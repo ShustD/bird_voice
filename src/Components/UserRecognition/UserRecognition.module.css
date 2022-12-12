@@ -1,0 +1,71 @@
+.wrapper {
+    padding: 0 10%;
+    position: relative;
+    z-index: 5;
+    min-height: 100vh;
+}
+
+.upperCloud {
+    background-image: url('../../assets/main/mainbg.png');
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 95%;
+    width: 8290px;
+    z-index: 0;
+    background-repeat: repeat-x;
+    background-size: contain;
+    -webkit-animation: movesky 900s linear infinite;
+    animation: movesky 900s linear infinite;
+    overflow: hidden;
+}
+
+.uuderCloud {
+    background-image: url('../../assets/mail/mainbg2.png');
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 25%;
+    width: 11290px;
+    z-index: 0;
+    background-repeat: repeat-x;
+    background-size: contain;
+    -webkit-animation: movesky 900s linear infinite;
+    animation: movesky 900s linear infinite;
+    animation-direction: reverse;
+    overflow: hidden;
+}
+
+
+
+@keyframes movesky {
+    from {
+        transform: translate(0);
+    }
+
+    to {
+        transform: translate(-5645px);
+    }
+}
+
+.container {
+    position: relative;
+    min-height: 100%;
+    z-index: 10;
+    padding-top: 50px;
+}
+
+
+.tittle {
+    display: inline-block;
+    margin-top: 70px;
+    margin-left: -12.5%;
+    padding: 10px 80px 10px 180px;
+    font-size: 34px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    background: #1466FF;
+    border-radius: 0px 20px 20px 0px;
+}
+
+

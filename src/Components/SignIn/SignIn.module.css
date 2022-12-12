@@ -1,0 +1,169 @@
+.wrapper {
+    padding: 0 10%;
+    position: relative;
+    z-index: 5;
+    height: 100vh;
+}
+.upperCloud {
+    background-image: url('../../assets/main/mainbg.png');
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 95%;
+    width: 8290px;
+    z-index: 0;
+    background-repeat: repeat-x;
+    background-size: contain;
+    -webkit-animation: movesky 900s linear infinite;
+    animation: movesky 900s linear infinite;
+    overflow: hidden;
+}
+.uuderCloud {
+    background-image: url('../../assets/mail/mainbg2.png');
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 25%;
+    width: 11290px;
+    z-index: 0;
+    background-repeat: repeat-x;
+    background-size: contain;
+    -webkit-animation: movesky 900s linear infinite;
+    animation: movesky 900s linear infinite;
+    animation-direction: reverse;
+    overflow: hidden;
+}
+@-webkit-keyframes movesky {
+    from {
+        transform: translate(0);
+    }
+
+    to {
+        transform: translate(-5645px);
+    }
+}
+
+@keyframes movesky {
+    from {
+        transform: translate(0);
+    }
+
+    to {
+        transform: translate(-5645px);
+    }
+}
+.container {
+    padding-top: 7%;
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.content {
+    padding-top: 3%;
+    display: flex;
+    height: 100%;
+    background-image: url(../../assets/main/bird1.png), url(../../assets/main/bird1.png), url(../../assets/main/bird1.png);
+    background-position: 25% 75%, 0% 45%, 38% 10%;
+    background-repeat: no-repeat;
+    background-size: 10%, 20%, 30%;
+}
+
+.birds {
+    flex: 1 0 55%;
+}
+
+.formSignIn {
+    padding: 0% 10% 10% 10%;
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    color: #0047CA;
+}
+
+.formTittle {
+    color: #1466FF;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 47px;
+    text-transform: capitalize;
+    padding-bottom: 35px;
+
+}
+
+.form label {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    font-variant: small-caps;
+}
+
+.form input {
+    width: 100%;
+    background: #76B9FF;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 4px solid #1466FF;
+    background-color: transparent;
+    margin-bottom: 45px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    color: #1466FF;
+}
+.form input:-webkit-autofill {
+    -webkit-text-fill-color: #1466FF !important;
+    transition: all 5000s ease-in-out;
+}
+.signBtn {
+    min-width: 100%;
+    padding: 23px 75px;
+    background: #1466FF;
+    box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+    font-variant: small-caps;
+    color: #DAEDFF;
+}
+
+.signBtn:hover {
+    background: #185FE3;
+    box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
+}
+.signBtn:active {
+    background: #0C52D5;
+    box-shadow: inset 2px 7px 10px rgba(0, 0, 0, 0.25);
+}
+.signBtn:disabled {
+    background: #5C5C5C;
+    box-shadow: none;
+}
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 35px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #0047CA;
+    padding-bottom: 10px;
+    
+}
+
+.inputField {
+    display: flex;
+    position: relative;
+}
+.vis {
+    position: absolute;
+    right: 0px;
+    cursor: pointer;
+}

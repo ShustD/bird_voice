@@ -1,0 +1,288 @@
+.resultModule {
+    padding-bottom: 50px;
+}
+p {
+    margin: 10px 0;
+}
+.recognitionButton {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 15px 40px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: capitalize;
+    color: #DAEDFF;
+    background: #1466FF;
+    box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
+    border-radius: 30px;
+}
+.recognitionButton:hover {
+    background: #185FE3;
+}
+.recognitionButton:active {
+    background: #0C52D5;
+    box-shadow: inset 2px 7px 10px rgba(0, 0, 0, 0.25);
+}
+
+.recognitionButton img {
+    margin-left: 15px;
+}
+
+.resultContainer {
+    padding: 15px 40px;
+    background: rgba(64, 140, 255, 0.6);
+    
+    border-radius: 20px;
+}
+
+.topSection {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sectionTittle {
+    margin-left: -40px;
+    padding: 5px 100px 5px 40px;
+    font-size: 34px;
+    line-height: 40px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    background: #1466FF;
+    border-radius: 0px 30px 30px 0px;
+}    
+.sectionButtons {
+    position: relative;
+}
+.sectionButtons button {
+    min-width: 150px;
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 20px;
+    font-size: 17px;
+    line-height: 20px;
+    text-transform: capitalize;
+}
+
+.buttonActive {
+    background: #A1C2FF;
+    color: #1466FF;
+    position: relative;
+    z-index: 2;
+}
+
+.buttonPassive {
+    background: #1466FF;
+    color: #A1C2FF;
+    z-index: 1;
+    position: relative;
+    right: 0;
+}
+.sectionButtons button:first-child {
+    margin-right: -40px;
+}
+.middleSection {
+    display: flex;
+    padding-bottom: 50px;
+}
+.birdImages {
+    flex: 1 1 30%;
+    padding: 50px 50px 0 0;
+    display: flex;
+    flex-direction: column;
+}
+.littleImages {
+    flex: 0 1 10%;
+    display: flex;
+}
+
+.littleImages img {
+    padding-right: 15px;
+    max-width: 20%;
+    border-radius: 20px;
+    
+}
+.mainImage {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+}
+.mainImage img {
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+.percentOfRecognition {
+    position: relative;
+    margin-top: 10px;
+}
+.confidence {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    background: #93BAFD;
+    border-radius: 20px;
+    font-size: 25px;
+    line-height: 29px;
+    color: #1466FF;
+}
+
+.percent {
+    background: #1466FF;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 80px;
+    text-align: center;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    bottom: 0; 
+    right: 0;
+}
+
+.birdInformation {
+    flex: 1 1 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.infTittleSection {
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 21.1697px;
+    line-height: 25px;
+    color: #1466FF;
+}
+.about, .data {
+    padding: 5px 10px;
+    background: rgba(236, 243, 255, 0.62);
+    border-radius: 60px;
+}
+
+.birdAboutSection {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 90%;
+    padding: 15px;
+    background: rgba(236, 243, 255, 0.62);
+    border-radius: 17px;
+    position: relative;
+}
+
+.informationAndMap {
+    display: flex;
+    justify-content: space-between;
+    flex: 1 0 30%;
+}
+
+.nameSection {
+    flex: 1 1 45%;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.nameSection div {
+    display: flex;
+    align-items: center;
+}
+.name__raw {
+    margin-left: -15px;
+    margin-top: 20px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    background: rgba(64, 140, 255, 0.6);
+    border-radius: 0 30px 30px 0;
+    justify-content: space-between;
+    font-size: 24px;
+}
+.raw__tittle {
+    color: rgba(255, 255, 255, 0.79);
+}
+.raw__name {
+    background: #1466FF;
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    margin-left: 10px;
+}
+
+.mapSection {
+    flex: 0 0 40%;
+    border-radius: 20px;
+    width: 100%;
+    border: none;
+}
+.bigMap {
+    margin-top: 20px;
+    border-radius: 20px;
+    width: 100%;
+    border: none;
+    height: 60vh;
+    display: none;
+}
+
+.descripyionText {
+    margin: 20px 0 30px;
+    padding: 15px 30px;
+    background: #8FBBFF;
+    border-radius: 20px;
+    color: #00379C;
+}
+
+.possibleChoiceTittle {
+    margin: 0 150px 0 -40px;
+    padding: 10px 0 10px 40px;
+    background: rgba(130, 178, 251, 0.7);
+    border-radius: 0px 20px 20px 0px;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 29px;
+    text-transform: capitalize;
+    color: #1466FF;
+}
+
+.possibleContaner {
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.possibleItem {
+    display: flex;
+    align-items: center;
+    flex: 1 1 100%;
+    padding: 0 15px;
+}
+
+.itemName {
+    text-align: center;
+    flex: 1 1 100%;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    background: rgba(236, 243, 255, 0.62);
+    padding: 20px 20px 20px 0;
+    color: #1466FF
+}
+
+.itemPercent {
+    margin-left: -25px;
+    color: #FFFFFF;
+    background: #1466FF;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 30px;
+    padding: 25px 15px;
+    border-radius: 50%;
+}

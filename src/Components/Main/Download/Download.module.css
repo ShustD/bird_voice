@@ -1,0 +1,328 @@
+.body {
+    margin-top: 150px;
+    display: flex;
+    max-width: 100%;
+    background: #286FE4;
+} 
+
+@media (max-width: 991.98px) {
+    .body {
+        flex-direction: column;
+    }
+}
+
+.discription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 86px 40px 52px 70px;
+    flex: 1 0 35%;
+    background: #286FE4;
+}
+
+@media (max-width: 991.98px) {
+    .discription {
+        flex: 1 0 100%;
+    }
+}
+
+@media (max-width: 479.98px) {
+    .discription {
+        padding: 40px 40px 25px 40px;
+    }
+}
+
+.animate {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    width: 120px;
+    height: 43px;
+  }
+  .soundwaves::before, .soundwaves::after, .soundwaveone::before, .soundwaveone::after {
+    position: absolute;
+    background: white;
+    border-radius: 10px;
+    width: 3px;
+    content: "";
+  }
+  .soundwaves {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    position: relative;
+  }
+  .soundwaves::before {
+    left: 0;
+    height: 32%;
+    -webkit-animation: soundwaves5 0.5s linear infinite;
+            animation: soundwaves5 0.5s linear infinite;
+  }
+  @-webkit-keyframes soundwaves5 {
+    0% {
+      height: 32%;
+    }
+    100% {
+      height: 60%;
+    }
+  }
+  @keyframes soundwaves5 {
+    0% {
+      height: 32%;
+    }
+    100% {
+      height: 60%;
+    }
+  }
+  .soundwaves::after {
+    right: 0;
+    height: 40%;
+    -webkit-animation: soundwaves4 1s ease-in-out infinite;
+            animation: soundwaves4 1s ease-in-out infinite;
+  }
+  @-webkit-keyframes soundwaves4 {
+    0% {
+      height: 40%;
+    }
+    25% {
+      height: 20%;
+    }
+    50% {
+      height: 100%;
+    }
+    75% {
+      height: 0%;
+    }
+    100% {
+      height: 40%;
+    }
+  }
+  @keyframes soundwaves4 {
+    0% {
+      height: 40%;
+    }
+    25% {
+      height: 20%;
+    }
+    50% {
+      height: 100%;
+    }
+    75% {
+      height: 0%;
+    }
+    100% {
+      height: 40%;
+    }
+  }
+  .soundwaveone {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 8px;
+    height: 100%;
+    width: 30%;
+  }
+  .soundwaveone::before {
+    left: 0;
+    height: 50%;
+    -webkit-animation: soundwaves3 1s ease-in-out infinite;
+            animation: soundwaves3 1s ease-in-out infinite;
+  }
+  @-webkit-keyframes soundwaves3 {
+    0% {
+      height: 50%;
+    }
+    100% {
+      height: 25%;
+    }
+  }
+  @keyframes soundwaves3 {
+    0% {
+      height: 50%;
+    }
+    100% {
+      height: 25%;
+    }
+  }
+  .soundwaveone::after {
+    right: 0;
+    height: 100%;
+    -webkit-animation: soundwaves2 2s ease-in-out infinite;
+            animation: soundwaves2 2s ease-in-out infinite;
+  }
+  @-webkit-keyframes soundwaves2 {
+    0% {
+      height: 100%;
+    }
+    25% {
+      height: 20%;
+    }
+    50% {
+      height: 70%;
+    }
+    75% {
+      height: 0%;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+  @keyframes soundwaves2 {
+    0% {
+      height: 100%;
+    }
+    25% {
+      height: 20%;
+    }
+    50% {
+      height: 70%;
+    }
+    75% {
+      height: 0%;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+  .soundwavetwo {
+    height: 70%;
+    width: 3px;
+    background-color: white;
+    margin-left: 5px;
+    border-radius: 10px;
+    -webkit-animation: soundwaves1 1.5s ease-in-out infinite;
+            animation: soundwaves1 1.5s ease-in-out infinite;
+  }
+  @-webkit-keyframes soundwaves1 {
+    0% {
+      height: 70%;
+    }
+    25% {
+      height: 0%;
+    }
+    50% {
+      height: 50%;
+    }
+    75% {
+      height: 0%;
+    }
+    100% {
+      height: 70%;
+    }
+  }
+  @keyframes soundwaves1 {
+    0% {
+      height: 70%;
+    }
+    25% {
+      height: 0%;
+    }
+    50% {
+      height: 50%;
+    }
+    75% {
+      height: 0%;
+    }
+    100% {
+      height: 70%;
+    }
+  }
+
+.definition {
+    font-size: 22px;
+    line-height: 141%;
+    color: #EDF2F5;
+    margin: 0 0 60px 0;
+}
+
+@media (max-width: 479.98px) {
+    .mobileapp__definition {
+        font-size: 16px;
+    }
+}
+
+.advertising {
+    flex: 1 0 55%;
+    display: flex;
+    background-image:url(../../../assets/Download/happy.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+  }
+
+@media (max-width: 991.98px) {
+    .mobileapp__advertising {
+        order: -1;
+        flex: 1 0 100%;
+    }
+}
+
+.advertising__content {
+    width: 100%;
+    
+    padding: 15% 52px;
+}
+
+.title {
+    position: relative;
+    top: -5px;
+    left: -1%;
+    font-weight: 600;
+    font-size: 85px;
+    line-height: 77%;
+    writing-mode: vertical-rl;
+    padding: 0 0 0 0px;
+    background-color: transparent;
+    color: #286FE4;
+}
+
+@media (max-width: 479.98px) {
+    .title {
+        font-size: 50px;
+        top: -3px;
+        left: -5px;
+    }
+}
+
+.text {
+    max-width: 330px;
+    font-size: 32px;
+    line-height: 139%;
+    text-transform: lowercase;
+    margin: 0 0 27px 0;
+    color: #FFFFFF;
+}
+
+@media (max-width: 479.98px) {
+    .text {
+        font-size: 20px;
+        background-color: rgba(40, 112, 228, 0.568627451);
+        padding: 10px;
+        border-radius: 12px;
+    }
+}
+
+.button {
+    padding: 20px 75px;
+    background: #1466FF;
+    box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
+    border-radius: 35px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-transform: capitalize;
+    border: none;
+    color: #FFFFFF;
+}
+
+.button:hover {
+    background: #185FE3;
+    box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
+}
+
+.button:active {
+    background: #0C52D5;
+    box-shadow: inset 2px 7px 10px rgba(0, 0, 0, 0.25);
+}
+

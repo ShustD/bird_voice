@@ -1,0 +1,362 @@
+/* here's all the animation */
+.slideshow {
+    position: relative;
+    height: 100%;
+}
+
+.i_1 {
+    position: absolute;
+    height: 70%;
+    bottom: 15%;
+    left: 43%;
+
+}
+
+.i_1A {
+    position: absolute;
+    height: 70%;
+    bottom: 15%;
+    left: 43%;
+    animation: height1 4s ease-in-out infinite 0s;
+
+}
+
+@keyframes height1 {
+    from {
+        height: 70%;
+        bottom: 15%;
+        left: 43%;
+    }
+
+    25% {
+        height: 80%;
+        bottom: 10%;
+        left: 28%;
+
+
+    }
+
+    50% {
+        height: 90%;
+        bottom: 5%;
+        left: 10%;
+
+    }
+
+    75% {
+        height: 100%;
+        bottom: 0;
+        left: 0;
+    }
+
+    to {
+        height: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.i_2 {
+    position: absolute;
+    height: 80%;
+    bottom: 10%;
+    left: 28%;
+}
+
+.i_2A {
+    position: absolute;
+    height: 80%;
+    bottom: 10%;
+    left: 28%;
+    animation: height2 4s ease-in-out infinite 0s;
+
+}
+
+@keyframes height2 {
+    from {
+        height: 80%;
+        bottom: 10%;
+        left: 28%;
+
+    }
+
+    25% {
+        height: 90%;
+        bottom: 5%;
+        left: 15%;
+
+    }
+
+    50% {
+        height: 100%;
+        bottom: 0;
+        left: 0
+    }
+
+    75% {
+        height: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    to {
+        height: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.i_3 {
+    position: absolute;
+    height: 90%;
+    bottom: 5%;
+    left: 10%;
+}
+
+.i_3A {
+    position: absolute;
+    height: 90%;
+    bottom: 5%;
+    left: 10%;
+    animation: height3 4s ease-in-out infinite 0s;
+
+}
+
+@keyframes height3 {
+    from {
+        height: 90%;
+        bottom: 5%;
+        left: 10%;
+    }
+
+    25% {
+        height: 100%;
+        bottom: 0;
+        left: 0;
+    }
+
+    50% {
+        height: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    to {
+        height: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.i_4 {
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.i_4A {
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    animation: height4 4s ease-in-out infinite 0s;
+
+}
+
+@keyframes height4 {
+    from {
+        height: 100%
+    }
+
+    25% {
+        bottom: 0%;
+        right: 0%;
+        height: 0%;
+    }
+
+    to {
+        bottom: 0%;
+        right: 0%;
+        height: 0%;
+    }
+}
+
+.i_5 {
+    position: absolute;
+    height: 0%;
+    bottom: 15%;
+    right: 43%;
+
+}
+
+.i_5A {
+    position: absolute;
+    height: 0%;
+    bottom: 15%;
+    right: 43%;
+    animation: height5 4s ease-in-out infinite 0s;
+
+}
+
+@keyframes height5 {
+    from {
+        height: 0;
+        bottom: 0;
+        right: 0;
+    }
+    25% {
+        height: 70%;
+        bottom: 15%;
+        right: 0%;
+    }
+    50% {
+        height: 80%;
+        bottom: 10%;
+        right: 10%;
+    }
+    75% {
+        height: 90%;
+        bottom: 5%;
+        right: 12%;
+    }
+    to {
+        height: 100%;
+        bottom: 0;
+        right: 26%;
+    }
+}
+
+.i_6 {
+    position: absolute;
+    height: 0%;
+    bottom: 15%;
+    right: 43%;
+
+}
+
+.i_6A {
+    position: absolute;
+    height: 0%;
+    bottom: 15%;
+    right: 43%;
+    animation: height6 4s ease-in-out infinite 0s;
+}
+
+@keyframes height6 {
+    from {
+        height: 0;
+        bottom: 0;
+        right: 0;
+    }
+    25% {
+        height: 0;
+        bottom: 0;
+        right: 0;
+    }
+    50% {
+        height: 70%;
+        bottom: 15%;
+        right: 5%;
+    }
+    75% {
+        height: 80%;
+        bottom: 10%;
+        right: 7%;
+    }
+    to {
+        height: 90%;
+        bottom: 5%;
+        right: 17%;
+    }
+}
+
+.i_7 {
+    position: absolute;
+    height: 0;
+}
+
+.i_7A {
+    position: absolute;
+    height: 0;
+    animation: height7 4s ease-in-out infinite 0s;
+
+}
+
+@keyframes height7 {
+    from {
+        height: 0;
+        bottom: 0;
+        right: 0
+    }
+
+    25% {
+        height: 0;
+        bottom: 0;
+        right: 0
+
+    }
+
+    50% {
+        height: 0;
+        bottom: 0;
+        right: 0
+    }
+
+    75% {
+        height: 70%;
+        bottom: 15%;
+        right: 0%;
+    }
+
+    to {
+        height: 80%;
+        bottom: 10%;
+        right: 7%;
+    }
+}
+
+.i_8 {
+    position: absolute;
+    height: 0%;
+}
+
+.i_8A {
+    position: absolute;
+    height: 80%;
+    animation: height8 4s ease-in-out infinite 0s;
+
+}
+
+@keyframes height8 {
+    from {
+        height: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    25% {
+        height: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    50% {
+        height: 0;
+        bottom: 0;
+        right: 0;
+
+    }
+
+    75% {
+        height: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    to {
+        height: 70%;
+        bottom: 15%;
+        right: 0;
+    }
+}

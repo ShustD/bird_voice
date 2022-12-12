@@ -1,0 +1,114 @@
+.wrapper {
+    padding: 0 10%;
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.upperBlock__container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+    max-width: 100%;
+    background-image: url(../../../assets/main/bird1.png), url(../../../assets/main/bird2.png), url(../../../assets/main/bird3.png), url(../../../assets/main/bird4.png), url(../../../assets/main/bird5.png);
+    background-position: 73% 25%, 75% 70%, 95% 50%, 0% 75%, 0% 15%;
+    background-repeat: no-repeat;
+    background-size: 25%, 20%, 7%, 8%, 25%;
+}
+
+.upperCloud {
+    background-image: url('../../../assets/main/mainbg.png');
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 11290px;
+    z-index: 0;
+    background-repeat: repeat-x;
+    background-size: contain;
+    -webkit-animation: movesky 900s linear infinite;
+    animation: movesky 900s linear infinite;
+    overflow: hidden;
+}
+
+@-webkit-keyframes movesky {
+    from {
+        transform: translate(0);
+    }
+
+    to {
+        transform: translate(-5645px);
+    }
+}
+
+@keyframes movesky {
+    from {
+        transform: translate(0);
+    }
+
+    to {
+        transform: translate(-5645px);
+    }
+}
+
+.tittle {
+    color: #1E5ED6;
+    height: 100%;
+    display: flex;
+    padding-left: 15%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tittle__up {
+    font-family: 'Montserrat Alternates';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 100px;
+}
+
+.tittle__down {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 78px;
+    color: #1E5ED6;
+    margin-top: -3vh;
+}
+
+.try {
+    padding-top: 20px;
+}
+
+.button__try {
+    padding: 23px 125px;
+    background: #1466FF;
+    box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
+    border-radius: 24px;
+    font-size: 20px;
+    line-height: 23px;
+    font-variant: small-caps;
+    color: #DAEDFF;
+    border: none;
+}
+
+.button__try:hover {
+    background: #185FE3;
+    box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
+}
+
+.button__try:active {
+    background: #0C52D5;
+    box-shadow: inset 2px 7px 10px rgba(0, 0, 0, 0.25);
+}
+.button__try:disabled {
+    background: #5C5C5C;
+    box-shadow: none;
+}
+.button__try img {
+    padding-left: 10px;
+}

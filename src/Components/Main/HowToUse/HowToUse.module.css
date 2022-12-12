@@ -1,0 +1,77 @@
+.howToUse {
+    display: flex;
+    padding: 0 10%;
+    justify-content: space-between;
+    align-items: center;
+    color: #EDF2F5;
+    padding-top: 150px;
+}
+.howToUse__leftBlock {
+    flex: 0 0 60%;
+    height: 441px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.howToUse__tittle {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 42px;
+}
+
+.howToUse__text {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 45px;
+}
+
+.howToUse__ul li {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 45px;
+    padding-top: 10px;
+}
+
+.howToUse__ul li::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #1466FF;
+    display: inline-block;
+    margin-right: 10px;
+
+}
+.howToUse__button {
+    padding-bottom: 15px;
+}
+.howToUse__button button {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    font-variant: small-caps;
+    color: #1466FF;
+    background: #9FCDFE;
+    border: 1px solid #1466FF;
+    border-radius: 14px;
+    padding: 13px 60px;
+}
+.howToUse__button button:hover {
+    background: #BCD8FC;
+    border: 1px solid #2F75F8;
+}
+.howToUse__button button:active {
+    background: #67B0FC;
+    border: 1px solid #1466FF;
+}
+
+.howToUse__button button:disabled {
+    background: #ECECEC;
+    border: 1px solid #25282B;
+    color: #25282B;
+}
+.howToUse__img img {
+    width: 354px;
+    border-radius: 89px 89px 0 0;
+    box-shadow: 17px -19px 0px 0px rgba(40, 111, 228, 1);
+}

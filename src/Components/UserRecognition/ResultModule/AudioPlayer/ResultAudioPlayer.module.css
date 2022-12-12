@@ -1,0 +1,46 @@
+.audio {
+    background: #0963F6;
+    padding: 10px 25px;
+    width: 50%;
+    border-radius: 30px;
+    margin:0 auto;
+    position: absolute;
+    left: 0; 
+    right: 0;
+    bottom: -25px;
+    
+}
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #FFFFFF;
+}
+
+.volume {
+    background-color: #A8BFEC;
+    height: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    max-width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    height: 7px;
+}
+
+.volume::-webkit-slider-thumb {
+    background: #FFFFFF;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    appearance: none;
+    margin-top: 0x;
+}
+
+.controlsLeft, .controlsRight {
+    display: flex;
+    align-items: center;
+}

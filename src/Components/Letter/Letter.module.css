@@ -1,0 +1,142 @@
+.wrapper {
+    padding: 0 10%;
+    position: relative;
+    z-index: 5;
+    height: 100vh;
+}
+
+
+.upperCloud {
+    background-image: url('../../assets/main/mainbg.png');
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 95%;
+    width: 8290px;
+    z-index: 0;
+    background-repeat: repeat-x;
+    background-size: contain;
+    -webkit-animation: movesky 900s linear infinite;
+    animation: movesky 900s linear infinite;
+    overflow: hidden;
+}
+
+.uuderCloud {
+    background-image: url('../../assets/mail/mainbg2.png');
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 25%;
+    width: 11290px;
+    z-index: 0;
+    background-repeat: repeat-x;
+    background-size: contain;
+    -webkit-animation: movesky 900s linear infinite;
+    animation: movesky 900s linear infinite;
+    animation-direction: reverse;
+    overflow: hidden;
+}
+
+@-webkit-keyframes movesky {
+    from {
+        transform: translate(500px);
+    }
+
+    to {
+        transform: translate(-5645px);
+    }
+}
+
+@keyframes movesky {
+    from {
+        transform: translate(-500px);
+    }
+
+    to {
+        transform: translate(-5645px);
+    }
+}
+
+.container {
+    padding-top: 7%;
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.content {
+    padding-top: 3%;
+    display: flex;
+    height: 100%;
+    background-image: url(../../assets/letter/bird.png);
+    background-position: 20% 0;
+    background-repeat: no-repeat;
+    background-size: 40%;
+}
+
+.birds {
+    flex: 1 0 55%;
+}
+
+.formForgot {
+    padding: 0% 10% 10% 0;
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    color: #0047CA;
+}
+
+.formTittle {
+    color: #1466FF;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 47px;
+    text-transform: capitalize;
+
+}
+
+.formText {
+    padding-top: 35px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-transform: lowercase;
+
+    color: #0047CA;
+}
+
+.button {
+    padding: 10% 20% 0 0;
+}
+
+
+
+.signBtn {
+    min-width: 100%;
+    padding: 23px 75px;
+    background: #1466FF;
+    box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+    font-variant: small-caps;
+    color: #DAEDFF;
+}
+
+.signBtn:hover {
+    background: #185FE3;
+    box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
+}
+.signBtn:active {
+    background: #0C52D5;
+    box-shadow: inset 2px 7px 10px rgba(0, 0, 0, 0.25);
+}
+.signBtn:disabled {
+    background: #5C5C5C;
+    box-shadow: none;
+}
