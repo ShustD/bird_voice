@@ -140,6 +140,7 @@
     position: relative;
 }
 .main_photo {
+    max-width: 100%;
     border-radius: 85px 85px 0px 0px;
     box-shadow: 17px -19px 0px 0px rgba(40, 111, 228, 1);
 }
@@ -163,5 +164,11 @@
     height: 100px;
 }
 .little_text {
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+    color: #0047CA;
 }
