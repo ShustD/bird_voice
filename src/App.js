@@ -10,6 +10,7 @@ import { Letter } from './Components/Letter/Letter';
 import { UserRecognition } from './Components/UserRecognition/UserRecognition';
 import { TablesPage } from './Components/TablePage/TablesPage';
 import { SettingPage } from './Components/SettingPage/SettingPage';
+import { SelectUsers } from './Components/SelectUsers/SelectUsers';
 
 
 export const App = () => {
@@ -30,6 +31,7 @@ export const App = () => {
             <Route path='userrecognition' element={<UserRecognition />} />
             <Route path='tablespage' element={<TablesPage />} />
             <Route path='settingspage' element={<SettingPage />} />
+            <Route path='selectusers' element={<SelectUsers />} />
           </Routes>
         </BrowserRouter>
       </div>

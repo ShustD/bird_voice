@@ -1,0 +1,106 @@
+.wrapper {
+    padding: 0 10%;
+    position: relative;
+    z-index: 5;
+    height: 100vh;
+}
+
+.upperCloud {
+    background-image: url('../../assets/main/mainbg.png');
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 45%;
+    width: 8290px;
+    z-index: 0;
+    background-repeat: repeat-x;
+    background-size: 15%;
+    -webkit-animation: movesky 900s linear infinite;
+    animation: movesky 900s linear infinite;
+    overflow: hidden;
+}
+.uuderCloud {
+    background-image: url('../../assets/mail/mainbg2.png');
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 40%;
+    width: 11290px;
+    z-index: 0;
+    background-repeat: repeat-x;
+    background-size: contain;
+    -webkit-animation: movesky 900s linear infinite;
+    animation: movesky 900s linear infinite;
+    animation-direction: reverse;
+    overflow: hidden;
+}
+@-webkit-keyframes movesky {
+    from {
+        transform: translate(0);
+    }
+
+    to {
+        transform: translate(-5645px);
+    }
+}
+
+@keyframes movesky {
+    from {
+        transform: translate(0);
+    }
+
+    to {
+        transform: translate(-5645px);
+    }
+}
+
+.container {
+    min-height: 100vh;
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px;
+    font-size: 25px;
+    line-height: 29px;
+    text-transform: capitalize;
+}
+
+
+.scientist_body {
+    cursor: pointer;
+    min-width: 200px;
+    height: 250px;
+    background: rgba(174, 214, 255, 0.8);
+    border: 2px solid rgba(20, 102, 255, 0.5);
+    border-radius: 10px;
+    color: #0047CA;
+    background-image: url('../../assets/selectusers/scientist.png');
+    background-repeat: no-repeat;
+    background-position: 50% 15%;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    }
+
+.volunteer_body {
+    cursor: pointer;
+    min-width: 200px;
+    height: 250px;
+    background: rgba(255, 190, 168, 0.37);
+    border: 2px solid rgba(182, 48, 29, 0.32);
+    border-radius: 10px;
+    color: #AA3218;
+    background-image: url('../../assets/selectusers/volunteer.png');
+    background-repeat: no-repeat;
+    background-position: 50% 15%;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 20px;
+}
