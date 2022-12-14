@@ -11,6 +11,7 @@ import { UserRecognition } from './Components/UserRecognition/UserRecognition';
 import { TablesPage } from './Components/TablePage/TablesPage';
 import { SettingPage } from './Components/SettingPage/SettingPage';
 import { SelectUsers } from './Components/SelectUsers/SelectUsers';
+import { ScientCode } from './Components/ScientCode/ScientCode';
 
 
 export const App = () => {
@@ -32,6 +33,7 @@ export const App = () => {
             <Route path='tablespage' element={<TablesPage />} />
             <Route path='settingspage' element={<SettingPage />} />
             <Route path='selectusers' element={<SelectUsers />} />
+            <Route path='scientcode' element={<ScientCode />} />
           </Routes>
         </BrowserRouter>
       </div>

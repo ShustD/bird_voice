@@ -8,7 +8,7 @@ export const SelectUsers = () => {
         <div className={s.wrapper}>
             <div className={s.wrapper_body}>
                 <div className={s.container}>
-                    <NavLink to='/signup'>
+                    <NavLink to='/scientcode'>
                         <div className={s.scientist_body}>
                             <div>scientist</div>
                         </div>
@@ -18,7 +18,6 @@ export const SelectUsers = () => {
                             <div>volunteer</div>
                         </div>
                     </NavLink>
-
                 </div>
                 <div className={s.upperCloud}></div>
                 <div className={s.uuderCloud}></div>
