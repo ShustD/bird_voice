@@ -195,3 +195,8 @@ input[type="file"] {
 .file_upload:active, .post button:active {
     background: #E2EBFB;
 }
+.post button:disabled {
+    background: rgba(216, 216, 216, 0.45);
+    border: 1px solid #25282B;
+    color: #25282B;
+}

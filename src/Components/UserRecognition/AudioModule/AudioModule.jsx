@@ -85,7 +85,8 @@ export const AudioModule = (props) => {
                                 <input id="uploadFile" type="file" name="userfile[]" onChange={(e) =>selectMusic(e)} />
                                 
                                 <div className={s.post}>
-                                    <button onClick={() => isVisibleAudioModule(false)}>Start or recognition</button>
+                                    <button onClick={() => isVisibleAudioModule(false)} 
+                                    disabled={voice && !animation ? false : true}>Start or recognition</button>
                                 </div>
                             </div>
                         </div>
