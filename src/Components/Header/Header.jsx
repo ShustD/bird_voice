@@ -86,9 +86,7 @@ export const Header = ({ user = 'User', userLogo = photo }) => {
             }
         }
     }
-    if (path === '/scientcode') {
-        return null
-    }
+
     return (
         <div className={s.header__container}>
             <div className={s.header__body}>
