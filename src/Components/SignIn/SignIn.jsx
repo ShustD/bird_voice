@@ -49,7 +49,7 @@ export const SignIn = () => {
                             </div>
                             <div className={s.links}>
                                 <NavLink to='/forgot'>forgot your password?</NavLink>
-                                <NavLink to='/signup'>sign up</NavLink> 
+                                <NavLink to='/selectusers'>sign up</NavLink> 
                             </div>
 
                         </div>

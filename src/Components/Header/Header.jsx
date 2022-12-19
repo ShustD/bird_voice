@@ -70,12 +70,10 @@ export const Header = ({ user = 'User', userLogo = photo }) => {
                             </div>
                             <div> Hello, {user}!</div>
                             <div className={s.user_settings}>
-                                <div>
-                                  <NavLink to='/settingspage'>
+                                <NavLink onClick={() => setDropMenu(false)} 
+                                  to='/settingspage'>
                                     <img className={s.user_logo} src={setting} alt="" />
                                 </NavLink>  
-                                </div>
-                                
                             </div>
                         </div>
                     </div>
