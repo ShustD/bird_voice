@@ -39,8 +39,8 @@ export const Header = ({ user = 'User', userLogo = photo }) => {
             }
             case '/userrecognition': case '/tablespage': {
                 return (
-                    <div ref={dropMenuRef} className={s.header_container}>
-                        <div className={s.menu_container}>
+                    <div className={s.header_container}>
+                        <div ref={dropMenuRef} className={s.menu_container}>
                             <div onClick={() => setDropMenu(!dropMenu)} className={dropMenu ? s.menu_vis : s.menu}>
                                 <div>Menu</div>
                                 <div className={dropMenu ? s.arrow_vis : s.arrow}>
@@ -70,9 +70,12 @@ export const Header = ({ user = 'User', userLogo = photo }) => {
                             </div>
                             <div> Hello, {user}!</div>
                             <div className={s.user_settings}>
-                                <NavLink to='/settingspage'>
+                                <div>
+                                  <NavLink to='/settingspage'>
                                     <img className={s.user_logo} src={setting} alt="" />
-                                </NavLink>
+                                </NavLink>  
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
