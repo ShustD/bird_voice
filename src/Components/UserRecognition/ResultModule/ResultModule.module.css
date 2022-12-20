@@ -330,7 +330,14 @@ p {
 }
 
 .spectogramm_container {
-    flex: 0 0 50%;
+    flex: 1 0 40%;
+    padding: 30px;
     background: #1466FF;
     border-radius: 16px;
+    display: flex;
+}
+
+.spectogramm_img {
+    background-color: #fff;
+    border-radius: 15px;
 }

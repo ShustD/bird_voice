@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import s from './ResultModule.module.css'
 import btnBird from '../../../assets/UserRecognition/btnBird.png'
 import li from '../../../assets/UserRecognition/li.png'
+import spec from '../../../assets/UserRecognition/spec.png'
 import coins from '../../../assets/UserRecognition/coins.png'
 import littleBird from '../../../assets/UserRecognition/littleBird.png'
 import bigBird from '../../../assets/UserRecognition/Rectangle 15.png'
@@ -154,7 +155,9 @@ export const ResultModule = (props) => {
                                     </div>
 
                                     <div className={s.spectogramm_container}>
-
+                                        <div className={s.spectogramm_img}>
+                                            <img src={spec} alt="" />
+                                        </div>
                                     </div>
                                 </div>
                                 : <div className={s.possibleContaner}>
