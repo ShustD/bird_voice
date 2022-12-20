@@ -84,7 +84,7 @@ p {
 }
 .middleSection {
     display: flex;
-    padding-bottom: 50px;
+    padding-bottom: 70px;
 }
 .birdImages {
     flex: 1 1 30%;
@@ -288,4 +288,49 @@ p {
     line-height: 30px;
     padding: 25px 15px;
     border-radius: 50%;
+}
+
+.possibleContainerScientist {
+    display: flex;
+    padding-top: 25px;
+
+}
+
+.sciBirds {
+    flex: 0 0 50%;
+    padding-left: 10px;
+    color: #FFFFFF;
+}
+.bird_container {
+    display: flex;
+    align-items: center;
+}
+.bird_image {
+    text-align: center;
+}
+.bird_percent {
+    display: flex;
+    width: 100%;
+    padding: 0 25px;
+}
+.bird_line {
+    align-self: center;
+    height: 40px;
+    background: #D9D9D9;
+    border-radius: 20px;
+}
+
+.bird_circle {
+    margin-left: -20px;
+    background: #1466FF;
+    padding: 25px 20px;
+    border-radius: 50%;
+    right: 0;
+    bottom: -35%;
+}
+
+.spectogramm_container {
+    flex: 0 0 50%;
+    background: #1466FF;
+    border-radius: 16px;
 }

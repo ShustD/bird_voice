@@ -1,13 +1,14 @@
 import React, { useState } from "react"
 import s from './ResultModule.module.css'
 import btnBird from '../../../assets/UserRecognition/btnBird.png'
+import li from '../../../assets/UserRecognition/li.png'
 import coins from '../../../assets/UserRecognition/coins.png'
 import littleBird from '../../../assets/UserRecognition/littleBird.png'
 import bigBird from '../../../assets/UserRecognition/Rectangle 15.png'
 import { ResultAudioPlayer } from "./AudioPlayer/ResultAudioPlayer"
 
 export const ResultModule = (props) => {
-    console.log(props);
+    const [isSci, setIsSci] = useState(false)
     const [buttonActive, setButtonActive] = useState(true)
     return (
         <div className={s.resultModule}>
@@ -91,10 +92,72 @@ export const ResultModule = (props) => {
                     </div>
                     <div className={s.bottomSection}>
                         <div className={s.birdVoice}>
-                            <div className={s.possibleChoiceTittle}>
+                            <div onClick={() => {setIsSci(!isSci)}} className={s.possibleChoiceTittle}>
                                 Possible Choice
                             </div>
-                            <div className={s.possibleContaner}>
+                            {
+                                isSci ? 
+                                <div className={s.possibleContainerScientist}>
+                                    <div className={s.sciBirds}>
+                                        <div className={s.bird_container}>
+                                            <div className={s.bird_image}>
+                                                <img src={li} alt="" />
+                                                <div>
+                                                    text
+                                                </div>
+                                            </div>
+                                            <div className={s.bird_percent}>
+                                                <div style={{width: 'calc(90% - 60px)'}} className={s.bird_line}>
+                                                </div>
+                                                <div className={s.bird_circle}>90%</div>
+                                            </div>
+                                        </div>
+                                        <div className={s.bird_container}>
+                                            <div className={s.bird_image}>
+                                                <img src={li} alt="" />
+                                                <div>
+                                                    text
+                                                </div>
+                                            </div>
+                                            <div className={s.bird_percent}>
+                                                <div style={{width: 'calc(80% - 60px)'}} className={s.bird_line}>
+                                                </div>
+                                                <div className={s.bird_circle}>80%</div>
+                                            </div>
+                                        </div>
+                                        <div className={s.bird_container}>
+                                            <div className={s.bird_image}>
+                                                <img src={li} alt="" />
+                                                <div>
+                                                    text
+                                                </div>
+                                            </div>
+                                            <div className={s.bird_percent}>
+                                                <div style={{width: 'calc(60% - 60px)'}} className={s.bird_line}>
+                                                </div>
+                                                <div className={s.bird_circle}>60%</div>
+                                            </div>
+                                        </div>
+                                        <div className={s.bird_container}>
+                                            <div className={s.bird_image}>
+                                                <img src={li} alt="" />
+                                                <div>
+                                                    text
+                                                </div>
+                                            </div>
+                                            <div className={s.bird_percent}>
+                                                <div style={{width: 'calc(40% - 60px)'}} className={s.bird_line}>
+                                                </div>
+                                                <div className={s.bird_circle}>40%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className={s.spectogramm_container}>
+
+                                    </div>
+                                </div>
+                                : <div className={s.possibleContaner}>
                                 <div className={s.possibleItem}>
                                     <div className={s.itemImage}>
                                         <img src={coins} alt="" />
@@ -133,6 +196,9 @@ export const ResultModule = (props) => {
 
 
                             </div>
+                            }
+                            
+                            
                         </div>
                     </div>
                 </div>
