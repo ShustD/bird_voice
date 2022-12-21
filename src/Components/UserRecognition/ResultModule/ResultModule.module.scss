@@ -1,9 +1,7 @@
 .resultModule {
     padding-bottom: 50px;
 }
-p {
-    margin: 10px 0;
-}
+
 .recognitionButton {
     display: flex;
     align-items: center;
@@ -17,6 +15,9 @@ p {
     background: #1466FF;
     box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
     border-radius: 30px;
+    img {
+        margin-left: 15px;
+    }
 }
 .recognitionButton:hover {
     background: #185FE3;
@@ -26,14 +27,9 @@ p {
     box-shadow: inset 2px 7px 10px rgba(0, 0, 0, 0.25);
 }
 
-.recognitionButton img {
-    margin-left: 15px;
-}
-
 .resultContainer {
     padding: 15px 40px;
     background: rgba(64, 140, 255, 0.6);
-    
     border-radius: 20px;
 }
 
@@ -54,8 +50,7 @@ p {
 }    
 .sectionButtons {
     position: relative;
-}
-.sectionButtons button {
+    button {
     min-width: 150px;
     padding: 10px;
     font-weight: 600;
@@ -63,6 +58,7 @@ p {
     font-size: 17px;
     line-height: 20px;
     text-transform: capitalize;
+    }
 }
 
 .buttonActive {
@@ -95,23 +91,22 @@ p {
 .littleImages {
     flex: 0 1 10%;
     display: flex;
+    img {
+        padding-right: 15px;
+        max-width: 20%;
+        border-radius: 20px;
+    }
 }
 
-.littleImages img {
-    padding-right: 15px;
-    max-width: 20%;
-    border-radius: 20px;
-    
-}
 .mainImage {
     width: 90%;
     display: flex;
     flex-direction: column;
     padding-top: 25px;
-}
-.mainImage img {
-    max-width: 100%;
-    border-radius: 20px;
+    img {
+        max-width: 100%;
+        border-radius: 20px;
+    }
 }
 
 .percentOfRecognition {

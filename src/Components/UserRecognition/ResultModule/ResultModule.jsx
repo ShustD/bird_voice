@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import s from './ResultModule.module.css'
+import s from './ResultModule.module.scss'
 import btnBird from '../../../assets/UserRecognition/btnBird.png'
 import li from '../../../assets/UserRecognition/li.png'
 import spec from '../../../assets/UserRecognition/spec.png'

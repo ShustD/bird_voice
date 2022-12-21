@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-import s from './UserRecognition.module.css'
+import s from './UserRecognition.module.scss'
 import { AudioModule } from "./AudioModule/AudioModule";
 import { ResultModule } from "./ResultModule/ResultModule";
 
@@ -20,7 +20,7 @@ export const UserRecognition = () => {
                     <div className={s.tittle}>
                         recognition service
                     </div>
-                    {openRecognitionBox ?  <AudioModule  changeState={changeState}/> 
+                    {!openRecognitionBox ?  <AudioModule  changeState={changeState}/> 
                     : <ResultModule birdImage={birdImage} birdName={birdName} changeState={changeState}/>}     
                 </div>
                 <div className={s.upperCloud}></div>
