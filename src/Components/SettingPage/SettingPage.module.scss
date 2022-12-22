@@ -68,31 +68,33 @@
     flex-direction: column;
     color: #0047CA;
 }
-.form label {
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
-    font-variant: small-caps;
-}
+.form {
+    label {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 20px;
+        font-variant: small-caps;
+    }
+    input {
+        width: 100%;
+        background: #76B9FF;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: 4px solid #1466FF;
+        background-color: transparent;
+        margin-bottom: 45px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 20px;
+        color: #1466FF;
+        &:-webkit-autofill {
+            -webkit-text-fill-color: #1466FF !important;
+            transition: all 5000s ease-in-out;
+        }
+    }
+} 
 
-.form input {
-    width: 100%;
-    background: #76B9FF;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    border-bottom: 4px solid #1466FF;
-    background-color: transparent;
-    margin-bottom: 45px;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 20px;
-    color: #1466FF;
-}
-.form input:-webkit-autofill {
-    -webkit-text-fill-color: #1466FF !important;
-    transition: all 5000s ease-in-out;
-}
 .signBtn {
     margin-top: 20px;
     min-width: 100%;
@@ -105,18 +107,18 @@
     line-height: 23px;
     font-variant: small-caps;
     color: #DAEDFF;
-}
-.signBtn:hover {
-    background: #185FE3;
-    box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
-}
-.signBtn:active {
-    background: #0C52D5;
-    box-shadow: inset 2px 7px 10px rgba(0, 0, 0, 0.25);
-}
-.signBtn:disabled {
-    background: #5C5C5C;
-    box-shadow: none;
+    &:hover {
+        background: #185FE3;
+        box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
+    }
+    &:active {
+        background: #0C52D5;
+        box-shadow: inset 2px 7px 10px rgba(0, 0, 0, 0.25);
+    }
+    &:disabled {
+        background: #5C5C5C;
+        box-shadow: none;
+    }
 }
 
 .inputField {

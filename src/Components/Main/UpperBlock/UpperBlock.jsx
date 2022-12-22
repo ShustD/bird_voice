@@ -1,5 +1,5 @@
 import React from 'react'
-import s from './UpperBlock.module.css'
+import s from './UpperBlock.module.scss'
 import vectorBtn from '../../../assets/main/Vector.svg'
 import { Link } from 'react-router-dom'
 

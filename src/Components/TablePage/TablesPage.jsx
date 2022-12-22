@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import s from './TablePage.module.css'
+import s from './TablePage.module.scss'
 import { CollectionTable } from "./Tables/CollectionTable";
 import { DeletedTable } from "./Tables/DeletedTable";
 import { NewFilesTable } from "./Tables/NewFilesTable";

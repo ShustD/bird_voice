@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useMemo, useEffect, useRef } from 'react';
-import s from '../AudioModule.module.css'
+import s from '../AudioModule.module.scss'
 import WaveSurfer from 'wavesurfer.js'
 import RegionsPlugin from "wavesurfer.js/dist/plugin/wavesurfer.regions.min.js";
 import { bufferToWave, copy } from "../../cut";

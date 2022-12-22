@@ -1,5 +1,5 @@
 import React from "react";
-import s from './AudioModule.module.css'
+import s from './AudioModule.module.scss'
 import preloader from '../../../assets/UserRecognition/preloader.png'
 
 

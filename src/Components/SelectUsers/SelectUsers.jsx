@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import s from './SelectUsers.module.css'
+import s from './SelectUsers.module.scss'
 
 export const SelectUsers = () => {
 

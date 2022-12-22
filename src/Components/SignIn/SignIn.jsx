@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import s from './SignIn.module.css'
+import s from './SignIn.module.scss'
 import { Formik, Field, Form } from 'formik';
 import { NavLink } from 'react-router-dom'
 import invis from '../../assets/SignUp/invisible.png'

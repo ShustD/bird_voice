@@ -1,5 +1,5 @@
 import React from "react";
-import s from '../TablePage.module.css'
+import s from '../TablePage.module.scss'
 import { RawOfTableCollection } from "./RawOfTable/RawOfTableCollection";
 
 export const CollectionTable = (props) => {

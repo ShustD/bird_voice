@@ -36,8 +36,6 @@
     overflow: hidden;
 }
 
-
-
 @keyframes movesky {
     from {
         transform: translate(0);
@@ -68,11 +66,10 @@
     padding: 5px 10px;
     background: #1466FF;
     color: #ACB6C9;
-}
-
-.buttons__container div {
-    padding: 0 30px;
-    cursor: pointer;
+    div {
+        padding: 0 30px;
+        cursor: pointer;
+    }
 }
 
 .table__add {
@@ -90,10 +87,9 @@
 
 .table__header {
     justify-content: end;
-}
-
-.table__header div {
-    border-radius: 5px 5px 0 0;
+    div {
+        border-radius: 5px 5px 0 0;
+    }
 }
 
 table {
@@ -112,17 +108,26 @@ tbody {
     text-align: center;
     color: #00164E;
 }
-.raw_of_table td {
-    word-break: break-all;
-    height: 45px;
-}
-.raw_of_table:nth-child(odd) {
-    background: #D9E3F8;
-}
+.raw_of_table {
+    td {
+        word-break: break-all;
+        height: 45px;
+    }
+    &:nth-child(odd) {
+        background: #D9E3F8;
+    }
+    &:nth-child(even) {
+        background: #C9DCFF;
+    }
+    button {
+        font-size: 15px;
+        min-width: 80px;
+        border-radius: 15px;
+        text-transform: uppercase;
+        margin: 0 5px;
+    }
+} 
 
-.raw_of_table:nth-child(even) {
-    background: #C9DCFF;
-}
 .table__audio {
     margin-top: 3px;
     height: 30px;
@@ -136,13 +141,6 @@ audio::-webkit-media-controls-panel {
     background: rgba(70, 122, 255, 0.3);
 }
 
-.raw_of_table button {
-    font-size: 15px;
-    min-width: 80px;
-    border-radius: 15px;
-    text-transform: uppercase;
-    margin: 0 5px;
-}
 .button__approve {
     background: #1466FF;
     color: #FFFFFF;

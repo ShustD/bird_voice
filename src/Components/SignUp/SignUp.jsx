@@ -1,5 +1,5 @@
 import React from 'react'
-import s from './SignUp.module.css'
+import s from './SignUp.module.scss'
 import { Formik, Field, Form } from 'formik';
 import invis from '../../assets/SignUp/invisible.png'
 import vis from '../../assets/SignUp/visible.png'

@@ -1,5 +1,5 @@
 import React from "react";
-import s from './AudioModule.module.css'
+import s from './AudioModule.module.scss'
 import a from '../Animation.module.css'
 import { AudioPlayer } from "./AudioPlayer/AudioPlayer";
 import bird1 from '../../../assets/UserRecognition/Rectangle 15.png'

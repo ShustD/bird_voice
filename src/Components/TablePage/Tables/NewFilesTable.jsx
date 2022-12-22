@@ -1,5 +1,5 @@
 import React from "react";
-import s from '../TablePage.module.css'
+import s from '../TablePage.module.scss'
 import { RawOfTableNewFiles } from "./RawOfTable/RawOfTableNewFiles";
 
 

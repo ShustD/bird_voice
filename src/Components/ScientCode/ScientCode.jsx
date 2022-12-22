@@ -1,5 +1,5 @@
 import React from "react";
-import s from './ScientCode.module.css'
+import s from './ScientCode.module.scss'
 
 export const ScientCode = () => {
 

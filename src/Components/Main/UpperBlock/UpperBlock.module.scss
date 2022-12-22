@@ -94,21 +94,19 @@
     font-variant: small-caps;
     color: #DAEDFF;
     border: none;
-}
-
-.button__try:hover {
-    background: #185FE3;
-    box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
-}
-
-.button__try:active {
-    background: #0C52D5;
-    box-shadow: inset 2px 7px 10px rgba(0, 0, 0, 0.25);
-}
-.button__try:disabled {
-    background: #5C5C5C;
-    box-shadow: none;
-}
-.button__try img {
-    padding-left: 10px;
+    &:hover {
+        background: #185FE3;
+        box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
+    }
+    &:active {
+        background: #0C52D5;
+        box-shadow: inset 2px 7px 10px rgba(0, 0, 0, 0.25);
+    }
+    &:disabled {
+        background: #5C5C5C;
+        box-shadow: none;
+    }
+    img {
+        padding-left: 10px;
+    }
 }
