@@ -1,6 +1,6 @@
 import React from "react";
 import { Formik, Field, Form } from 'formik';
-import s from './Forgot.module.css'
+import s from './Forgot.module.scss'
 import { Link } from "react-router-dom";
 
 export const Forgot = () => {

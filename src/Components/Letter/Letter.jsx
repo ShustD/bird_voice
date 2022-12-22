@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import s from './Letter.module.css'
+import s from './Letter.module.scss'
 
 export const Letter = () => {
     return (

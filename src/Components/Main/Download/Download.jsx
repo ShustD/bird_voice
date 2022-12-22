@@ -1,5 +1,5 @@
 import React from "react";
-import s from './Download.module.css'
+import s from './Download.module.scss'
 
 
 

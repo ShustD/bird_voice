@@ -1,5 +1,5 @@
 import React from 'react'
-import s from './HowToUse.module.css'
+import s from './HowToUse.module.scss'
 import howToUseIMG from '../../../assets/HowToUse/Photo.jpg'
 
 export const HowToUse = () => {

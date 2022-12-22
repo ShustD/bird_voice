@@ -1,5 +1,5 @@
 import React from 'react'
-import './Footer.css'
+import './Footer.scss'
 import img from '../../assets/Footer/Logo.png'
 import facebook from '../../assets/Footer/facebook_icon.png'
 import linked from'../../assets/Footer/linked_icon.png'

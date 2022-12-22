@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import s from './Header.module.css'
+import s from './Header.module.scss'
 import headerLogo from '../../assets/main/header.svg'
 import button from '../../assets/SignIn/ButtonBack.png'
 import setting from '../../assets/UserRecognition/setting.png'

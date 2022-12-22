@@ -51,13 +51,20 @@
     align-items: center;
     width: 30%;
     position: relative;
+    &::before {
+      left: 0;
+      height: 32%;
+      -webkit-animation: soundwaves5 0.5s linear infinite;
+              animation: soundwaves5 0.5s linear infinite;
+    }
+    &::after {
+      right: 0;
+      height: 40%;
+      -webkit-animation: soundwaves4 1s ease-in-out infinite;
+              animation: soundwaves4 1s ease-in-out infinite;
+    }
   }
-  .soundwaves::before {
-    left: 0;
-    height: 32%;
-    -webkit-animation: soundwaves5 0.5s linear infinite;
-            animation: soundwaves5 0.5s linear infinite;
-  }
+
   @-webkit-keyframes soundwaves5 {
     0% {
       height: 32%;
@@ -74,12 +81,7 @@
       height: 60%;
     }
   }
-  .soundwaves::after {
-    right: 0;
-    height: 40%;
-    -webkit-animation: soundwaves4 1s ease-in-out infinite;
-            animation: soundwaves4 1s ease-in-out infinite;
-  }
+ 
   @-webkit-keyframes soundwaves4 {
     0% {
       height: 40%;
@@ -121,13 +123,20 @@
     margin-left: 8px;
     height: 100%;
     width: 30%;
+    &::before {
+      left: 0;
+      height: 50%;
+      -webkit-animation: soundwaves3 1s ease-in-out infinite;
+              animation: soundwaves3 1s ease-in-out infinite;
+    }
+    &::after {
+      right: 0;
+      height: 100%;
+      -webkit-animation: soundwaves2 2s ease-in-out infinite;
+              animation: soundwaves2 2s ease-in-out infinite;
+    }
   }
-  .soundwaveone::before {
-    left: 0;
-    height: 50%;
-    -webkit-animation: soundwaves3 1s ease-in-out infinite;
-            animation: soundwaves3 1s ease-in-out infinite;
-  }
+ 
   @-webkit-keyframes soundwaves3 {
     0% {
       height: 50%;
@@ -144,12 +153,7 @@
       height: 25%;
     }
   }
-  .soundwaveone::after {
-    right: 0;
-    height: 100%;
-    -webkit-animation: soundwaves2 2s ease-in-out infinite;
-            animation: soundwaves2 2s ease-in-out infinite;
-  }
+ 
   @-webkit-keyframes soundwaves2 {
     0% {
       height: 100%;
@@ -258,9 +262,8 @@
 }
 
 .advertising__content {
-    width: 100%;
-    
-    padding: 15% 52px;
+  width: 100%;
+  padding: 15% 52px;
 }
 
 .title {
@@ -314,15 +317,12 @@
     text-transform: capitalize;
     border: none;
     color: #FFFFFF;
+    &:hover {
+      background: #185FE3;
+      box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
+    }
+    &:active {
+      background: #0C52D5;
+      box-shadow: inset 2px 7px 10px rgba(0, 0, 0, 0.25);
+    }
 }
-
-.button:hover {
-    background: #185FE3;
-    box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
-}
-
-.button:active {
-    background: #0C52D5;
-    box-shadow: inset 2px 7px 10px rgba(0, 0, 0, 0.25);
-}
-

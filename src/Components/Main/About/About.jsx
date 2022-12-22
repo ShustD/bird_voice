@@ -1,5 +1,5 @@
 import React from 'react'
-import s from './About.module.css'
+import s from './About.module.scss'
 import aboutUsPic1 from '../../../assets/about us/illustration.png'
 import aboutUsPic2 from '../../../assets/about us/illustration1.png'
 import aboutUsPic3 from '../../../assets/about us/illustration2.png'

@@ -11,7 +11,7 @@ export const DragDropArea = (props) => {
                 <div className={s.preloader}>
                     <div className={s.drop_area}>
                         <img src={preloader} alt="" />
-                        <div>у працэссе разнання</div>
+                        <div>у працэссе распазнання</div>
                     </div>
                 </div>
             )

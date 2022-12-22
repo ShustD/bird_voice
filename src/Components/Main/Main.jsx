@@ -1,5 +1,5 @@
 import React from "react";
-import s from './Main.module.css'
+import s from './Main.module.scss'
 import { Download } from "./Download/Download";
 import { Mail } from "./Mail/Mail";
 
