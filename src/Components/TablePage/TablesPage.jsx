@@ -10,11 +10,10 @@ export const TablesPage = () => {
     const [tableState, setTableState] = useState('collection')
     const [isCheckAll, setIsCheckAll] = useState(false);
     const [isCheck, setIsCheck] = useState([]);
-    const [list, setList] = useState([]);
+    const [list, setList] = useState(Catalogues);
+    const [deleteList, setDeleteList] = useState([])
   
-    useEffect(() => {
-      setList(Catalogues);
-    }, [list]);
+ 
   
     const handleSelectAll = () => {
       setIsCheckAll(!isCheckAll);
@@ -24,7 +23,13 @@ export const TablesPage = () => {
       }
       
     };
-  
+    const deleteArr = (deleteList) => {
+        console.log(deleteList);
+        tableState === 'deleted' ? setDeleteList(deleteList.filter(item => !isCheck.includes(item.id))) :
+        setList(list.filter(item => !isCheck.includes(item.id)))
+        setDeleteList(list.filter(item => isCheck.includes(item.id)))
+        }
+        console.log(deleteList);
     const handleClick = (e) => {
       const { id, checked } = e.target;
       setIsCheck([...isCheck, id]);
@@ -32,7 +37,6 @@ export const TablesPage = () => {
         setIsCheck(isCheck.filter((item) => item !== id));
       }
     };
-    
     const changeTable = (table) => {
         switch (table) {
             case 'collection' : {
@@ -45,7 +49,7 @@ export const TablesPage = () => {
                 return <NewFilesTable bird={list} handleClick={handleClick} check={isCheck}/>
             }
             case 'deleted' : {
-                return <DeletedTable />
+                return <DeletedTable bird={deleteList} handleClick={handleClick} check={isCheck}/>
             }
             default : {
                 return <CollectionTable bird={list} handleClick={handleClick} check={isCheck}/>
@@ -86,7 +90,7 @@ export const TablesPage = () => {
                                 <div>filter</div>
                                 <div onClick={() => handleSelectAll()}
                                 style={isCheckAll ? {color: '#FFFFFF'} : null}>select all</div>
-                                <div onClick={() => setList(list.remove())}>delete</div>
+                                <div onClick={() => deleteArr(deleteList)}>delete</div>
                             </div>}
                             
                         </div>

@@ -1,8 +1,11 @@
 import React from "react";
 import s from '../TablePage.module.scss'
+import { RawOfTableCollection } from "./RawOfTable/RawOfTableCollection";
 
-export const DeletedTable = () => {
-
+export const DeletedTable = (props) => {
+    
+    let raw = props.bird.map((b,index) => <RawOfTableCollection key={index} handleClick={props.handleClick} check={props.check.includes(b.id)} id={b.id} title={b.title} bird_specie={b.bird_specie} validated={b.validated}
+    xeno_canto={b.xeno_canto} annotation={b.annotation} audio_quality={b.audio_quality} spectogram={b.spectogram} created={b.created} update={b.update} />)
     return (
         <div className={s.table__content}>
         <table>
@@ -24,6 +27,7 @@ export const DeletedTable = () => {
                 </tr>
             </thead>
             <tbody>
+                {raw}
                 
             </tbody>
 
