@@ -23,13 +23,15 @@ export const TablesPage = () => {
       }
       
     };
-    const deleteArr = (deleteList) => {
-        console.log(deleteList);
-        tableState === 'deleted' ? setDeleteList(deleteList.filter(item => !isCheck.includes(item.id))) :
-        setList(list.filter(item => !isCheck.includes(item.id)))
-        setDeleteList(list.filter(item => isCheck.includes(item.id)))
+    const deleteArr = () => {
+        if ( tableState === 'deleted') {
+            setDeleteList(deleteList.filter(item => !isCheck.includes(item.id)))
+        } else {
+            setList(list.filter(item => !isCheck.includes(item.id)))
+            setDeleteList(list.filter(item => isCheck.includes(item.id)))  
         }
-        console.log(deleteList);
+    }
+
     const handleClick = (e) => {
       const { id, checked } = e.target;
       setIsCheck([...isCheck, id]);
@@ -90,7 +92,7 @@ export const TablesPage = () => {
                                 <div>filter</div>
                                 <div onClick={() => handleSelectAll()}
                                 style={isCheckAll ? {color: '#FFFFFF'} : null}>select all</div>
-                                <div onClick={() => deleteArr(deleteList)}>delete</div>
+                                <div onClick={() => deleteArr()}>delete</div>
                             </div>}
                             
                         </div>
