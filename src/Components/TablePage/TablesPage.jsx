@@ -31,7 +31,10 @@ export const TablesPage = () => {
             setDeleteList(list.filter(item => isCheck.includes(item.id)))  
         }
     }
-
+    const addArr = () => {
+        setList(list.concat(deleteList.filter(item => isCheck.includes(item.id))))
+        setDeleteList(deleteList.filter(item => !isCheck.includes(item.id)))
+    }
     const handleClick = (e) => {
       const { id, checked } = e.target;
       setIsCheck([...isCheck, id]);
@@ -89,7 +92,7 @@ export const TablesPage = () => {
                             <div>refuse</div>
                         </div>
                         : <div className={s.buttons__container}>
-                                <div>filter</div>
+                                <div onClick={() => addArr()}>filter</div>
                                 <div onClick={() => handleSelectAll()}
                                 style={isCheckAll ? {color: '#FFFFFF'} : null}>select all</div>
                                 <div onClick={() => deleteArr()}>delete</div>
