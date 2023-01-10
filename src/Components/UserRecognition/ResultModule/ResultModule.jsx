@@ -7,10 +7,12 @@ import coins from '../../../assets/UserRecognition/coins.png'
 import littleBird from '../../../assets/UserRecognition/littleBird.png'
 import bigBird from '../../../assets/UserRecognition/Rectangle 15.png'
 import { ResultAudioPlayer } from "./AudioPlayer/ResultAudioPlayer"
+import { Spectrogram } from "./Spectrogram/Spectrogram"
 
 export const ResultModule = (props) => {
     const [isSci, setIsSci] = useState(false)
     const [buttonActive, setButtonActive] = useState(true)
+    const [isBigSpectrogram, setIsBigSpectrogram] = useState(false)
     return (
         <div className={s.resultModule}>
             <div className={s.recognitionBox}>
@@ -155,8 +157,8 @@ export const ResultModule = (props) => {
                                     </div>
 
                                     <div className={s.spectogramm_container}>
-                                        <div className={s.spectogramm_img}>
-                                            <img src={spec} alt="" />
+                                        <div onClick={() => setIsBigSpectrogram(true) } className={s.spectogramm_img}>
+                                            <img  src={spec} alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -200,12 +202,13 @@ export const ResultModule = (props) => {
 
                             </div>
                             }
-                            
-                            
+                                                       
                         </div>
                     </div>
                 </div>
             </div>
+            {isBigSpectrogram ? <Spectrogram  setIsBigSpectrogram = {() => setIsBigSpectrogram(false)} /> : null}
+            
         </div>
     )
 }

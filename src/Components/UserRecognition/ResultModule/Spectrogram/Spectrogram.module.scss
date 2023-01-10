@@ -1,0 +1,59 @@
+.spectrogram__container {
+    position: fixed;
+    height: 100%;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(2px);
+    z-index: 50;
+}
+
+.spectrogram__content {
+    background-color: #FFFFFF;
+    width: 100%;
+    margin-top: 30vh;
+}
+
+.spectrogram__header {
+    padding: 20px 50px;
+    display: flex;
+    justify-content: flex-end;
+    background: #1466FF;
+}
+
+.btn__exit {
+    position: relative;
+    border-radius: 50%;
+    background: #76B9FF;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.btn__exit::before,
+.btn__exit::after {
+	content: '';
+	position: absolute;
+	top: 48%;
+    left: 25%;
+	display: block;
+	width: 24px;
+	height: 3px;
+	background: #1466FF;
+}
+
+.btn__exit::before {
+	transform: rotate(45deg);
+}
+
+.btn__exit::after {
+	transform: rotate(-45deg);
+}
+.btn__exit:hover {
+    background: #FFFFFF;
+}
+
+.spectogram__img {
+    display: flex;
+    justify-content: center;
+}
