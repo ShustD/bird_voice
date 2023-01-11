@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react"
-import s from './ResultAudioPlayer.module.css'
+import s from './ResultAudioPlayer.module.scss'
 
 
 export const ResultAudioPlayer = (props) => {

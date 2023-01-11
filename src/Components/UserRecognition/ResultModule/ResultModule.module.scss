@@ -331,9 +331,93 @@
     background: #1466FF;
     border-radius: 16px;
     display: flex;
+    gap: 10px;
 }
 
 .spectogramm_img {
     background-color: #fff;
     border-radius: 15px;
+    flex: 1 0 90%;
+    img {
+        width: 100%;
+    }
 }
+.spectogramm_btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 0 10%;
+    align-items: center;
+    position: relative;
+}
+.btn__exit {
+    position: relative;
+    top: -10px;
+    right: 0px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #76B9FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s linear;
+    &:hover {
+        background: #FFFFFF
+    } 
+}
+.btn__exit::before,
+.btn__exit::after {
+	content: '';
+	position: absolute;
+	top: 45%;
+    left: 20%;
+	display: block;
+	width: 20px;
+	height: 3px;
+	background: #1466FF;
+}
+
+.btn__exit::before {
+	transform: rotate(45deg);
+}
+
+.btn__exit::after {
+	transform: rotate(-45deg);
+}
+.center__btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    i {
+        color: #FFFFFF;
+        transition: 0.3s linear;
+        &:hover {
+            transform: scale(1.5);
+        }
+    }
+}
+.btn__large {
+    position: relative;
+    bottom: -10px;
+    right: 0px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #76B9FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s linear;
+    &:hover {
+        background: #FFFFFF
+    }
+    i {
+        color: #1466FF;
+    }
+}
+

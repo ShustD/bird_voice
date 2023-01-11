@@ -28,6 +28,7 @@
     height: 50px;
     width: 50px;
     cursor: pointer;
+    transition: 0.3s linear;
 }
 
 .btn__exit::before,
@@ -56,4 +57,5 @@
 .spectogram__img {
     display: flex;
     justify-content: center;
+    overflow-x: scroll;
 }

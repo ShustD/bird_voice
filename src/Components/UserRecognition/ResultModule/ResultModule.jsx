@@ -95,120 +95,133 @@ export const ResultModule = (props) => {
                     </div>
                     <div className={s.bottomSection}>
                         <div className={s.birdVoice}>
-                            <div onClick={() => {setIsSci(!isSci)}} className={s.possibleChoiceTittle}>
+                            <div onClick={() => { setIsSci(!isSci) }} className={s.possibleChoiceTittle}>
                                 Possible Choice
                             </div>
                             {
-                                isSci ? 
-                                <div className={s.possibleContainerScientist}>
-                                    <div className={s.sciBirds}>
-                                        <div className={s.bird_container}>
-                                            <div className={s.bird_image}>
-                                                <img src={li} alt="" />
-                                                <div>
-                                                    text
+                                isSci ?
+                                    <div className={s.possibleContainerScientist}>
+                                        <div className={s.sciBirds}>
+                                            <div className={s.bird_container}>
+                                                <div className={s.bird_image}>
+                                                    <img src={li} alt="" />
+                                                    <div>
+                                                        text
+                                                    </div>
+                                                </div>
+                                                <div className={s.bird_percent}>
+                                                    <div style={{ width: 'calc(90% - 60px)' }} className={s.bird_line}>
+                                                    </div>
+                                                    <div className={s.bird_circle}>90%</div>
                                                 </div>
                                             </div>
-                                            <div className={s.bird_percent}>
-                                                <div style={{width: 'calc(90% - 60px)'}} className={s.bird_line}>
+                                            <div className={s.bird_container}>
+                                                <div className={s.bird_image}>
+                                                    <img src={li} alt="" />
+                                                    <div>
+                                                        text
+                                                    </div>
                                                 </div>
-                                                <div className={s.bird_circle}>90%</div>
+                                                <div className={s.bird_percent}>
+                                                    <div style={{ width: 'calc(80% - 60px)' }} className={s.bird_line}>
+                                                    </div>
+                                                    <div className={s.bird_circle}>80%</div>
+                                                </div>
+                                            </div>
+                                            <div className={s.bird_container}>
+                                                <div className={s.bird_image}>
+                                                    <img src={li} alt="" />
+                                                    <div>
+                                                        text
+                                                    </div>
+                                                </div>
+                                                <div className={s.bird_percent}>
+                                                    <div style={{ width: 'calc(60% - 60px)' }} className={s.bird_line}>
+                                                    </div>
+                                                    <div className={s.bird_circle}>60%</div>
+                                                </div>
+                                            </div>
+                                            <div className={s.bird_container}>
+                                                <div className={s.bird_image}>
+                                                    <img src={li} alt="" />
+                                                    <div>
+                                                        text
+                                                    </div>
+                                                </div>
+                                                <div className={s.bird_percent}>
+                                                    <div style={{ width: 'calc(40% - 60px)' }} className={s.bird_line}>
+                                                    </div>
+                                                    <div className={s.bird_circle}>40%</div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div className={s.bird_container}>
-                                            <div className={s.bird_image}>
-                                                <img src={li} alt="" />
-                                                <div>
-                                                    text
-                                                </div>
+
+                                        <div className={s.spectogramm_container}>
+                                            <div className={s.spectogramm_img}>
+                                                <img src={spec} alt="" />
                                             </div>
-                                            <div className={s.bird_percent}>
-                                                <div style={{width: 'calc(80% - 60px)'}} className={s.bird_line}>
+                                            <div className={s.spectogramm_btn}>
+                                                <div className={s.btn__exit}>
+
                                                 </div>
-                                                <div className={s.bird_circle}>80%</div>
-                                            </div>
-                                        </div>
-                                        <div className={s.bird_container}>
-                                            <div className={s.bird_image}>
-                                                <img src={li} alt="" />
-                                                <div>
-                                                    text
+                                                <div className={s.center__btn}>
+                                                    <i class="material-icons">share</i>
+                                                    <i class="material-icons">autorenew</i>
+                                                    <i class="material-icons">delete</i>
                                                 </div>
-                                            </div>
-                                            <div className={s.bird_percent}>
-                                                <div style={{width: 'calc(60% - 60px)'}} className={s.bird_line}>
+                                                <div onClick={() => setIsBigSpectrogram(true)} className={s.btn__large}>
+                                                    <i className="material-icons">fullscreen</i>
                                                 </div>
-                                                <div className={s.bird_circle}>60%</div>
-                                            </div>
-                                        </div>
-                                        <div className={s.bird_container}>
-                                            <div className={s.bird_image}>
-                                                <img src={li} alt="" />
-                                                <div>
-                                                    text
-                                                </div>
-                                            </div>
-                                            <div className={s.bird_percent}>
-                                                <div style={{width: 'calc(40% - 60px)'}} className={s.bird_line}>
-                                                </div>
-                                                <div className={s.bird_circle}>40%</div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div className={s.spectogramm_container}>
-                                        <div onClick={() => setIsBigSpectrogram(true) } className={s.spectogramm_img}>
-                                            <img  src={spec} alt="" />
+                                    : <div className={s.possibleContaner}>
+                                        <div className={s.possibleItem}>
+                                            <div className={s.itemImage}>
+                                                <img src={coins} alt="" />
+                                            </div>
+                                            <div className={s.itemName}>
+                                                coincidence
+                                            </div>
+                                            <div className={s.itemPercent}>
+                                                70%
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                : <div className={s.possibleContaner}>
-                                <div className={s.possibleItem}>
-                                    <div className={s.itemImage}>
-                                        <img src={coins} alt="" />
-                                    </div>
-                                    <div className={s.itemName}>
-                                        coincidence
-                                    </div>
-                                    <div className={s.itemPercent}>
-                                        70%
-                                    </div>
-                                </div>
 
-                                <div className={s.possibleItem}>
-                                    <div className={s.itemImage}>
-                                        <img src={coins} alt="" />
-                                    </div>
-                                    <div className={s.itemName}>
-                                        coincidence
-                                    </div>
-                                    <div className={s.itemPercent}>
-                                        70%
-                                    </div>
-                                </div>
+                                        <div className={s.possibleItem}>
+                                            <div className={s.itemImage}>
+                                                <img src={coins} alt="" />
+                                            </div>
+                                            <div className={s.itemName}>
+                                                coincidence
+                                            </div>
+                                            <div className={s.itemPercent}>
+                                                70%
+                                            </div>
+                                        </div>
 
-                                <div className={s.possibleItem}>
-                                    <div className={s.itemImage}>
-                                        <img src={coins} alt="" />
-                                    </div>
-                                    <div className={s.itemName}>
-                                        coincidence
-                                    </div>
-                                    <div className={s.itemPercent}>
-                                        70%
-                                    </div>
-                                </div>
+                                        <div className={s.possibleItem}>
+                                            <div className={s.itemImage}>
+                                                <img src={coins} alt="" />
+                                            </div>
+                                            <div className={s.itemName}>
+                                                coincidence
+                                            </div>
+                                            <div className={s.itemPercent}>
+                                                70%
+                                            </div>
+                                        </div>
 
 
-                            </div>
+                                    </div>
                             }
-                                                       
+
                         </div>
                     </div>
                 </div>
             </div>
-            {isBigSpectrogram ? <Spectrogram  setIsBigSpectrogram = {() => setIsBigSpectrogram(false)} /> : null}
-            
+            {isBigSpectrogram ? <Spectrogram setIsBigSpectrogram={() => setIsBigSpectrogram(false)} /> : null}
+
         </div>
     )
 }

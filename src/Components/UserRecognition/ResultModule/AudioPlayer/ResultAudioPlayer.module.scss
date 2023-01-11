@@ -14,6 +14,12 @@
     align-items: center;
     justify-content: space-between;
     color: #FFFFFF;
+    i {
+        transition: 0.3s linear;
+        &:hover {
+        color: #FFF;
+        }
+    }
 }
 
 .volume {
@@ -43,3 +49,7 @@
     display: flex;
     align-items: center;
 }
+
+
+
+    
