@@ -1,6 +1,5 @@
 .audio {
     background: #0963F6;
-    outline: 2px solid black;
     padding: 15px 25px;
     border-radius: 15px;
     margin:0 auto;
@@ -14,12 +13,6 @@
     align-items: center;
     justify-content: space-between;
     color: #FFFFFF;
-    i {
-        transition: 0.3s linear;
-        &:hover {
-        color: #FFF;
-        }
-    }
 }
 
 .volume {

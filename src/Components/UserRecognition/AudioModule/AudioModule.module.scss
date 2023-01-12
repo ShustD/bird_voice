@@ -121,6 +121,12 @@
     align-items: center;
     justify-content: space-between;
     color: #A8BFEC;
+    i {
+        transition: 0.2s linear;
+        &:hover {
+        color: #FFFFFF;
+        }
+    }
 }
 
 .volume {

@@ -161,9 +161,6 @@ export const ResultModule = (props) => {
                                                 <img src={spec} alt="" />
                                             </div>
                                             <div className={s.spectogramm_btn}>
-                                                <div className={s.btn__exit}>
-
-                                                </div>
                                                 <div className={s.center__btn}>
                                                     <i class="material-icons">share</i>
                                                     <i class="material-icons">autorenew</i>
