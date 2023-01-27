@@ -6,6 +6,13 @@
     color: #EDF2F5;
     padding-top: 150px;
 }
+
+@media (max-width: 990px) {
+    .howToUse {
+        padding: 0;
+    }
+}
+
 .howToUse__leftBlock {
     flex: 0 0 60%;
     height: 441px;
@@ -13,24 +20,68 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+@media (max-width: 990px) {
+    .howToUse__leftBlock {
+        padding: 15px;
+        position: relative;
+        flex: 1 1 100%;
+        background: url(../../../assets/HowToUse/Photo2.jpg) no-repeat 0 100%;
+        height: auto;
+        background-size: cover;
+        div {
+            position: relative;
+            z-index: 3;
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 0;
+        }
+    }
+
+    .howToUse__rightBlock {
+        display: none;
+    }
+}
+
 .howToUse__tittle {
+    position: relative;
+    z-index: 3;
     font-weight: 600;
     font-size: 36px;
     line-height: 42px;
 }
-
+@media (max-width: 675px) {
+    .howToUse__tittle {
+        font-size: 30px;
+        text-align: center;
+    }
+}
 .howToUse__text {
     font-weight: 400;
     font-size: 25px;
     line-height: 45px;
 }
-
+@media (max-width: 675px) {
+    .howToUse__text {
+        font-size: 25px;
+        line-height: 30px;
+    }
+}
 .howToUse__ul {
     li {
         font-weight: 400;
         font-size: 25px;
         line-height: 45px;
         padding-top: 10px;
+
         &::before {
             content: '';
             width: 20px;
@@ -42,9 +93,29 @@
         }
     }
 }
-
+@media (max-width: 675px) {
+    .howToUse__ul {
+        li {
+            font-size: 25px;
+            line-height: 35px;
+            padding-top: 10px;
+    
+            &::before {
+                content: '';
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background-color: #1466FF;
+                display: inline-block;
+                margin-right: 10px;
+            }
+        }
+    }
+}
 .howToUse__button {
     padding-bottom: 15px;
+    text-align: center;
+
     button {
         font-weight: 600;
         font-size: 24px;
@@ -55,14 +126,17 @@
         border: 1px solid #1466FF;
         border-radius: 14px;
         padding: 13px 60px;
+
         &:hover {
             background: #BCD8FC;
             border: 1px solid #2F75F8
         }
+
         &:active {
             background: #67B0FC;
             border: 1px solid #1466FF;
         }
+
         &:disabled {
             background: #ECECEC;
             border: 1px solid #25282B;
@@ -70,9 +144,30 @@
         }
     }
 }
-
+@media (max-width: 675px) {
+    .howToUse__button {
+        padding-top: 10px;
+        padding-bottom: 5px;
+    
+        button {
+            font-size: 20px;
+            color: #1466FF;
+            background: #9FCDFE;
+            border: 1px solid #1466FF;
+            border-radius: 14px;
+            padding: 10px 40px;
+        }
+    }
+}
 .howToUse__img img {
     width: 354px;
     border-radius: 89px 89px 0 0;
     box-shadow: 17px -19px 0px 0px rgba(40, 111, 228, 1);
+}
+
+@media (max-width: 1090px) {
+    .howToUse__img img {
+        width: 280px;
+        height: 100%;
+    }
 }

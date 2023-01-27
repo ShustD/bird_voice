@@ -4,7 +4,11 @@
     z-index: 5;
     overflow: hidden;
 }
-
+@media (max-width: 700px) {
+    .wrapper {
+        padding: 0 10px;
+    } 
+}
 .upperBlock__container {
     min-height: 100vh;
     display: flex;
@@ -18,7 +22,13 @@
     background-repeat: no-repeat;
     background-size: 25%, 20%, 7%, 8%, 25%;
 }
-
+@media (max-width: 700px) {
+    .upperBlock__container {
+        background-image: url(../../../assets/main/bird2.png),  url(../../../assets/main/bird5.png);
+        background-position: 50% 95%, 0% 15%;
+        background-size: 50%, 45%;
+    }
+}
 .upperCloud {
     background-image: url('../../../assets/main/mainbg.png');
     position: absolute;
@@ -62,14 +72,24 @@
     flex-direction: column;
     justify-content: center;
 }
-
+@media (max-width: 700px) {
+    .tittle{
+        padding: 0;
+        text-align: center;
+    }
+}
 .tittle__up {
     font-family: 'Montserrat Alternates';
     font-style: normal;
     font-weight: 600;
     font-size: 100px;
 }
-
+@media (max-width: 700px) {
+    .tittle__up {
+        font-size: 80px;
+        line-height: 80px;
+    }
+}
 .tittle__down {
     font-family: 'Montserrat';
     font-style: normal;
@@ -79,7 +99,19 @@
     color: #1E5ED6;
     margin-top: -3vh;
 }
-
+@media (max-width: 700px) {
+    .tittle__down {
+        font-size: 60px;
+        line-height: 60px;
+        margin: 0
+    }
+}
+@media (max-width: 400px) {
+    .tittle__down {
+        font-size: 40px;
+        line-height: 40px;
+    }
+}
 .try {
     padding-top: 20px;
 }

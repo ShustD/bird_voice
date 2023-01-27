@@ -20,7 +20,7 @@ export const UserRecognition = () => {
                     <div className={s.tittle}>
                         recognition service
                     </div>
-                    {!openRecognitionBox ?  <AudioModule  changeState={changeState}/> 
+                    {openRecognitionBox ?  <AudioModule  changeState={changeState}/> 
                     : <ResultModule birdImage={birdImage} birdName={birdName} changeState={changeState}/>}     
                 </div>
                 <div className={s.upperCloud}></div>

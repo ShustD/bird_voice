@@ -58,4 +58,16 @@
     display: flex;
     justify-content: center;
     overflow-x: scroll;
+    &::-webkit-scrollbar {
+        height: 25px;               
+      }
+    &::-webkit-scrollbar-track {
+        
+        background: #1466FF;       
+      }
+    &::-webkit-scrollbar-thumb {
+        background-color: #FFFFFF;  
+        border-radius: 20px;      
+        border: 3px solid #1466FF; 
+      }
 }

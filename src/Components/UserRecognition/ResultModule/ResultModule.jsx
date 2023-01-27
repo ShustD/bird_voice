@@ -99,7 +99,7 @@ export const ResultModule = (props) => {
                                 Possible Choice
                             </div>
                             {
-                                isSci ?
+                                !isSci ?
                                     <div className={s.possibleContainerScientist}>
                                         <div className={s.sciBirds}>
                                             <div className={s.bird_container}>

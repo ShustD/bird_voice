@@ -11,11 +11,19 @@
     align-items: center;
     padding: 0 10%;
 }
-
+@media (max-width: 700px) {
+    .header__body {
+        padding: 0 10px;
+    }
+}
 .header__logo img {
     padding-top: 15px;
 }
-
+@media (max-width: 700px) {
+    .header__logo img {
+        height: 40px;
+    }
+}
 .header__button button {
     font-variant: small-caps;
     font-weight: 600;
@@ -24,7 +32,14 @@
     padding: 6px 20px;
     border-radius: 12px;
 }
-
+@media (max-width: 700px) {
+    .header__button button {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 15px;
+        padding: 5px 10px;
+    }
+}
 .button__up {
     background-color: #1466FF;
     color: #ACD2FE;
@@ -43,7 +58,11 @@
         box-shadow: none;
     }
 }
-
+@media (max-width: 700px) {
+    .button__up {
+        margin-right: 10px;
+    }
+}
 .button__in {
     background-color: rgba(217, 230, 255, 0.45);
     color: #1466FF;
