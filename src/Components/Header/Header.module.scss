@@ -10,8 +10,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 10%;
+    gap: 15px;
 }
-@media (max-width: 700px) {
+@media (max-width: 998px) {
     .header__body {
         padding: 0 10px;
     }
@@ -98,7 +99,11 @@
     margin-right: 10px;
     position: relative;
 }
-
+@media (max-width: 768px) {
+    .menu_container {
+        min-width: 100px;
+    }
+}
 .menu_vis {
     height: 100%;
     cursor: pointer;
@@ -200,4 +205,13 @@
 
 .user_settings {
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .userHi {
+        min-width: 100px;
+    }
+    .user_text {
+        display: none;
+    }
 }

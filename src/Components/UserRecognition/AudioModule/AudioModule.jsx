@@ -50,6 +50,7 @@ export const AudioModule = (props) => {
         setUrl(URL.createObjectURL(e.dataTransfer.files[0]))
     }
     const selectMusic = (e) => {
+        e.target.files[0] &&
         setUrl(URL.createObjectURL(e.target.files[0]))
         setVoice(e.target.files[0])
     }
@@ -81,7 +82,7 @@ export const AudioModule = (props) => {
                                 </div>
                             </div>
                             <div className={s.upload__buttons}>
-                                <label className={s.file_upload} htmlFor="uploadFile">Upload from computer</label>
+                                <label className={s.file_upload} htmlFor="uploadFile">Upload</label>
                                 <input id="uploadFile" type="file" name="userfile[]" onChange={(e) =>selectMusic(e)} />
                                 
                                 <div className={s.post}>

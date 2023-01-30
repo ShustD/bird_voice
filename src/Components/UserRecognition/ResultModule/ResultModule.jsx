@@ -162,9 +162,9 @@ export const ResultModule = (props) => {
                                             </div>
                                             <div className={s.spectogramm_btn}>
                                                 <div className={s.center__btn}>
-                                                    <i class="material-icons">share</i>
-                                                    <i class="material-icons">autorenew</i>
-                                                    <i class="material-icons">delete</i>
+                                                    <i className="material-icons">share</i>
+                                                    <i className="material-icons">autorenew</i>
+                                                    <i className="material-icons">delete</i>
                                                 </div>
                                                 <div onClick={() => setIsBigSpectrogram(true)} className={s.btn__large}>
                                                     <i className="material-icons">fullscreen</i>

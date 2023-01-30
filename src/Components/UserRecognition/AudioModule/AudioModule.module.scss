@@ -4,11 +4,12 @@
 }
 
 .recognition_body {
-    min-height: 50vh;
+    //min-height: 50vh;
     flex: 1 0 60%;
     background: rgba(20, 102, 255, 0.62);
     border-radius: 20px;
     margin-right: 10px;
+    margin-bottom: 20px;
 }
 
 .birds {
@@ -18,6 +19,14 @@
 @media (max-width: 1650px) {
     .birds {
         display: none;
+    }
+    .recognition_body {
+        margin-right: 0;
+    }
+}
+@media (max-width: 480px) {
+    .recognition_body {
+        margin: auto 0;
     }
 }
 .recognition_model {
@@ -35,7 +44,12 @@
     color: #FFFFFF;
     background: #1466FF;
 }
-
+@media (max-width: 768px) {
+    .recognotion_tittle {
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+}
 .test_model select {
     margin-left: -15px;
     padding: 10px 45px 10px 30px;
@@ -52,9 +66,16 @@
     background-repeat: no-repeat;
     background-position: 90% 50%;
 }
-
+@media (max-width: 768px) {
+    .test_model select {
+       margin-left: -15px;
+       padding: 10px 30px 10px 10px;
+       font-size: 18px;
+       background-position: 95% 50%;
+       background-size: 12%;
+    }
+}
 .dragDropAudio {
-    height: 60%;
     margin: 0 3%;
     display: flex;
     flex-direction: column;
@@ -98,6 +119,11 @@
     line-height: 31px;
     color: rgba(40, 116, 255, 0.56);
     padding: 0 20px;
+}
+@media (max-width: 768px) {
+    .drop_area {
+       display: none;
+    }
 }
 .audio {
     flex: 1 0 30%;
@@ -168,16 +194,23 @@
     margin: 0 1.5%;
     width: 100%;
     padding: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: rgba(217, 230, 255, 0.45);
     border: 1px solid #1466FF;
     border-radius: 14px;
     color: #1466FF;
     font-size: 24px;
     font-weight: 600;
-    text-align: center;
     cursor: pointer;
 }
-
+@media (max-width: 480px) {
+    .file_upload {
+        font-size: 18px;
+        text-align: center;
+    }
+}
 input[type="file"] {
     display: none
 }
@@ -188,16 +221,22 @@ input[type="file"] {
     button {
         width: 100%;
         height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background: rgba(217, 230, 255, 0.45);
         border: 1px solid #1466FF;
         border-radius: 14px;
-        line-height: 29px;
         color: #1466FF;
         font-size: 24px;
         font-weight: 600;
     }
 }
-
+@media (max-width: 480px) {
+    .post button {
+        font-size: 18px;
+    }
+}
 .file_upload:hover, .post button:hover {
     background: rgba(253, 253, 254, 0.6);
 }

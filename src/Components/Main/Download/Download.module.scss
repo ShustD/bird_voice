@@ -8,6 +8,7 @@
 @media (max-width: 991.98px) {
     .body {
         flex-direction: column;
+        margin-top: 50px;
     }
 }
 
@@ -239,12 +240,6 @@
     margin: 0 0 60px 0;
 }
 
-@media (max-width: 479.98px) {
-    .mobileapp__definition {
-        font-size: 16px;
-    }
-}
-
 .advertising {
     flex: 1 0 55%;
     display: flex;
@@ -254,10 +249,9 @@
     background-position: center;
   }
 
-@media (max-width: 991.98px) {
-    .mobileapp__advertising {
-        order: -1;
-        flex: 1 0 100%;
+@media (max-width: 700px) {
+  .advertising {
+    background-size: cover;
     }
 }
 

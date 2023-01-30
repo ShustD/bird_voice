@@ -4,11 +4,17 @@
     padding: 5% 10%;
     background-color: #286FE4;
     display: flex;
+    gap: 20px;
     justify-content: space-between;
     color: #D9D9D9;
     z-index: 3;
 }
-
+@media (max-width: 700px) {
+    .footer__container {
+        flex-direction: column;
+        padding: 15px;
+    }
+}
 .footer__colomn {
     display: flex;
     flex-direction: column;

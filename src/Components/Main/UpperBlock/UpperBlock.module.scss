@@ -26,7 +26,14 @@
     .upperBlock__container {
         background-image: url(../../../assets/main/bird2.png),  url(../../../assets/main/bird5.png);
         background-position: 50% 95%, 0% 15%;
-        background-size: 50%, 45%;
+        background-size: 30vh, 25vh;
+    }
+}
+@media  (max-width: 1000px) {
+    .upperBlock__container {
+        background-image: url(../../../assets/main/bird2.png),  url(../../../assets/main/bird5.png);
+        background-position: 80% 95%, 0% 15%;
+        background-size: 30vh, 25vh;
     }
 }
 .upperCloud {
@@ -72,7 +79,7 @@
     flex-direction: column;
     justify-content: center;
 }
-@media (max-width: 700px) {
+@media (max-width: 768px) {
     .tittle{
         padding: 0;
         text-align: center;

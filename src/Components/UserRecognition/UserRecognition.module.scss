@@ -4,7 +4,11 @@
     z-index: 5;
     min-height: 100vh;
 }
-
+@media (max-width: 998px) {
+    .wrapper {
+        padding: 0 15px;
+    }
+}
 .upperCloud {
     background-image: url('../../assets/main/mainbg.png');
     position: absolute;
@@ -65,5 +69,11 @@
     background: #1466FF;
     border-radius: 0px 20px 20px 0px;
 }
-
+@media (max-width: 768px) {
+    .tittle {
+        padding: 10px 30px 10px 40px;
+        font-size: 30px;
+        margin-left: -15px;
+    }
+}
 
