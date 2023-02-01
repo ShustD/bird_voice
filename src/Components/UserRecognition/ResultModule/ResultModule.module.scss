@@ -1,12 +1,20 @@
 .resultModule {
-    padding-bottom: 50px;
+    padding-bottom: 60px;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
-
+@media (max-width: 768px) {
+    .resultModule {
+        flex-direction: column-reverse;
+        align-items: center;
+        margin-top: 20px;
+    }
+}
 .recognitionButton {
     display: flex;
     align-items: center;
-    margin: 20px 0;
+    margin: 20px 0 0;
     padding: 15px 40px;
     font-weight: 400;
     font-size: 20px;
@@ -32,13 +40,23 @@
     padding: 15px 40px;
     background: rgba(64, 140, 255, 0.6);
     border-radius: 20px;
+    margin-top: 20px;
 }
-
+@media (max-width: 768px) {
+    .resultContainer {
+        background: none;
+        padding: 15px 0;
+    }
+}
 .topSection {
     display: flex;
     justify-content: space-between;
 }
-
+@media (max-width: 768px) {
+    .topSection {
+        flex-direction: column;
+    }
+}
 .sectionTittle {
     margin-left: -40px;
     padding: 5px 100px 5px 40px;
@@ -48,7 +66,12 @@
     color: #FFFFFF;
     background: #1466FF;
     border-radius: 0px 30px 30px 0px;
-}    
+}
+@media (max-width: 768px) {
+    .sectionTittle {
+        margin-left: -40px;
+    }
+}
 .sectionButtons {
     position: relative;
     button {
@@ -61,7 +84,14 @@
     text-transform: capitalize;
     }
 }
-
+@media (max-width: 768px) {
+    .sectionButtons {
+        align-self: center;
+        button {
+            margin-top: 20px;
+        }
+    }
+}
 .buttonActive {
     background: #A1C2FF;
     color: #1466FF;
@@ -83,11 +113,27 @@
     display: flex;
     padding-bottom: 70px;
 }
+@media (max-width: 768px) {
+    .middleSection {
+        margin-top: 20px;
+        padding: 15px 20px;
+        flex-direction: column;
+        background: #416EC2;
+        border-radius: 15px;
+    }
+}
 .birdImages {
     flex: 1 1 30%;
     padding: 50px 50px 0 0;
     display: flex;
     flex-direction: column;
+}
+@media (max-width: 768px) {
+    .birdImages {
+        padding: 0;
+        background: #416EC2;
+        border-radius: 15px;
+    }
 }
 .littleImages {
     flex: 0 1 10%;
@@ -109,22 +155,37 @@
         border-radius: 20px;
     }
 }
-
+@media (max-width: 768px) {
+    .mainImage {
+        position: relative;
+        width: 100%;
+        margin-top: 10px;
+        padding: 0;
+        background: #416EC2;
+        border-radius: 15px;
+        img {
+            align-self: center;
+        }
+    }
+}
 .percentOfRecognition {
     position: relative;
     margin-top: 10px;
-}
-.confidence {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 20px;
     background: #93BAFD;
+    height: 30px;
     border-radius: 20px;
-    font-size: 25px;
-    line-height: 29px;
-    color: #1466FF;
 }
-
+@media (max-width: 768px) {
+    .percentOfRecognition {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        height: 0;
+        background: #416EC2;
+        border-radius: 15px;
+    }
+}
 .percent {
     background: #1466FF;
     color: #FFFFFF;
@@ -150,40 +211,50 @@
     display: flex;
     flex-direction: column;
 }
-
-
-.about {
-    font-size: 22px;
-    line-height: 25px;
-    color: #1466FF;
-    padding: 5px 15px;
-    background: rgba(236, 243, 255, 0.62);
-    border-radius: 60px;
-    position: absolute;
-    z-index: 5;
-    top: 7px;
-    left: 7px;
+@media (max-width: 768px) {
+    .birdInformation {
+        padding-top: 15px;
+    }
 }
-.data {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 150px;
-    height: 50px;
-    background-color: rgba(64, 140, 255, 0.7);
-    border-radius: 0 5px 30px 0px;
-}
+
+// .about {
+//     font-size: 22px;
+//     line-height: 25px;
+//     color: #1466FF;
+//     padding: 5px 15px;
+//     background: rgba(236, 243, 255, 0.62);
+//     border-radius: 60px;
+//     position: absolute;
+//     z-index: 5;
+//     top: 7px;
+//     left: 7px;
+// }
+// .data {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 150px;
+//     height: 50px;
+//     background-color: rgba(64, 140, 255, 0.7);
+//     border-radius: 0 5px 30px 0px;
+// }
 .birdAboutSection {
     display: flex;
     flex-direction: column;
     flex: 1 0 70%;
     padding: 25px;
     background: rgba(236, 243, 255, 0.62);
-    border-radius: 0 17px 17px 17px;
+    border-radius: 17px 17px 0 0;
     position: relative;
 }
-
+@media (max-width: 768px) {
+    .birdAboutSection {
+        background: none;
+        padding: 0;
+    }
+}
 .informationAndMap {
+    position: relative;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -195,6 +266,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .name__raw {
     padding: 10px 15px;
     display: flex;
@@ -204,8 +276,21 @@
     justify-content: space-between;
     font-size: 24px;
 }
+@media (max-width: 768px) {
+    .name__raw {
+        margin-top: 40px;
+        font-size: 18px;
+        flex-direction: column;
+        padding: 15px;
+    }
+}
 .raw__tittle {
     color: rgba(255, 255, 255, 0.79);
+}
+@media (max-width: 768px) {
+    .raw__tittle {
+        align-self: start;
+    }
 }
 .raw__name {
     background: #1466FF;
@@ -214,7 +299,14 @@
     color: #FFFFFF;
     margin-left: 10px;
 }
-
+@media (max-width: 768px) {
+    .raw__name {
+        padding: 5px;
+        text-align: center;
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}
 .mapSection {
     padding-top: 10px;
     flex: 1 0 auto;
@@ -222,10 +314,15 @@
     width: 100%;
     border: none;
 }
+@media (max-width: 768px) {
+    .mapSection {
+        min-height: 250px;
+    }
+}
 .bigMap {
     margin-top: 20px;
     border-radius: 20px;
-    width: 100%;
+    width: 95vw;
     border: none;
     height: 60vh;
     display: none;
@@ -250,13 +347,24 @@
     text-transform: capitalize;
     color: #1466FF;
 }
-
+@media (max-width: 768px) {
+    .possibleChoiceTittle {
+        background: #1466FF;
+        color: #FFFFFF;
+        margin: 15px 90px 0 -30px;
+    }
+}
 .possibleContaner {
     padding: 50px 0;
     display: flex;
     justify-content: space-between;
 }
-
+@media (max-width: 768px) {
+    .possibleContaner {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
 .possibleItem {
     display: flex;
     align-items: center;
@@ -289,9 +397,12 @@
 .possibleContainerScientist {
     display: flex;
     padding-top: 25px;
-
 }
-
+@media (max-width: 768px) {
+    .possibleContainerScientist {
+        flex-direction: column;
+    }
+}
 .sciBirds {
     flex: 0 0 50%;
     padding-left: 10px;
@@ -315,16 +426,25 @@
     background: #D9D9D9;
     border-radius: 20px;
 }
-
+@media (max-width: 768px) {
+    .bird_line {
+        height: 30px;
+    }
+}
 .bird_circle {
-    margin-left: -20px;
+    margin-left: -69px;
     background: #1466FF;
     padding: 25px 20px;
     border-radius: 50%;
     right: 0;
     bottom: -35%;
 }
-
+@media (max-width: 768px) {
+    .bird_circle  {
+        padding: 15px 10px;
+        margin-left: -50px;
+    }
+}
 .spectogramm_container {
     flex: 1 0 40%;
     padding: 30px;
@@ -333,7 +453,11 @@
     display: flex;
     gap: 10px;
 }
-
+@media (max-width: 768px) {
+    .spectogramm_container  {
+        display: none;
+    }
+}
 .spectogramm_img {
     background-color: #fff;
     border-radius: 15px;

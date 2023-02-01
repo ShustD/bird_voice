@@ -54,6 +54,7 @@ export const SettingPage = (props) => {
                                     <div className={s.inputField}>
                                         <Field
                                             name="password"
+                                            autocomplete="on"
                                             type={passType}
                                         /> <i onClick={() => setPassVis(!passVis)}>
                                             <img className={s.vis} src={passIcon} alt="" /></i>

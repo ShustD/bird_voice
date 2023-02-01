@@ -48,10 +48,6 @@ export const ResultModule = (props) => {
                                 <img src={props.birdImage ? `data:image/jpg;base64,${props.birdImage}`
                                     : bigBird} alt="" />
                                 <div className={s.percentOfRecognition}>
-                                    <div className={s.confidence}>
-                                        <div>recognition</div>
-                                        <div>confidence</div>
-                                    </div>
                                     <div className={s.percent}>
                                         90%
                                     </div>
@@ -61,9 +57,9 @@ export const ResultModule = (props) => {
                         </div>
                         <div className={s.birdInformation}>
                             <div className={s.birdAboutSection}>
-                                <div className={s.about}>
+                                {/* <div className={s.about}>
                                     About Bird
-                                </div>
+                                </div> */}
                                 <div className={s.informationAndMap}>
                                     <div className={s.nameSection}>
                                         <div>
@@ -82,14 +78,14 @@ export const ResultModule = (props) => {
 
                                     <iframe title="map" className={s.mapSection}
                                         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d37612.50783388711!2d30.362828800000003!3d53.9000832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sby!4v1669023232658!5m2!1sru!2sby" loading="lazy" ></iframe>
-
-                                </div>
                                 <div className={s.audio}>
                                     <ResultAudioPlayer />
                                 </div>
-                                <div className={s.data}>
-
                                 </div>
+                                
+                                {/* <div className={s.data}>
+
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -110,7 +106,7 @@ export const ResultModule = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className={s.bird_percent}>
-                                                    <div style={{ width: 'calc(90% - 60px)' }} className={s.bird_line}>
+                                                    <div style={{ width: '90%' }} className={s.bird_line}>
                                                     </div>
                                                     <div className={s.bird_circle}>90%</div>
                                                 </div>
@@ -123,7 +119,7 @@ export const ResultModule = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className={s.bird_percent}>
-                                                    <div style={{ width: 'calc(80% - 60px)' }} className={s.bird_line}>
+                                                    <div style={{ width: '80%' }} className={s.bird_line}>
                                                     </div>
                                                     <div className={s.bird_circle}>80%</div>
                                                 </div>
@@ -136,7 +132,7 @@ export const ResultModule = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className={s.bird_percent}>
-                                                    <div style={{ width: 'calc(60% - 60px)' }} className={s.bird_line}>
+                                                    <div style={{ width: '60%' }} className={s.bird_line}>
                                                     </div>
                                                     <div className={s.bird_circle}>60%</div>
                                                 </div>
@@ -149,7 +145,7 @@ export const ResultModule = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className={s.bird_percent}>
-                                                    <div style={{ width: 'calc(40% - 60px)' }} className={s.bird_line}>
+                                                    <div style={{ width: '40%' }} className={s.bird_line}>
                                                     </div>
                                                     <div className={s.bird_circle}>40%</div>
                                                 </div>

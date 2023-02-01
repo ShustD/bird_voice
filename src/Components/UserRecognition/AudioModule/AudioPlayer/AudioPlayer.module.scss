@@ -1,0 +1,67 @@
+.progressBar {
+  width: 100%;
+  box-sizing: content-box;
+  position: relative;
+  left: -3px;
+  top: -5px;
+  background: #4F89F7;
+  border: 3px solid rgba(20, 102, 255, 0.57);
+  border-radius: 13px;
+  div {
+      min-width: 100%;
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #A8BFEC;
+  i {
+      transition: 0.2s linear;
+      &:hover {
+      color: #FFFFFF;
+      }
+  }
+}
+
+.volume {
+  background-color: #A8BFEC;
+  height: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  max-width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  height: 7px;
+  &::-webkit-slider-thumb {
+      background: #A8BFEC;
+      border-radius: 50%;
+      cursor: pointer;
+      width: 14px;
+      height: 14px;
+      appearance: none;
+      margin-top: 0x;
+  }
+  &::-webkit-slider-thumb:hover {
+      background: #fff;
+  }
+}
+
+.controlsLeft, .controlsRight {
+  display: flex;
+  align-items: center;
+  label {
+    display: flex;
+  }
+  input[type = 'button'] {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .controlsRight input[type='range'] {
+      display: none;
+  }
+}

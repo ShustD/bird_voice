@@ -4,9 +4,18 @@
     border-radius: 15px;
     margin:0 auto;
     position: absolute;
-    left: 0; 
-    right: 0;
-    bottom: -45px;
+    left: -25px; 
+    right: -25px;
+    bottom: -75px;
+}
+@media (max-width: 768px) {
+    .audio {
+        padding: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: none;
+    }
 }
 .controls {
     display: flex;
@@ -14,7 +23,12 @@
     justify-content: space-between;
     color: #FFFFFF;
 }
-
+@media (max-width: 768px) {
+    .controls {
+        justify-content: space-around;
+        gap: 20px;
+    }
+}
 .volume {
     background-color: #A8BFEC;
     height: 5px;
@@ -43,6 +57,13 @@
     align-items: center;
 }
 
-
+@media (max-width: 768px) {
+    .controlsLeft, .controlsRight {
+        gap: 10px;
+    }
+    input[type = 'range'] {
+        display: none;
+    }
+}
 
     

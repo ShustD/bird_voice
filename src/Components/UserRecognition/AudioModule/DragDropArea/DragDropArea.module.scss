@@ -1,0 +1,67 @@
+.dragDropAudio {
+    margin: 0 3%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dragDrop {
+    flex: 1 0 70%;
+    width: 100%;
+    background: rgba(236, 243, 255, 0.62);
+    border-radius: 20px 20px 0 0;
+    
+}
+.preloader {
+    img {
+        animation: rot infinite 1s  linear 0s;
+    }
+    .drop_area, .drop_area_mobile {
+        text-align: center;
+    }
+}
+
+@keyframes rot {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+.drop_area {
+    display: flex;
+    flex-direction: column;
+    min-height: 205px;
+    max-height: 205px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 26.4382px;
+    line-height: 31px;
+    color: rgba(40, 116, 255, 0.56);
+    padding: 0 20px;
+}
+.drop_area_mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .drop_area {
+        display: none;
+    }
+    .drop_area_mobile {
+    display: flex;
+    flex-direction: column;
+    min-height: 205px;
+    max-height: 205px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 26.4382px;
+    line-height: 31px;
+    color: rgba(40, 116, 255, 0.56);
+    padding: 0 20px;
+    }
+}
