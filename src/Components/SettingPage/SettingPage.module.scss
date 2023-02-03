@@ -2,7 +2,12 @@
     padding: 0 10%;
     position: relative;
     z-index: 5;
-    height: 100vh;
+    min-height: 100vh;
+}
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 0 15px;
+    }
 }
 .upperCloud {
     background-image: url('../../assets/main/mainbg.png');
@@ -59,7 +64,14 @@
     z-index: 3;
     height: 100%;
     display: flex;
-    
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-bottom: 15px;
+    }
 }
 .form_container {
     padding-top: 100px;
@@ -67,6 +79,15 @@
     display: flex;
     flex-direction: column;
     color: #0047CA;
+}
+@media (max-width: 768px) {
+    .form_container {
+        
+        padding-top: 15px;
+        min-width: 290px;
+        width: 100%;
+        max-width: 530px;
+    }
 }
 .form {
     label {
@@ -91,6 +112,9 @@
         &:-webkit-autofill {
             -webkit-text-fill-color: #1466FF !important;
             transition: all 5000s ease-in-out;
+        }
+        &:focus-visible {
+            outline: none;
         }
     }
 } 
@@ -118,6 +142,9 @@
     &:disabled {
         background: #5C5C5C;
         box-shadow: none;
+    }
+    &:focus-visible {
+        outline: none;
     }
 }
 

@@ -8,7 +8,7 @@
 @media (max-width: 991.98px) {
     .body {
         flex-direction: column;
-        margin-top: 50px;
+        margin-top: 0;
     }
 }
 
@@ -247,6 +247,7 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
+    position: relative;
   }
 
 @media (max-width: 700px) {
@@ -290,12 +291,9 @@
     color: #FFFFFF;
 }
 
-@media (max-width: 479.98px) {
+@media (max-width: 768px) {
     .text {
-        font-size: 20px;
-        background-color: rgba(40, 112, 228, 0.568627451);
-        padding: 10px;
-        border-radius: 12px;
+      display: none;
     }
 }
 
@@ -319,4 +317,14 @@
       background: #0C52D5;
       box-shadow: inset 2px 7px 10px rgba(0, 0, 0, 0.25);
     }
+}
+@media (max-width: 768px) {
+  .button {
+    position: absolute;
+    transform: translateX(-50%);
+    bottom: 15px;
+    left: 50%;
+    padding: 15px 50px;
+    font-size: 16px;
+  }
 }

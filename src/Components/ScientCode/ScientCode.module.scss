@@ -4,7 +4,11 @@
     z-index: 5;
     height: 100vh;
 }
-
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 0 15px;
+    }
+}
 .upperCloud {
     background-image: url('../../assets/main/mainbg.png');
     position: absolute;
@@ -68,23 +72,41 @@
 }
 
 .code_card {
-    height: 50vh;
-    width: 50vw;
+    width: auto;
+    height: auto;
+    padding: 20px 0;
+    margin: 0 30px;
     background: rgba(20, 102, 255, 0.63);
     border-radius: 20px;
     text-align: center;
 }
-
+@media (max-width: 768px) {
+    .code_card {
+        padding: 15px 20px;
+        margin: 0 15px;
+        width: auto;
+        height: auto;
+    }
+}
 .card_title {
     padding: 20px 60px 10px 60px;
     font-size: 25px;
     line-height: 29px;
     color: #FFFFFF;
     }
-
+@media (max-width: 768px) {
+        .card_title {
+            padding: 10px;
+        }
+    }
 .card_text {
     padding: 0 100px;
     font-size: 18px;
     line-height: 20px;
     color: #76B9FF;
+}
+@media (max-width: 768px) {
+    .card_text {
+        padding: 10px;
+    }
 }

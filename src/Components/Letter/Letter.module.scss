@@ -2,7 +2,12 @@
     padding: 0 10%;
     position: relative;
     z-index: 5;
-    height: 100vh;
+    min-height: 100vh;
+}
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 0 15px;
+    }
 }
 
 
@@ -77,11 +82,25 @@
     background-repeat: no-repeat;
     background-size: 40%;
 }
-
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+        background-image: url(../../assets/letter/bird.png);
+        background-position: 50% 7%;
+        background-repeat: no-repeat;
+        background-size: 85%;
+        margin-bottom: 15px;
+    }
+}
 .birds {
     flex: 1 0 55%;
 }
-
+@media (max-width: 768px) {
+    .birds {
+        margin-bottom: 50%;
+    }
+}
 .formForgot {
     padding: 0% 10% 10% 0;
     flex: 1 1 50%;
@@ -89,7 +108,14 @@
     flex-direction: column;
     color: #0047CA;
 }
-
+@media (max-width: 768px) {
+    .formForgot {
+        padding: 0;
+        min-width: 290px;
+        width: 100%;
+        max-width: 530px;
+    }
+}
 .formTittle {
     color: #1466FF;
     font-weight: 600;
@@ -112,7 +138,11 @@
 .button {
     padding: 10% 20% 0 0;
 }
-
+@media (max-width: 768px) {
+    .button {
+        padding: 10% 0 0 0;
+    }
+}
 .signBtn {
     min-width: 100%;
     padding: 23px 75px;
@@ -135,5 +165,10 @@
     &:disabled {
         background: #5C5C5C;
         box-shadow: none;
+    }
+}
+@media (max-width: 768px) {
+    .signBtn {
+        padding: 23px 0;
     }
 }

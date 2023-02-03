@@ -54,7 +54,7 @@ export const SettingPage = (props) => {
                                     <div className={s.inputField}>
                                         <Field
                                             name="password"
-                                            autocomplete="on"
+                                            autoComplete='true'
                                             type={passType}
                                         /> <i onClick={() => setPassVis(!passVis)}>
                                             <img className={s.vis} src={passIcon} alt="" /></i>
@@ -64,6 +64,7 @@ export const SettingPage = (props) => {
                                     <div className={s.inputField}>
                                         <Field
                                             name="repeatPassword"
+                                            autoComplete='true'
                                             type={repeatPassType}
                                         /> <i onClick={() => setrepeatPassVis(!repeatPassVis)}>
                                             <img className={s.vis} src={repeatPassIcon} alt="" /></i>
