@@ -4,7 +4,11 @@
     z-index: 5;
     min-height: 100vh;
 }
-
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 0 15px;
+    }
+}
 .upperCloud {
     background-image: url('../../assets/main/mainbg.png');
     position: absolute;
@@ -59,7 +63,13 @@
     text-transform: capitalize;
     color: #DAEDFF;
 }
-
+@media (max-width: 768px) {
+    .table__buttons, .table__header {
+        font-size: 13px;
+        font-weight: 600;
+        justify-content: center;
+    }
+}
 .buttons__container {
     display: inline-flex;
     border-radius: 10px;
@@ -71,7 +81,16 @@
         cursor: pointer;
     }
 }
+@media (max-width: 768px) {
+    .buttons__container {
+        padding: 0;
+        align-items: center;
 
+        div {
+            padding: 5px 15px;
+        }
+    }
+}
 .table__add {
     display: inline-block;
     margin-top: 30px;
@@ -80,18 +99,38 @@
     color: #DAEDFF;
     border-radius: 20px;
 }
+@media (max-width: 768px) {
+    .table__add {
+        display: none;
+    }
+}
 
 .table__main {
     margin: 0px -10%;
 }
-
+@media (max-width: 768px) {
+    .table__main {
+        margin: 15px 0 0 0;
+    }
+}
 .table__header {
     justify-content: end;
     div {
         border-radius: 5px 5px 0 0;
     }
 }
-
+@media (max-width: 768px) {
+    .table__header {
+        display: none;
+    }
+    .table__content {
+        border-radius: 15px;
+        overflow: hidden;
+    }
+}
+.table {
+    display: none;
+}
 table {
     width: 100%;
     border-collapse: collapse;

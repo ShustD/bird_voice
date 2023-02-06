@@ -2,7 +2,7 @@ import React from "react";
 import s from '../../TablePage.module.scss'
 
 export const RawOfTableCollection = (props) => {
-    
+
     return (
         <tr className={s.raw_of_table}>
         <td><input id={props.id} type="checkbox" checked={props.check} onChange={props.handleClick}/></td>

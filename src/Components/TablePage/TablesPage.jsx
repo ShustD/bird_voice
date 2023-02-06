@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import s from './TablePage.module.scss'
 import { CollectionTable } from "./Tables/CollectionTable";
 import { DeletedTable } from "./Tables/DeletedTable";

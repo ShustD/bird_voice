@@ -13,7 +13,7 @@ export const Catalogues = [
         annotation: 'annotation',
         audio_quality: 'high',
         photo_quality: 'low',
-        spectogram: '/media/spectrograms/Spinussspinus552973.mp3_spectrogram.png',
+        spectogram: 'spectrogram.png',
         userName: 'Никита',
         created: '05/06/2022',
         update: '07/06/2022'
@@ -32,7 +32,7 @@ export const Catalogues = [
         annotation: 'annotation',
         audio_quality: 'high',
         photo_quality: 'low',
-        spectogram: '/media/spectrograms/Spinussspinus552973.mp3_spectrogram.png',
+        spectogram: 'spectrogram.png',
         userName: 'Гена',
         created: '05/06/2022',
         update: '07/06/2022'
@@ -51,7 +51,7 @@ export const Catalogues = [
         annotation: 'annotation',
         audio_quality: 'high',
         photo_quality: 'low',
-        spectogram: '/media/spectrograms/Spinussspinus552973.mp3_spectrogram.png',
+        spectogram: 'spectrogram.png',
         userName: 'Стас',
         created: '05/06/2022',
         update: '07/06/2022'
@@ -70,7 +70,7 @@ export const Catalogues = [
         annotation: 'annotation',
         audio_quality: 'high',
         photo_quality: 'low',
-        spectogram: '/media/spectrograms/Spinussspinus552973.mp3_spectrogram.png',
+        spectogram: 'spectrogram.png',
         userName: 'Володя',
         created: '05/06/2022',
         update: '07/06/2022'
@@ -89,7 +89,7 @@ export const Catalogues = [
         annotation: 'annotation',
         audio_quality: 'high',
         photo_quality: 'low',
-        spectogram: '/media/spectrograms/Spinussspinus552973.mp3_spectrogram.png',
+        spectogram: 'spectrogram.png',
         userName: 'Игорь',
         created: '05/06/2022',
         update: '07/06/2022'
@@ -108,7 +108,7 @@ export const Catalogues = [
         annotation: 'annotation',
         audio_quality: 'high',
         photo_quality: 'low',
-        spectogram: '/media/spectrograms/Spinussspinus552973.mp3_spectrogram.png',
+        spectogram: 'spectrogram.png',
         userName: 'Олег',
         created: '05/06/2022',
         update: '07/06/2022'
