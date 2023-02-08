@@ -453,11 +453,11 @@
     display: flex;
     gap: 10px;
 }
-@media (max-width: 768px) {
-    .spectogramm_container  {
-        display: none;
-    }
-}
+// @media (max-width: 768px) {
+//     .spectogramm_container  {
+//         display: none;
+//     }
+// }
 .spectogramm_img {
     background-color: #fff;
     border-radius: 15px;
