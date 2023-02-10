@@ -10,7 +10,7 @@ export const NewFilesTable = (props) => {
     let raw = props.bird.map((b,index) => <RawOfTableNewFiles key={index} handleClick={props.handleClick} check={props.check.includes(b.id)} id={b.id}
      title={b.title} percentage={b.percentage} bird_specie={b.bird_specie} userName={b.userName}
      created={b.created} update={b.update} />)
-     const boxInfo = props.bird.map((b,index) => <BoxInfo id={b.id}
+     const boxInfo = props.bird.map((b,index) => <BoxInfo id={b.id} englishName={b.englishName}
      title={b.title} percentage={b.percentage} bird_specie={b.bird_specie} userName={b.userName}
      created={b.created} update={b.update} key={index} />)
     return (

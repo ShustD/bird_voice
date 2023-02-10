@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import s from './BoxInfo.module.scss'
+import bird from './bird.png'
 
 
 
 export const BoxInfo = (props) => {
+    
     const [isActive, setIsActive] = useState(false);
     const arr = Object.entries(props)
     const got = arr.map((e, index) => (
@@ -11,13 +13,26 @@ export const BoxInfo = (props) => {
     ))
     return (
         <div className={s.box}>
-            <div className={s.title} onClick={() => setIsActive(false)}>Bird</div>
-            {isActive && <span className={s.arrow__up}></span>}
-           {isActive ? got : 
+            {isActive &&
+                <>
+                    <div className={s.title} onClick={() => setIsActive(false)}>{props.englishName}</div>
+                    <span className={s.arrow__up}></span>
+                </>
+            }
+            {isActive ? got :
                 <div className={s.box__id} onClick={() => setIsActive(true)}>
-                    <div>ID</div>
-                    <div>{props.id}</div>
-                    <span className={s.arrow__down}></span>
+                    <div className={s.box__img}>
+                        <img src={bird} alt="" />
+                    </div>
+                    <div>
+                        <div className={s.content__title}>{props.englishName}</div>
+                        <div className={s.box__content}>
+                            <div>ID</div>
+                            <div className={s.content__id}>{props.id}</div>
+                        </div>
+                        <span className={s.arrow__down}></span>
+                    </div>
+
                 </div>
             }
         </div>
