@@ -119,18 +119,8 @@
         border-radius: 5px 5px 0 0;
     }
 }
-@media (max-width: 768px) {
-    .table__header {
-        display: none;
-    }
-    .table__content {
-        border-radius: 15px;
-        overflow: hidden;
-    }
-}
-.table {
-    display: none;
-}
+
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -166,7 +156,18 @@ tbody {
         margin: 0 5px;
     }
 } 
-
+@media (max-width: 768px) {
+    .table__header {
+        display: none;
+    }
+    .table__content {
+        border-radius: 15px;
+        overflow: hidden;
+    }
+    .table {
+        display: none;
+    }
+}
 .table__audio {
     margin-top: 3px;
     height: 30px;

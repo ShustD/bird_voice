@@ -1,34 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React from 'react'
 import s from './Header.module.scss'
 import headerLogo from '../../assets/main/header.svg'
 import button from '../../assets/SignIn/ButtonBack.png'
-import setting from '../../assets/UserRecognition/setting.png'
-import photo from '../../assets/UserRecognition/userlogo.png'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { HeaderDropDownMenu } from './HeaderDropDown/HeaderDropDown'
 
-export const Header = ({ user = 'User', userLogo = photo }) => {
+export const Header = () => {
 
-    const [dropMenu, setDropMenu] = useState(false)
-    const dropMenuRef = useRef(null)
     const locate = useLocation()
     const path = locate.pathname
     const navigate = useNavigate()
     const goBack = () => navigate(-1)
-    useEffect(() => {
-        if (!dropMenu) return
-
-        const handleClick = (e) => {
-            if (!dropMenuRef.current) return
-            if (!dropMenuRef.current.contains(e.target)) {
-                setDropMenu(false)
-            }
-        }
-        document.addEventListener('click', handleClick)
-
-        return () => {
-            document.removeEventListener('click', handleClick)
-        }
-    }, [dropMenu])
+    
     const navbar = () => {
         switch (path) {
             case '/': {
@@ -39,44 +22,7 @@ export const Header = ({ user = 'User', userLogo = photo }) => {
             }
             case '/userrecognition': case '/tablespage': {
                 return (
-                    <div className={s.header_container}>
-                        <div ref={dropMenuRef} className={s.menu_container}>
-                            <div onClick={() => setDropMenu(!dropMenu)} className={dropMenu ? s.menu_vis : s.menu}>
-                                <div>Menu</div>
-                                <div className={dropMenu ? s.arrow_vis : s.arrow}>
-                                    <div className={dropMenu ? s.arrow_up : s.arrow_down}></div>
-                                </div>
-                            </div>
-                            <div className={dropMenu ? s.menu_drop_vis : s.menu_drop}>
-                                <NavLink onClick={() => setDropMenu(false)} to='/'>
-                                    <div className={s.drop_item}>
-                                        main page
-                                    </div>
-                                </NavLink>
-                                <NavLink onClick={() => setDropMenu(false)}
-                                    to={path === '/userrecognition' ? '/tablespage' : '/userrecognition'}>
-                                    <div className={s.drop_item}>
-                                        {path === '/userrecognition' ? 'collection'
-                                            : 'recognize service'}
-                                    </div>
-                                </NavLink>
-
-                            </div>
-                        </div>
-
-                        <div className={s.userHi}>
-                            <div>
-                                <img className={s.user_logo} src={userLogo} alt="" />
-                            </div>
-                            <div className={s.user_text}> Hello, {user}!</div>
-                            <div className={s.user_settings}>
-                                <NavLink onClick={() => setDropMenu(false)} 
-                                  to='/settingspage'>
-                                    <img className={s.user_logo} src={setting} alt="" />
-                                </NavLink>  
-                            </div>
-                        </div>
-                    </div>
+                    <HeaderDropDownMenu />
                 )
             }
 

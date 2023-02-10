@@ -1,5 +1,6 @@
 import React from "react";
 import s from '../TablePage.module.scss'
+import { BoxInfo } from "./BoxInfo/BoxInfo";
 import { RawOfTableNewFiles } from "./RawOfTable/RawOfTableNewFiles";
 
 
@@ -9,10 +10,12 @@ export const NewFilesTable = (props) => {
     let raw = props.bird.map((b,index) => <RawOfTableNewFiles key={index} handleClick={props.handleClick} check={props.check.includes(b.id)} id={b.id}
      title={b.title} percentage={b.percentage} bird_specie={b.bird_specie} userName={b.userName}
      created={b.created} update={b.update} />)
-
+     const boxInfo = props.bird.map((b,index) => <BoxInfo id={b.id}
+     title={b.title} percentage={b.percentage} bird_specie={b.bird_specie} userName={b.userName}
+     created={b.created} update={b.update} key={index} />)
     return (
         <div className={s.table__content}>
-        <table>
+        <table className={s.table}>
             <thead>
                 <tr>
                     <td></td>
@@ -32,6 +35,9 @@ export const NewFilesTable = (props) => {
             </tbody>
 
         </table>
+        <div  className={s.boxInfo}>
+            {boxInfo}
+        </div>
     </div>
     )
 }

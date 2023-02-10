@@ -5,7 +5,11 @@
     position: relative;
 
 }
-
+@media (min-width: 769px) {
+    .box {
+        display: none;
+    }
+}
 .title {    
     font-weight: 600;
     font-size: 20px;
