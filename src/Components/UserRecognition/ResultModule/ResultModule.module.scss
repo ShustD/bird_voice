@@ -322,9 +322,9 @@
 .bigMap {
     margin-top: 20px;
     border-radius: 20px;
-    width: 95vw;
+    width: 100%;
     border: none;
-    height: 60vh;
+    min-height: 60vh;
     display: none;
 }
 
