@@ -3,6 +3,7 @@ import { useState, useMemo, useEffect, useRef } from 'react';
 import s from './AudioPlayer.module.scss'
 import WaveSurfer from 'wavesurfer.js'
 import RegionsPlugin from "wavesurfer.js/dist/plugin/wavesurfer.regions.min.js";
+import SpectrogramPlugin from 'wavesurfer.js/src/plugin/spectrogram/index.js'
 import { bufferToWave, copy } from "../../cut";
 
 export const AudioPlayer = (props) => {
@@ -16,6 +17,8 @@ export const AudioPlayer = (props) => {
     const [currentRegion, setCurrentRegion] = useState(null)
     const audioElement = useMemo(() => new Audio(url), [url])
     const containerRef = useRef()
+    const spectogramRef = useRef()
+   
     useEffect(() => {
         const waveSurfer = WaveSurfer.create({
             barWidth: 3,
@@ -36,6 +39,11 @@ export const AudioPlayer = (props) => {
                         drag: true,
                         resize: true
                     }
+                }),
+                SpectrogramPlugin.create({
+                    container: spectogramRef.current,
+                    labels: true,
+                    height: 256,
                 })
             ]
         })
@@ -123,6 +131,7 @@ export const AudioPlayer = (props) => {
         <div>
             <div className={s.progressBar}>
                 <div ref={containerRef} />
+                <div ref={spectogramRef} />
             </div>
             <div className={s.controls}>
                 <div className={s.controlsLeft}>

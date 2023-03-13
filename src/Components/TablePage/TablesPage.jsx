@@ -7,6 +7,19 @@ import { StatisticsTable } from "./Tables/StatisticsTable";
 import { Catalogues } from "./mock";
 
 export const TablesPage = () => {
+    const apiUrl = 'https://bird-sounds-database.ssrlab.by/api/audios/';
+    
+    fetch(apiUrl, {
+      method: 'GET',
+      mode: 'no-cors',
+    })
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+    })
+
     const [tableState, setTableState] = useState('collection')
     const [isCheckAll, setIsCheckAll] = useState(false);
     const [isCheck, setIsCheck] = useState([]);

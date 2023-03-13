@@ -16,7 +16,7 @@ export const Header = () => {
         switch (path) {
             case '/': {
                 return (<div className={s.header__button}>
-                    <NavLink to='/selectusers'><button className={s.button__up}>sign up</button></NavLink>
+                    <NavLink to='/signup'><button className={s.button__up}>sign up</button></NavLink>
                     <NavLink to='/signin'><button className={s.button__in}>sign in</button></NavLink>
                 </div>)
             }
