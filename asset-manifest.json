@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/bird_voice/static/css/main.6e6d18c3.css",
-    "main.js": "/bird_voice/static/js/main.26962251.js",
+    "main.js": "/bird_voice/static/js/main.df734fba.js",
     "static/js/787.c0f4de71.chunk.js": "/bird_voice/static/js/787.c0f4de71.chunk.js",
     "static/media/mainbg.png": "/bird_voice/static/media/mainbg.c8200b17b16ac2c54b0e.png",
     "static/media/mainbg2.png": "/bird_voice/static/media/mainbg2.7365290b56de3ea071f3.png",
@@ -32,11 +32,11 @@
     "static/media/Vector.svg": "/bird_voice/static/media/Vector.84e236cb865127162a411733e9fd6157.svg",
     "index.html": "/bird_voice/index.html",
     "main.6e6d18c3.css.map": "/bird_voice/static/css/main.6e6d18c3.css.map",
-    "main.26962251.js.map": "/bird_voice/static/js/main.26962251.js.map",
+    "main.df734fba.js.map": "/bird_voice/static/js/main.df734fba.js.map",
     "787.c0f4de71.chunk.js.map": "/bird_voice/static/js/787.c0f4de71.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6e6d18c3.css",
-    "static/js/main.26962251.js"
+    "static/js/main.df734fba.js"
   ]
 }
