@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/bird_voice/static/css/main.6e6d18c3.css",
+    "main.js": "/bird_voice/static/js/main.26962251.js",
+    "static/js/787.c0f4de71.chunk.js": "/bird_voice/static/js/787.c0f4de71.chunk.js",
+    "static/media/mainbg.png": "/bird_voice/static/media/mainbg.c8200b17b16ac2c54b0e.png",
+    "static/media/mainbg2.png": "/bird_voice/static/media/mainbg2.7365290b56de3ea071f3.png",
+    "static/media/Photo.jpg": "/bird_voice/static/media/Photo.9cd2ec11ecc2ab3b3202.jpg",
+    "static/media/Rectangle 15.png": "/bird_voice/static/media/Rectangle 15.4fc375978e6a3d681ffd.png",
+    "static/media/happy.png": "/bird_voice/static/media/happy.73b899d414a2306217ec.png",
+    "static/media/photo.png": "/bird_voice/static/media/photo.c1724dc0b5b99d1f3982.png",
+    "static/media/bigspec.jpg": "/bird_voice/static/media/bigspec.10c3d5287b611c064623.jpg",
+    "static/media/Rectangle 25.png": "/bird_voice/static/media/Rectangle 25.febb4329cbf311308589.png",
+    "static/media/Rectangle 16.png": "/bird_voice/static/media/Rectangle 16.299b1df742248c576fcd.png",
+    "static/media/mob3.png": "/bird_voice/static/media/mob3.5760a529e2c8c53d2fa1.png",
+    "static/media/mob1.png": "/bird_voice/static/media/mob1.23c9209235a13792e299.png",
+    "static/media/mob4.png": "/bird_voice/static/media/mob4.d61a25d7fb8ad21ea040.png",
+    "static/media/Photo2.jpg": "/bird_voice/static/media/Photo2.79ccbd984cf00ccdf7ac.jpg",
+    "static/media/volunteer.png": "/bird_voice/static/media/volunteer.d0eb3a005a71d6f01fe4.png",
+    "static/media/mob2.png": "/bird_voice/static/media/mob2.542cf41b8d08011e2bf4.png",
+    "static/media/Group 88.png": "/bird_voice/static/media/Group 88.025de6cf2cb4a5d99074.png",
+    "static/media/scientist.png": "/bird_voice/static/media/scientist.b89deaa020ede9553e03.png",
+    "static/media/bird5.png": "/bird_voice/static/media/bird5.c9bedb6e085c8c27a3b0.png",
+    "static/media/spec.png": "/bird_voice/static/media/spec.c78550c255d42b2dcbe8.png",
+    "static/media/bird.png": "/bird_voice/static/media/bird.055bd76c171f514a2971.png",
+    "static/media/coins.png": "/bird_voice/static/media/coins.71de75a8897c58b5c261.png",
+    "static/media/littleBird.png": "/bird_voice/static/media/littleBird.d240ff212829e824e180.png",
+    "static/media/header.svg": "/bird_voice/static/media/header.e525317bcb843da062d0096b562705b3.svg",
+    "static/media/li.png": "/bird_voice/static/media/li.92b141f74a971d69ea0a.png",
+    "static/media/birds.png": "/bird_voice/static/media/birds.049dee8c60445d2fd247.png",
+    "static/media/bird1.png": "/bird_voice/static/media/bird1.210e57a59e60a1153e7e.png",
+    "static/media/Vector.svg": "/bird_voice/static/media/Vector.84e236cb865127162a411733e9fd6157.svg",
+    "index.html": "/bird_voice/index.html",
+    "main.6e6d18c3.css.map": "/bird_voice/static/css/main.6e6d18c3.css.map",
+    "main.26962251.js.map": "/bird_voice/static/js/main.26962251.js.map",
+    "787.c0f4de71.chunk.js.map": "/bird_voice/static/js/787.c0f4de71.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6e6d18c3.css",
+    "static/js/main.26962251.js"
+  ]
+}
