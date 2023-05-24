@@ -75,6 +75,31 @@
     background-repeat: no-repeat;
     background-size: 10%, 20%, 30%;
 }
+.animate  {
+    background-position: 0 10%, 30% 10%, 10% 45%;
+    background-size: 10%, 20%, 30%;
+    animation: myAnimation 3s infinite;    
+}
+@media (min-width: 769px) {
+@keyframes myAnimation {
+    0% {
+        background-position: 0 10%, 30% 10%, 10% 45%;
+        background-size: 10%, 20%, 30%;
+    }
+    33% {
+        background-position: 10% 45%, 0 10%, 30% 10%;
+        background-size: 30%, 10%, 20%;
+    }
+    66% {
+        background-position: 30% 10%, 10% 45%, 0 10%;
+        background-size: 20%, 30%, 10%, ;
+    }
+    100% {
+        background-position: 0 10%, 30% 10%, 10% 45%;
+        background-size: 10%, 20%, 30%;
+    }
+  }
+}
 @media (max-width: 768px) {
     .content {
         flex-direction: column;
@@ -135,7 +160,7 @@
         border-left: none;
         border-bottom: 4px solid #1466FF;
         background-color: transparent;
-        margin-bottom: 45px;
+        margin-bottom: 35px;
         font-weight: 500;
         font-size: 20px;
         line-height: 20px;
@@ -183,4 +208,14 @@
     position: absolute;
     right: 5px;
     cursor: pointer;
+}
+
+.error {
+    margin-top: -25px;
+    color: #F13A3A;
+    font-size: 20px;    
+    padding-bottom: 15px;
+}
+.inputError {
+    border-bottom: 4px solid #ED033B !important;
 }

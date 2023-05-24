@@ -55,9 +55,12 @@
     position: relative;
     min-height: 100%;
     z-index: 10;
+    a {
+        text-decoration: none;
+    }
 }
 
-.table__buttons, .table__header {
+.table__header {
     display: flex;
     font-size: 15px;
     text-transform: capitalize;
@@ -71,14 +74,22 @@
     }
 }
 .buttons__container {
-    display: inline-flex;
+    display: flex;
     border-radius: 10px;
     padding: 5px 10px;
     background: #1466FF;
     color: #ACB6C9;
+    align-items: center;
     div {
         padding: 0 30px;
         cursor: pointer;
+        transition: .3s;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        &:hover {
+            color: #FFFFFF;
+        }
     }
 }
 @media (max-width: 768px) {
@@ -91,13 +102,32 @@
         }
     }
 }
-.table__add {
-    display: inline-block;
+.table__add, .button__approve {
+    cursor: pointer;
+    display: inline-flex;
     margin-top: 30px;
     padding: 10px 50px;
     background: #1466FF;
     color: #DAEDFF;
     border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
+    transition: .1s;
+
+        &:hover {
+            background: #185FE3;
+            box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
+        }
+        &:active {
+            background: #0C52D5;
+            box-shadow: inset 2px 7px 10px rgba(0, 0, 0, 0.25);
+        }
+        &:disabled {
+            background: #5C5C5C;
+            box-shadow: none;
+        }
 }
 @media (max-width: 768px) {
     .table__add {
@@ -141,6 +171,7 @@ tbody {
     td {
         word-break: break-all;
         height: 45px;
+        padding: 5px;
     }
     &:nth-child(odd) {
         background: #D9E3F8;
@@ -154,6 +185,7 @@ tbody {
         border-radius: 15px;
         text-transform: uppercase;
         margin: 0 5px;
+        word-break: initial;
     }
 } 
 @media (max-width: 768px) {
@@ -182,15 +214,49 @@ audio::-webkit-media-controls-panel {
 }
 
 .button__approve {
-    background: #1466FF;
-    color: #FFFFFF;
     padding: 5px 15px;
 }
 
 .button__refuse {
-    background: #B5C8EF;
+    background: rgba(217, 230, 255, 0.45);
     color: rgba(20, 102, 255, 0.8);
     border: 0.5px solid #1466FF;
     border-radius: 20px;
     padding: 4px 14px;
+    transition: .3s;
+    &:hover {
+        background: rgba(253, 253, 254, 0.6);
+    }
+    &:active {
+        background: #1957CC;
+        color: #FFFFFF;
+    }
+}
+
+.preloader_body {
+    display: flex;
+    justify-content: center;
+    .preloader {
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+.icon_add {
+    font-size: 35px !important;
+}
+.icon_close{
+    font-size: 30px !important;
+    color: #F13A3A; 
+}
+.icon_done{
+    font-size: 30px !important;
+    color: #09D72A; 
 }

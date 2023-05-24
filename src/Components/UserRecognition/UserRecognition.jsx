@@ -12,6 +12,7 @@ export const UserRecognition = () => {
         setBirdImage(image)
         setBirdName(name)
     }
+
     return (
         <div className={s.wrapper}>
             <div>

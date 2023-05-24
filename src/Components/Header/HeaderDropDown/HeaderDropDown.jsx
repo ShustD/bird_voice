@@ -3,6 +3,7 @@ import s from './HeaderDropDown.module.scss'
 import setting from '../../../assets/UserRecognition/setting.png'
 import photo from '../../../assets/UserRecognition/userlogo.png'
 import { NavLink, useLocation } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 export const HeaderDropDownMenu = ({ user = 'User', userLogo = photo }) => {
 
@@ -12,6 +13,7 @@ export const HeaderDropDownMenu = ({ user = 'User', userLogo = photo }) => {
     const mobileMenuRef = useRef(null)
     const locate = useLocation()
     const path = locate.pathname
+    const { userName } = useSelector(state => state.auth)
     useEffect(() => {
         if (!dropMenu) return
 
@@ -59,7 +61,7 @@ export const HeaderDropDownMenu = ({ user = 'User', userLogo = photo }) => {
                             </div>
                         </NavLink>
                         <NavLink onClick={() => setDropMenu(false)}
-                            to={path === '/userrecognition' ? '/tablespage' : '/userrecognition'}>
+                            to={path === '/userrecognition' ? '/collectiontable' : '/userrecognition'}>
                             <div className={s.drop_item}>
                                 {path === '/userrecognition' ? 'collection'
                                     : 'recognize service'}
@@ -73,7 +75,7 @@ export const HeaderDropDownMenu = ({ user = 'User', userLogo = photo }) => {
                     <div>
                         <img className={s.user_logo} src={userLogo} alt="" />
                     </div>
-                    <div className={s.user_text}> Hello, {user}!</div>
+                    <div className={s.user_text}> Hello, {userName}!</div>
                     <div className={s.user_settings}>
                         <NavLink onClick={() => setDropMenu(false)}
                             to='/settingspage'>
@@ -97,7 +99,7 @@ export const HeaderDropDownMenu = ({ user = 'User', userLogo = photo }) => {
                             </div>
                             <div className={s.user_text}> Hello, {user}!</div>
                         </div>
-                        <NavLink onClick={() => setMobileMenu(false)} to='/tablespage'>
+                        <NavLink onClick={() => setMobileMenu(false)} to='/collectiontable'>
                             <div className={s.drop_item}>
                                 Collection
                             </div>

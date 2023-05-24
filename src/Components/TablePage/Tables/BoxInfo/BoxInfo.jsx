@@ -5,7 +5,7 @@ import bird from './bird.png'
 
 
 export const BoxInfo = (props) => {
-    
+
     const [isActive, setIsActive] = useState(false);
     const arr = Object.entries(props)
     const got = arr.map((e, index) => (
@@ -15,7 +15,7 @@ export const BoxInfo = (props) => {
         <div className={s.box}>
             {isActive &&
                 <>
-                    <div className={s.title} onClick={() => setIsActive(false)}>{props.englishName}</div>
+                    <div className={s.title} onClick={() => setIsActive(false)}>{props.name}</div>
                     <span className={s.arrow__up}></span>
                 </>
             }
@@ -25,7 +25,7 @@ export const BoxInfo = (props) => {
                         <img src={bird} alt="" />
                     </div>
                     <div>
-                        <div className={s.content__title}>{props.englishName}</div>
+                        <div className={s.content__title}>{props.name}</div>
                         <div className={s.box__content}>
                             <div>ID</div>
                             <div className={s.content__id}>{props.id}</div>
@@ -44,7 +44,10 @@ const Info = ({ one, two }) => {
     return (
         <>
             <div className={s.name__content}>{one}</div>
-            <div className={s.content}>{two}</div>
+            <div className={s.content}>
+                {two === true && <i style={{ color: '#09D72A' }} className="material-icons">done</i>}
+                {two ? two : <i style={{ color: '#F13A3A' }} className="material-icons">close</i>}
+            </div>
         </>
     )
 }

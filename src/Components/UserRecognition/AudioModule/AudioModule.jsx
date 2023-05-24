@@ -8,6 +8,8 @@ import mob4 from '../../../assets/UserRecognition/mob4.png'
 import { useState } from "react";
 import { DragDropArea } from "./DragDropArea/DragDropArea"
 import { BirdCarousel } from "./BirdCarousel/BirdCarousel"
+import { useDispatch } from "react-redux"
+import { fetchRecognize } from "../../../store/recognizeSlice"
 
 export const AudioModule = (props) => {
     const [animation, setAnimation] = useState(false)
@@ -16,8 +18,8 @@ export const AudioModule = (props) => {
     const [drag, setDrag] = useState(false)
     const [voice, setVoice] = useState(null)
     const [model, setModel] = useState("dataset_xc_20220816-model_EffNetB3-species_14-date_20221006-epoch_98")
-
-    const postCall = (sound, bool) => {
+    const dispatch = useDispatch()
+    const postCall2 = (sound, bool) => {
         const data = new FormData()
         data.set('audio', sound)
         data.set('model', model)
@@ -33,7 +35,28 @@ export const AudioModule = (props) => {
             setError(true)
         });
     }
+const postCall = (sound, bool) => {
 
+    const reader = new FileReader();
+    reader.readAsDataURL(sound);
+    reader.onload = (event) => {
+      const base64String = event.target.result
+    const item = [
+        {
+            name: sound.name,
+            data: base64String
+        },
+        {
+            name: 'zip.zip',
+            data: base64String
+        },
+        'Латынь'
+    ]
+    dispatch(fetchRecognize(base64String))
+    };
+
+
+}
 
     function dragStartHandler(e) {
         e.preventDefault()
@@ -71,6 +94,7 @@ export const AudioModule = (props) => {
                         <select name="test_model" onChange={(e) => setModel(e.target.value)}>
                             <option value="dataset_xc_20220816-model_EffNetB3-species_14-date_20221006-epoch_98">test_model 1</option>
                             <option value="dataset_xc_20220113_model_EffNetB3_species_14_date_20220202_epoch_14">test_model 2</option>
+                            <option value="dataset_npc_20230307_model_EffNetB3_species_79_date_20230316_epoch_27">test_model 3</option>
                         </select>
                     </div>
                 </div>

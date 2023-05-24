@@ -25,27 +25,45 @@
         height: 40px;
     }
 }
-.header__button button {
+.header__button{ 
+    display: flex;
+    align-items: center;
+    button {
     font-variant: small-caps;
     font-weight: 600;
     font-size: 17px;
     line-height: 20px;
     padding: 6px 20px;
     border-radius: 12px;
+    }
+    span {
+        margin-right: 25px;
+        font-variant: small-caps;
+        font-weight: 600;
+        font-size: 25px;
+        color: #1466FF
+    }
 }
 @media (max-width: 700px) {
-    .header__button button {
+    .header__button {
+        button {
         font-weight: 400;
         font-size: 14px;
         line-height: 15px;
         padding: 5px 10px;
     }
+        span {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+}
 }
 .button__up {
     background-color: #1466FF;
     color: #ACD2FE;
     border: 1px solid rgba(0, 0, 0, 0);
     margin-right: 25px;
+    transition: .3s;
     &:hover {
         background: #185FE3;
         box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);

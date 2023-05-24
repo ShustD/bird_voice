@@ -76,6 +76,32 @@
     background-repeat: no-repeat;
     background-size: 10%, 20%, 30%;
 }
+.animate  {
+    background-position: 25% 75%, 0% 45%, 38% 10%;
+    background-size: 10%, 20%, 30%;
+    animation: myAnimation 3s infinite;    
+}
+@media (min-width: 769px) {
+    @keyframes myAnimation {
+    0% {
+        background-position: 25% 75%, 0% 45%, 38% 10%;
+        background-size: 10%, 20%, 30%;
+    }
+    33% {
+        background-position:38% 10%, 25% 75%, 0% 45%;
+        background-size: 30%, 10%, 20%;
+    }
+    66% {
+        background-position:0% 45%, 38% 10%, 25% 75% ;
+        background-size:20%, 30%, 10%;
+    }
+    100% {
+        background-position: 25% 75%, 0% 45%, 38% 10%;
+        background-size: 10%, 20%, 30%;
+    }
+  }
+}
+
 @media (max-width: 768px) {
     .content {
         flex-direction: column;

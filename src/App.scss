@@ -4,6 +4,9 @@
     min-height: 100%;
     display: flex;
     flex-direction: column;
+    *:focus-visible {
+        outline: none;
+    }
 }
 
 .app__content {
