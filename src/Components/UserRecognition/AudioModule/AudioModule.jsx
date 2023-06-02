@@ -13,7 +13,6 @@ import { fetchRecognize } from "../../../store/recognizeSlice"
 
 export const AudioModule = (props) => {
     const [animation, setAnimation] = useState(false)
-    const [error, setError] = useState(false)
     const [url, setUrl] = useState(null)
     const [drag, setDrag] = useState(false)
     const [voice, setVoice] = useState(null)
