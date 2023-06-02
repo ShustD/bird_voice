@@ -6,7 +6,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import invis from '../../assets/SignUp/invisible.png'
 import vis from '../../assets/SignUp/visible.png'
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser } from '../../store/authSlice';
+import { loginUser, resetAuthError } from '../../store/authSlice';
 
 export const SignIn = () => {
     const dispatch = useDispatch()
@@ -27,6 +27,10 @@ export const SignIn = () => {
         dispatch(loginUser(values))
     }
     
+    useEffect(() => {
+        dispatch(resetAuthError())
+    }, [dispatch])
+
     useEffect(() => {        
      if (isAuth) {
         navigate('/userrecognition')

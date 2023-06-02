@@ -1,12 +1,13 @@
 import React from "react"
 import s from './DragDropArea.module.scss'
 import preloader from '../../../../assets/UserRecognition/preloader.png'
+import { useSelector } from "react-redux"
 
 
 export const DragDropArea = (props) => {
-
+    const { error } = useSelector(state => state.recognize)
     const changeArea = () => {
-        if (props.animation) {
+        if (props.status === 'loading') {
             return (
                 <div className={s.preloader}>
                     <div className={s.drop_area}>
@@ -20,24 +21,24 @@ export const DragDropArea = (props) => {
                 </div>
             )
         }
-        else if (props.voice && !props.error && !props.drag) {
+        else if (props.voice && !error && !props.drag) {
             return (
                 <>
-                <div className={s.drop_area}
-                onDragStart={e => props.dragStartHandler(e)}
-                    onDragLeave={e => props.dragLeaveHandler(e)}
-                    onDragOver={e => props.dragStartHandler(e)}
-                    
-                >файл для распазнання павінен доўжыцца больш за 6 секунд, але менш за 3 хвіліны </div>
-                <div className={s.drop_area_mobile}>
-                файл для распазнання павінен доўжыцца больш за 6 секунд, але менш за 3 хвіліны 
-                </div>
+                    <div className={s.drop_area}
+                        onDragStart={e => props.dragStartHandler(e)}
+                        onDragLeave={e => props.dragLeaveHandler(e)}
+                        onDragOver={e => props.dragStartHandler(e)}
+
+                    >файл для распазнання павінен доўжыцца больш за 6 секунд, але менш за 3 хвіліны </div>
+                    <div className={s.drop_area_mobile}>
+                        файл для распазнання павінен доўжыцца больш за 6 секунд, але менш за 3 хвіліны
+                    </div>
                 </>
-                
+
             )
 
         }
-        else if (props.drag || (props.drag && props.error)) {
+        else if (props.drag || (props.drag && error)) {
             return (
                 <div className={s.drop_area}
                     onDragStart={e => props.dragStartHandler(e)}
@@ -49,39 +50,37 @@ export const DragDropArea = (props) => {
 
         }
         else if (!props.drag && !props.voice) {
-            return ( 
-            <>
-            <div className={s.drop_area}
-                    onDragStart={e => props.dragStartHandler(e)}
-                    onDragLeave={e => props.dragLeaveHandler(e)}
-                    onDragOver={e => props.dragStartHandler(e)}
-                >перацягніце абраны вамі файл у гэтую вобласць</div>
-                <div className={s.drop_area_mobile}>
-                Загрузіце файл
-                </div>
-            </>
-                
-            )
-
-        }
-        else if (props.error && !props.drag) {
             return (
                 <>
-                                <div className={s.preloader}>
                     <div className={s.drop_area}
                         onDragStart={e => props.dragStartHandler(e)}
                         onDragLeave={e => props.dragLeaveHandler(e)}
                         onDragOver={e => props.dragStartHandler(e)}
-                        onDrop={e => props.onDropHandler(e)}
-                    >памылка ў працэсе распазнання, загрузіце гук </div>
-                </div>
-                <div className={s.drop_area_mobile}>
-                памылка ў працэсе распазнання, загрузіце гук  
-                </div>
+                    >перацягніце абраны вамі файл у гэтую вобласць</div>
+                    <div className={s.drop_area_mobile}>
+                        Загрузіце файл
+                    </div>
                 </>
 
             )
 
+        }
+        else if (error && !props.drag) {
+            return (
+                <>
+                    <div className={s.preloader}>
+                        <div className={s.drop_area}
+                            onDragStart={e => props.dragStartHandler(e)}
+                            onDragLeave={e => props.dragLeaveHandler(e)}
+                            onDragOver={e => props.dragStartHandler(e)}
+                            onDrop={e => props.onDropHandler(e)}
+                        >памылка ў працэсе распазнання, загрузіце гук </div>
+                    </div>
+                    <div className={s.drop_area_mobile}>
+                        памылка ў працэсе распазнання, загрузіце гук
+                    </div>
+                </>
+            )
         }
     }
     return (

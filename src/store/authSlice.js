@@ -1,8 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { resetError } from "./collectionSlice";
 
 export const createUser = createAsyncThunk(
   'auth/createUser',
-  async (values, { rejectWithValue }) => {
+  async (values, { rejectWithValue, dispatch }) => {
     try {
       const response = await fetch(`https://bird-sounds-database.ssrlab.by/api/user-create/`, {
         method: 'POST',
@@ -12,8 +13,10 @@ export const createUser = createAsyncThunk(
         body: JSON.stringify(values)
       })
       if (!response.ok) {
-        throw new Error('Some error delete request')
+        const errorMessage = await response.json();
+        throw new Error(errorMessage.message);
       }
+      dispatch(resetError())
       const data = await response.json()
       return data
     } catch (error) {
@@ -24,7 +27,7 @@ export const createUser = createAsyncThunk(
 
 export const loginUser = createAsyncThunk(
   'auth/loginUser',
-  async (values, { rejectWithValue }) => {
+  async (values, { rejectWithValue, dispatch }) => {
     try {
       const response = await fetch(`https://bird-sounds-database.ssrlab.by/api/login-api/`, {
         method: 'POST',
@@ -36,8 +39,9 @@ export const loginUser = createAsyncThunk(
 
       if (!response.ok) {
         const errorMessage = await response.json();
-        throw new Error(errorMessage.non_field_errors);
+        throw new Error(errorMessage.message);
       }
+      dispatch(resetError())
       const data = await response.json()
       return data
     } catch (error) {
@@ -47,7 +51,7 @@ export const loginUser = createAsyncThunk(
 );
 export const checkAuth = createAsyncThunk(
   'auth/chekAuth',
-  async (_, { rejectWithValue }) => {
+  async (_, { rejectWithValue, dispatch }) => {
     try {
       const response = await fetch(`https://bird-sounds-database.ssrlab.by/api/account/`, {
         method: 'GET',
@@ -59,6 +63,7 @@ export const checkAuth = createAsyncThunk(
         const errorMessage = await response.json();
         throw new Error(errorMessage.non_field_errors);
       }
+      dispatch(resetError())
       const data = await response.json()
       return data
     } catch (error) {
@@ -69,7 +74,7 @@ export const checkAuth = createAsyncThunk(
 
 export const logout = createAsyncThunk(
   'auth/logout',
-  async (_, { rejectWithValue }) => {
+  async (_, { rejectWithValue, dispatch }) => {
     const token = {
       refresh: localStorage.getItem('refreshToken')
     }
@@ -84,6 +89,10 @@ export const logout = createAsyncThunk(
       })
       
       if (!response.ok) {
+        if (response.status === 401) {
+    
+          dispatch(setAuthStatus(false));
+        }
         const errorMessage = await response.json();
         throw new Error(errorMessage.non_field_errors);
       }
@@ -119,6 +128,35 @@ export const refreshToken = createAsyncThunk(
   }
 );
 
+export const addPhoto = createAsyncThunk(
+  'auth/addPhoto',
+  async (photo, { rejectWithValue, dispatch }) => {
+    const formData = new FormData();
+    formData.append('profile_pic', photo)
+    try {
+      const response = await fetch(`https://bird-sounds-database.ssrlab.by/api/account/`, {
+        method: 'PUT',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+        },
+        body: formData,
+      })      
+      if (!response.ok) {
+        if (response.status === 401) {
+    
+          dispatch(setAuthStatus(false));
+        }
+        const errorMessage = await response.json();
+        throw new Error(errorMessage.non_field_errors);
+      }
+      const data = await response.json()
+      return data
+    } catch (error) {
+      return rejectWithValue(error.message)
+    }
+  }
+);
+
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
@@ -128,15 +166,18 @@ const authSlice = createSlice({
     lastName: null,
     isAuth: null,
     error: null,
-    errorlogin: null,
     statusLogin: null,
     statusCreate: null,
-    statusCheck: null,    
+    statusCheck: null,
+    avatarUrl: null    
   },
   reducers: {
     setAuthStatus: (state, action) => {
       state.isAuth = action.payload;
     },
+    resetAuthError: (state) => {
+      state.error = null
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -145,15 +186,17 @@ const authSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.statusLogin = 'succeeded';
-        state.userName = action.payload.username;
+        state.userName = action.payload.user.username;
         localStorage.setItem('token', action.payload.token.access);
         localStorage.setItem('refreshToken', action.payload.token.refresh);
+        state.avatarUrl = action.payload.user.account[0].profile_pic
         state.isAuth = true;
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.statusLogin = 'failed';
         state.error = action.payload;
       })
+
       .addCase(createUser.pending, (state) => {
         state.statusCreate = 'loading';
       })
@@ -168,21 +211,26 @@ const authSlice = createSlice({
         state.statusCreate = 'failed';
         state.error = action.payload;
       })
+      
       .addCase(logout.pending, (state) => {
         
       })
       .addCase(logout.fulfilled, (state, action) => {        
         localStorage.removeItem('token');
-        localStorage.removeItem('refreshToken');;
+        localStorage.removeItem('refreshToken');
+        state.userName = null;        
+        state.avatarUrl = null
         state.isAuth = false;
       })
       .addCase(logout.rejected, (state, action) => {
         state.error = action.payload;
       })
+
       .addCase(checkAuth.pending, (state) => {
         
       })
       .addCase(checkAuth.fulfilled, (state, action) => {
+        state.avatarUrl = action.payload.account[0].profile_pic
         state.userName = action.payload.username;
         state.isAuth = true;
       })
@@ -190,8 +238,15 @@ const authSlice = createSlice({
         state.error = action.payload;
         state.isAuth = false;
       })
+
+      .addCase(addPhoto.fulfilled, (state, action) => {        
+        state.avatarUrl = action.payload.profile_pic;
+      })
+      .addCase(addPhoto.rejected, (state, action) => {
+        state.error = action.payload;
+      })
   }
 })
-export const { setAuthStatus } = authSlice.actions;
+export const { setAuthStatus, resetAuthError } = authSlice.actions;
 
 export default authSlice.reducer

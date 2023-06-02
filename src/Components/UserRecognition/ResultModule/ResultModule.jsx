@@ -8,21 +8,27 @@ import littleBird from '../../../assets/UserRecognition/littleBird.png'
 import bigBird from '../../../assets/UserRecognition/Rectangle 15.png'
 import { ResultAudioPlayer } from "./AudioPlayer/ResultAudioPlayer"
 import { Spectrogram } from "./Spectrogram/Spectrogram"
+import { useDispatch, useSelector } from "react-redux"
+import { resetStatus } from "../../../store/recognizeSlice"
 
-export const ResultModule = (props) => {
+export const ResultModule = () => {
+    
+    const birdImage = bigBird
     const [isSci, setIsSci] = useState(false)
     const [buttonActive, setButtonActive] = useState(true)
     const [isBigSpectrogram, setIsBigSpectrogram] = useState(false)
+    const { birdName } = useSelector(state => state.recognize)
+    const dispatch = useDispatch()
     return (
         <div className={s.resultModule}>
             <div className={s.recognitionBox}>
-                <button onClick={() => props.changeState(true)} className={s.recognitionButton}>open recognition box <img src={btnBird} alt="" /> </button>
+                <button onClick={() => dispatch(resetStatus())} className={s.recognitionButton}>open recognition box <img src={btnBird} alt="" /> </button>
             </div>
             <div className={s.resultContainer}>
                 <div className={s.topSection}>
                     <div className={s.sectionTittle}>
-                        {props.birdName ?
-                            props.birdName.split(')')[0].split('(')[1]
+                        {birdName ?
+                           birdName
                             : 'Small Cormorant'}
                     </div>
                     <div className={s.sectionButtons}>
@@ -45,8 +51,7 @@ export const ResultModule = (props) => {
                                 <img src={littleBird} alt="" />
                             </div>
                             <div className={s.mainImage}>
-                                <img src={props.birdImage ? `data:image/jpg;base64,${props.birdImage}`
-                                    : bigBird} alt="" />
+                                <img src={birdImage} alt="" />
                                 <div className={s.percentOfRecognition}>
                                     <div className={s.percent}>
                                         90%
@@ -68,8 +73,8 @@ export const ResultModule = (props) => {
                                                     Latin name
                                                 </div>
                                                 <div className={s.raw__name}>
-                                                    {props.birdName ?
-                                                        props.birdName.split('(', 1)
+                                                    {birdName ?
+                                                       birdName
                                                         : 'Microcarbo pygmaeus'}
                                                 </div>
                                             </div>

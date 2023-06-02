@@ -125,11 +125,15 @@ const collectionSlice = createSlice({
     next: null,
     statusAdd: null,
     errorAdd: null,
+    currentPage: null
   },
   reducers: {
     resetAddState: (state) => {
       state.statusAdd = null
       state.errorAdd = null
+    },
+    resetError: (state) => {
+      state.error = null
     },
   },
   extraReducers: (builder) => {
@@ -144,6 +148,7 @@ const collectionSlice = createSlice({
         state.prev = action.payload.previous;
         state.next = action.payload.next
         state.count = action.payload.count
+        state.currentPage = action.payload.current
       })
       .addCase(fetchCollection.rejected, (state, action) => {
         state.status = 'failed';
@@ -158,6 +163,7 @@ const collectionSlice = createSlice({
         state.prev = action.payload.previous;
         state.next = action.payload.next
         state.count = action.payload.count
+        state.currentPage = action.payload.current
       })
       .addCase(collectionUpdate.rejected, (state, action) => {
         state.status = 'failed';
@@ -191,5 +197,5 @@ const collectionSlice = createSlice({
 })
 
 
-export const { resetAddState } = collectionSlice.actions
+export const { resetAddState, resetError } = collectionSlice.actions
 export default collectionSlice.reducer

@@ -1,17 +1,11 @@
-import React, { useState} from "react";
+import React from "react";
 import s from './UserRecognition.module.scss'
 import { AudioModule } from "./AudioModule/AudioModule";
 import { ResultModule } from "./ResultModule/ResultModule";
+import { useSelector } from "react-redux";
 
 export const UserRecognition = () => {
-    const [openRecognitionBox, setOpenRecognitionBox] = useState(true)
-    const [birdImage, setBirdImage] = useState(null)
-    const [birdName, setBirdName] = useState(null)
-    const changeState = (bool, image, name) => {
-        setOpenRecognitionBox(bool)
-        setBirdImage(image)
-        setBirdName(name)
-    }
+    const { status } = useSelector(state => state.recognize)
 
     return (
         <div className={s.wrapper}>
@@ -21,8 +15,8 @@ export const UserRecognition = () => {
                     <div className={s.tittle}>
                         recognition service
                     </div>
-                    {openRecognitionBox ?  <AudioModule  changeState={changeState}/> 
-                    : <ResultModule birdImage={birdImage} birdName={birdName} changeState={changeState}/>}     
+                    {status !== 'succeeded' ?  <AudioModule  /> 
+                    : <ResultModule />}     
                 </div>
                 <div className={s.upperCloud}></div>
                 <div className={s.uuderCloud}></div>

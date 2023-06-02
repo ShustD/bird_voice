@@ -6,7 +6,7 @@ import vis from '../../assets/SignUp/visible.png'
 import { useState } from 'react';
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
-import { createUser } from '../../store/authSlice';
+import { createUser, resetAuthError } from '../../store/authSlice';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -14,7 +14,7 @@ export const SignUp = () => {
     const [passVis, setPassVis] = useState(false)
     const passType = passVis ? 'text' : 'password'
     const passIcon = passVis ? vis : invis
-    const { statusCreate } = useSelector(state => state.auth)
+    const { statusCreate, error, isAuth } = useSelector(state => state.auth)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -36,10 +36,14 @@ export const SignUp = () => {
         dispatch(createUser(values))
     }
     useEffect(() => {
-        if (statusCreate === 'succeeded') {
-            navigate('/userrecognition')
-        }
-    }, [statusCreate, navigate])
+        dispatch(resetAuthError())
+    }, [dispatch])
+
+    useEffect(() => {        
+        if (isAuth) {
+           navigate('/userrecognition')
+       }   
+       }, [isAuth, navigate])
     return (
         <div className={s.wrapper}>
             <div>
@@ -99,6 +103,7 @@ export const SignUp = () => {
                                                     type="text" />
                                             </div>
                                             {errors.last_name ? <div className={s.error}>{errors.last_name}</div> : null}
+                                            {error ? <div style={{color: 'red'}}>{error}</div> : null}
                                             <button disabled={statusCreate === 'loading' ? true : false} className={s.signBtn} type="submit">sign up</button>
                                         </Form>
                                     )}

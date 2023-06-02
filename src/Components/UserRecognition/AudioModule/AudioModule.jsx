@@ -8,7 +8,7 @@ import mob4 from '../../../assets/UserRecognition/mob4.png'
 import { useState } from "react";
 import { DragDropArea } from "./DragDropArea/DragDropArea"
 import { BirdCarousel } from "./BirdCarousel/BirdCarousel"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { fetchRecognize } from "../../../store/recognizeSlice"
 
 export const AudioModule = (props) => {
@@ -17,46 +17,34 @@ export const AudioModule = (props) => {
     const [url, setUrl] = useState(null)
     const [drag, setDrag] = useState(false)
     const [voice, setVoice] = useState(null)
-    const [model, setModel] = useState("dataset_xc_20220816-model_EffNetB3-species_14-date_20221006-epoch_98")
+    //const [model, setModel] = useState("dataset_xc_20220816-model_EffNetB3-species_14-date_20221006-epoch_98")
     const dispatch = useDispatch()
-    const postCall2 = (sound, bool) => {
-        const data = new FormData()
-        data.set('audio', sound)
-        data.set('model', model)
-        data.set('lang', 'en')
-        fetch('https://corpus.by/BirdSoundsRecognizer/api', {
-            method: "POST",
-            body: data
-        }).then((res) => res.json().then(data => {
-            props.changeState(bool, data.bird_image, data.bird_name)
-            setAnimation(false)
-        })).catch((error) => {
-            setAnimation(false)
-            setError(true)
-        });
+
+    const { status } = useSelector(state => state.recognize)
+
+
+    // const postCall2 = (sound, bool) => {
+    //     const data = new FormData()
+    //     data.set('audio', sound)
+    //     data.set('model', model)
+    //     data.set('lang', 'en')
+    //     fetch('https://corpus.by/BirdSoundsRecognizer/api', {
+    //         method: "POST",
+    //         body: data
+    //     }).then((res) => res.json().then(data => {
+    //         props.changeState(bool, data.bird_image, data.bird_name)
+    //         setAnimation(false)
+    //     })).catch((error) => {
+    //         setAnimation(false)
+    //         setError(true)
+    //     });
+    // }
+    const postCall = (sound, bool) => {
+        const formData = new FormData()
+        formData.append('audio_file', sound)
+        formData.append('language', 1)
+        dispatch(fetchRecognize(formData))
     }
-const postCall = (sound, bool) => {
-
-    const reader = new FileReader();
-    reader.readAsDataURL(sound);
-    reader.onload = (event) => {
-      const base64String = event.target.result
-    const item = [
-        {
-            name: sound.name,
-            data: base64String
-        },
-        {
-            name: 'zip.zip',
-            data: base64String
-        },
-        'Латынь'
-    ]
-    dispatch(fetchRecognize(base64String))
-    };
-
-
-}
 
     function dragStartHandler(e) {
         e.preventDefault()
@@ -90,16 +78,16 @@ const postCall = (sound, bool) => {
             <div className={s.recognition_body}>
                 <div className={s.recognition_model}>
                     <div className={s.recognotion_tittle}>Recognition model</div>
-                    <div className={s.test_model}>
+                    {/* <div className={s.test_model}>
                         <select name="test_model" onChange={(e) => setModel(e.target.value)}>
                             <option value="dataset_xc_20220816-model_EffNetB3-species_14-date_20221006-epoch_98">test_model 1</option>
                             <option value="dataset_xc_20220113_model_EffNetB3_species_14_date_20220202_epoch_14">test_model 2</option>
                             <option value="dataset_npc_20230307_model_EffNetB3_species_79_date_20230316_epoch_27">test_model 3</option>
                         </select>
-                    </div>
+                    </div> */}
                 </div>
                 <div className={s.dragDropAudio}>
-                    {animation ?
+                    {status === 'loading' ?
                         <div className={s.pic_ctn}>
                             <img src={mob2} alt="" className={s.pic} />
                             <img src={mob4} alt="" className={s.pic} />
@@ -114,7 +102,7 @@ const postCall = (sound, bool) => {
                     }
 
                     <DragDropArea dragStartHandler={dragStartHandler} dragLeaveHandler={dragLeaveHandler}
-                        onDropHandler={onDropHandler} animation={animation} voice={voice} drag={drag} error={error} />
+                        onDropHandler={onDropHandler} status={status} voice={voice} drag={drag} />
                     <div className={s.audio}>
                         <AudioPlayer changeUrl={changeUrl} voice={voice} url={url} />
                     </div>
@@ -125,13 +113,13 @@ const postCall = (sound, bool) => {
 
                     <div className={s.post}>
                         <button onClick={() => isVisibleAudioModule(false)}
-                            disabled={voice && !animation ? false : true}>Start of recognition</button>
+                            disabled={voice && status !== 'loading' ? false : true}>Start of recognition</button>
                     </div>
                 </div>
             </div>
             <div className={s.birds}>
-                <BirdCarousel animation={animation}/>
-            </div>            
+                <BirdCarousel status={status} />
+            </div>
         </div>
     )
 }

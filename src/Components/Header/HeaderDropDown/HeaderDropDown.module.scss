@@ -6,10 +6,11 @@
     text-transform: capitalize;
     color: #FFFFFF;
 }
+
 @media (max-width: 768px) {
-    .header_container  {
+    .header_container {
         display: none;
-    } 
+    }
 }
 
 .menu_container {
@@ -19,11 +20,13 @@
     margin-right: 10px;
     position: relative;
 }
+
 @media (max-width: 768px) {
     .menu_container {
         min-width: 100px;
     }
 }
+
 .menu_vis {
     height: 100%;
     cursor: pointer;
@@ -54,12 +57,15 @@
     border-radius: 0px 0px 9px 9px;
     display: flex;
     flex-direction: column;
+
     a {
         text-decoration: none;
         color: #FFFFFF;
+
         &:hover {
             background: rgb(9, 78, 207);
         }
+
         &:last-child:hover {
             border-radius: 0px 0px 9px 9px;
         }
@@ -120,20 +126,36 @@
 .user_logo {
     padding-top: 5px;
     max-height: 42px;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
 }
 
 .user_settings {
     cursor: pointer;
+    margin-bottom: -4px;
+
+    .setting_icon {
+        color: #FFFFFF;
+        transition: .3s;
+        font-size: 30px;
+
+        &:hover {
+            transform: rotate(90deg);
+        }
+    }
+
 }
+
 @media (min-width: 769px) {
     .mobile__menu {
         display: none;
     }
 }
+
 .burger__menu_invis {
     display: none;
 }
+
 .burger__menu i {
     font-size: 40px;
     color: #1466FF;
@@ -141,13 +163,14 @@
 
 .bar__background {
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
 }
 
-.side__bar, .side__bar_invis {
+.side__bar,
+.side__bar_invis {
     position: absolute;
     top: 0;
     right: -250px;
@@ -162,20 +185,24 @@
     flex-direction: column;
     transform: translateX(-250px);
     transition: all .3s linear;
+
     a {
         text-decoration: none;
         color: #FFFFFF;
     }
+
     i {
         padding: 10px;
         align-self: end;
         font-size: 40px;
     }
 }
+
 .side__bar_invis {
     right: 0;
     transform: translateX(250px);
 }
+
 .side__user {
     display: flex;
     gap: 15px;

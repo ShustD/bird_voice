@@ -53,6 +53,8 @@
     color: #FFFFFF;
     padding: 10px 0;
     text-transform: capitalize;
+    //word-wrap: break-word;
+    word-break: break-all;
 }
 .name__content {
     background: #C9DCFF;

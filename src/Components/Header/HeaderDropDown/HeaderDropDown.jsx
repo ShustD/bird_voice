@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
 import s from './HeaderDropDown.module.scss'
-import setting from '../../../assets/UserRecognition/setting.png'
 import photo from '../../../assets/UserRecognition/userlogo.png'
 import { NavLink, useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { Settings } from '@material-ui/icons'
 
-export const HeaderDropDownMenu = ({ user = 'User', userLogo = photo }) => {
+export const HeaderDropDownMenu = () => {
 
     const [dropMenu, setDropMenu] = useState(false)
     const dropMenuRef = useRef(null)
@@ -13,7 +13,7 @@ export const HeaderDropDownMenu = ({ user = 'User', userLogo = photo }) => {
     const mobileMenuRef = useRef(null)
     const locate = useLocation()
     const path = locate.pathname
-    const { userName } = useSelector(state => state.auth)
+    const { userName, avatarUrl } = useSelector(state => state.auth)
     useEffect(() => {
         if (!dropMenu) return
 
@@ -73,13 +73,14 @@ export const HeaderDropDownMenu = ({ user = 'User', userLogo = photo }) => {
 
                 <div className={s.userHi}>
                     <div>
-                        <img className={s.user_logo} src={userLogo} alt="" />
+                        <img className={s.user_logo} 
+                        src={avatarUrl ? `https://bird-sounds-database.ssrlab.by${avatarUrl}` : photo } alt="" />
                     </div>
                     <div className={s.user_text}> Hello, {userName}!</div>
                     <div className={s.user_settings}>
                         <NavLink onClick={() => setDropMenu(false)}
                             to='/settingspage'>
-                            <img className={s.user_logo} src={setting} alt="" />
+                                <Settings className={s.setting_icon} />
                         </NavLink>
                     </div>
                 </div>
@@ -95,9 +96,10 @@ export const HeaderDropDownMenu = ({ user = 'User', userLogo = photo }) => {
                         <i onClick={() => setMobileMenu(false)} className='material-icons'>close</i>
                         <div className={s.side__user}>
                             <div>
-                                <img className={s.user_logo} src={userLogo} alt="" />
+                                <img className={s.user_logo} 
+                                src={avatarUrl ? `https://bird-sounds-database.ssrlab.by${avatarUrl}` : photo } alt="" />
                             </div>
-                            <div className={s.user_text}> Hello, {user}!</div>
+                            <div className={s.user_text}> Hello, {userName}!</div>
                         </div>
                         <NavLink onClick={() => setMobileMenu(false)} to='/collectiontable'>
                             <div className={s.drop_item}>

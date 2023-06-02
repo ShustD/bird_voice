@@ -1,32 +1,26 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { setAuthStatus } from "./authSlice";
 
 export const fetchRecognize = createAsyncThunk(
   'recognize/fetchRecognize',
-  async (itemAudio, { rejectWithValue }) => {
+  async (formData, { rejectWithValue, dispatch }) => {
     try {
-      const response = await fetch("https://ptuski.ssrlab.by/run/predict", {
+      const response = await fetch("https://cors-anywhere.herokuapp.com/https://apiptushki.ssrlab.by/predict", {
 	  method: "POST",
     headers: { 
-      "Content-Type": "application/json", 
-      "Authorization": "Bearer 2db3HwQUrhU2gyluvDWVRA"
+      Authorization: `Bearer ${localStorage.getItem('token')}`
     },
-    body: JSON.stringify({
-      data: [
-        {
-            name: 'sound.name',
-            data: itemAudio
-        },
-        {
-            name: 'zip.zip',
-            data: itemAudio
-        },
-        'Латынь'
-    ]
-    }),
+    redirect: 'follow',
+    body: formData
 });
-      if (!response.ok) {
-        throw new Error('Server error')
-      }
+if (!response.ok) {
+  if (response.status === 401) {
+    
+    dispatch(setAuthStatus(false));
+  }
+    
+  throw new Error(response.statusText);
+}
       const data = await response.json()
       return data
     } catch (error) {
@@ -38,19 +32,25 @@ export const fetchRecognize = createAsyncThunk(
 const recognizeSlice = createSlice({
   name: 'recognize',
   initialState: {
-    data: null,
     error: null,
-    status: 'idle'
+    status: null,
+    birdName: null
+
+  },
+  reducers: {
+    resetStatus: (state) => {
+      state.status = null
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchRecognize.pending, (state) => {
         state.status = 'loading';
+        state.error = null
       })
       .addCase(fetchRecognize.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.data = action.payload;
-
+        state.birdName = action.payload[2].Birdname
       })
       .addCase(fetchRecognize.rejected, (state, action) => {
         state.status = 'failed';
@@ -60,5 +60,6 @@ const recognizeSlice = createSlice({
   },
 })
 
+export const { resetStatus } = recognizeSlice.actions
 export default recognizeSlice.reducer
 

@@ -6,17 +6,22 @@ import vis from '../../assets/SignUp/visible.png'
 import { useState } from 'react';
 import photo from '../../assets/settings/photo.png'
 import bird from '../../assets/settings/bird.png'
+import { useDispatch, useSelector } from "react-redux";
+import { addPhoto } from "../../store/authSlice";
 
 
 
-export const SettingPage = (props) => {
+export const SettingPage = () => {
     const [passVis, setPassVis] = useState(false)
     const passType = passVis ? 'text' : 'password'
     const passIcon = passVis ? vis : invis
     const [repeatPassVis, setrepeatPassVis] = useState(false)
     const repeatPassType = repeatPassVis ? 'text' : 'password'
     const repeatPassIcon = repeatPassVis ? vis : invis
-
+    const [avatar, setAvatar] = useState(null)
+    const dispatch = useDispatch()
+    const { avatarUrl } = useSelector(state => state.auth)
+  
 
     return (
         <div className={s.wrapper}>
@@ -90,15 +95,26 @@ export const SettingPage = (props) => {
 
                     <div className={s.profile_container}>
                         <div className={s.profile_content}>
-                            <img className={s.main_photo} src={photo} alt="" />
+                            <img className={s.main_photo} 
+                            src={avatarUrl ? `https://bird-sounds-database.ssrlab.by${avatarUrl}` : photo } alt="" />
                             <img className={s.upper_bird} src={bird} alt="" />
                             <div className={s.photo_set}>
                                 <div>
-                                    <img className={s.little_photo} src={photo} alt="" />
+                                    <img className={s.little_photo} 
+                                    src={avatarUrl ? `https://bird-sounds-database.ssrlab.by${avatarUrl}` : photo } alt="" />
                                 </div>
                                 <div className={s.little_text}>
                                     <div>edit avatar size</div>
-                                    <div>upload a photo</div>
+                                    <label className={s.upload_btn} htmlFor="audiorecord_local">select photo</label>
+                                            <input
+                                                id="audiorecord_local"
+                                                name="audiorecord_local"
+                                                type="file"
+                                                onChange={(e) => {
+                                                    setAvatar(e.target.files[0]);
+                                                }}
+                                            />
+                                    <div onClick={() => dispatch(addPhoto(avatar))}>upload a photo</div>
                                     <div>delete a photo</div>
                                 </div>
                             </div>

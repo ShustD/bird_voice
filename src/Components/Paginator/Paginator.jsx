@@ -6,7 +6,7 @@ import { fetchCollection } from "../../store/collectionSlice";
 
 export const Paginator = ({url}) => {
     const dispatch = useDispatch()
-    const { next, prev, count } = useSelector(state => state.collection)
+    const { next, prev, count, currentPage } = useSelector(state => state.collection)
     const pageNumbers = Array.from({ length: Math.ceil(count / 10) }, (_, index) => index + 1);
     return (
         <div className={s.paginator}>
@@ -14,7 +14,7 @@ export const Paginator = ({url}) => {
                         {pageNumbers.map(pageNumber =>  
                             <span 
                             onClick={() => dispatch(fetchCollection(`${url}${pageNumber}`))} 
-                            className={s.page_number}
+                            className={currentPage === pageNumber ? s.page_current : s.page_number}
                             key={pageNumber}>
                                 {pageNumber}
                             </span>

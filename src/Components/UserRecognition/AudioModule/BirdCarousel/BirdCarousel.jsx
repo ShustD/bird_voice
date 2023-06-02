@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 import "./BirdCarousel.css";
 import { EffectCube, Autoplay } from "swiper";
 
-export const BirdCarousel = ({animation}) => {
+export const BirdCarousel = ({status}) => {
     const [swiper, setSwiper] = useState(null);
 
     const handleSwiper = (swiper) => {
@@ -19,10 +19,10 @@ export const BirdCarousel = ({animation}) => {
     };
   
     useEffect(() => {
-      if (animation && swiper !== null) {
+      if (status === 'loading' && swiper !== null) {
         swiper.autoplay.start();
       }
-    }, [animation, swiper]);
+    }, [status, swiper]);
     return (
         <>
             <Swiper
@@ -37,7 +37,7 @@ export const BirdCarousel = ({animation}) => {
                     shadowOffset: 20,
                     shadowScale: 0.94,
                 }}
-                autoplay={animation ? {
+                autoplay={status === 'loading' ? {
                     delay: 2000,
                     disableOnInteraction: false,
                   } : false}
