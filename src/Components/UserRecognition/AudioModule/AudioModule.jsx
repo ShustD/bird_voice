@@ -13,6 +13,7 @@ import { fetchRecognize } from "../../../store/recognizeSlice"
 
 export const AudioModule = (props) => {
     const [animation, setAnimation] = useState(false)
+    const [error, setError] = useState(false)
     const [url, setUrl] = useState(null)
     const [drag, setDrag] = useState(false)
     const [voice, setVoice] = useState(null)
@@ -39,10 +40,7 @@ export const AudioModule = (props) => {
     //     });
     // }
     const postCall = (sound, bool) => {
-        const formData = new FormData()
-        formData.append('audio_file', sound)
-        formData.append('language', 1)
-        dispatch(fetchRecognize(formData))
+        dispatch(fetchRecognize(sound))
     }
 
     function dragStartHandler(e) {

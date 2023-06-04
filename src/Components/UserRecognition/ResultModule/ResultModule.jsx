@@ -17,14 +17,31 @@ export const ResultModule = () => {
     const [isSci, setIsSci] = useState(false)
     const [buttonActive, setButtonActive] = useState(true)
     const [isBigSpectrogram, setIsBigSpectrogram] = useState(false)
-    const { birdName } = useSelector(state => state.recognize)
+    const { birdName, birdArray } = useSelector(state => state.recognize)
     const dispatch = useDispatch()
+    
+    const birdElements = Object.keys(birdArray).map((key) => {
+        const value = birdArray[key];
+        const rangeElements = value.map((arr, index) => {
+          const [start, end] = arr;
+          const rangeText = `${start}s - ${end}s`;
+          return <div key={index}>{rangeText}</div>;
+        });
+      
+        return (
+          <div style={{marginBottom: '15px'}} className={s.sectionTittle} key={key}>
+            <h3>{key}</h3>
+            <div>{rangeElements}</div>
+          </div>
+        );
+      });
     return (
         <div className={s.resultModule}>
             <div className={s.recognitionBox}>
                 <button onClick={() => dispatch(resetStatus())} className={s.recognitionButton}>open recognition box <img src={btnBird} alt="" /> </button>
             </div>
             <div className={s.resultContainer}>
+                {birdElements}
                 <div className={s.topSection}>
                     <div className={s.sectionTittle}>
                         {birdName ?

@@ -3,6 +3,7 @@ import s from './UserRecognition.module.scss'
 import { AudioModule } from "./AudioModule/AudioModule";
 import { ResultModule } from "./ResultModule/ResultModule";
 import { useSelector } from "react-redux";
+import { ResultModuleNew } from "./ResultModule/ResultModuleNew";
 
 export const UserRecognition = () => {
     const { status } = useSelector(state => state.recognize)
@@ -16,7 +17,7 @@ export const UserRecognition = () => {
                         recognition service
                     </div>
                     {status !== 'succeeded' ?  <AudioModule  /> 
-                    : <ResultModule />}     
+                    : <ResultModuleNew />}     
                 </div>
                 <div className={s.upperCloud}></div>
                 <div className={s.uuderCloud}></div>

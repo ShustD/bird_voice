@@ -3,9 +3,12 @@ import { setAuthStatus } from "./authSlice";
 
 export const fetchRecognize = createAsyncThunk(
   'recognize/fetchRecognize',
-  async (formData, { rejectWithValue, dispatch }) => {
+  async (sound, { rejectWithValue, dispatch }) => {
+    const formData = new FormData()
+    formData.append('audio_file', sound)
+    formData.append('language', 2)
     try {
-      const response = await fetch("https://cors-anywhere.herokuapp.com/https://apiptushki.ssrlab.by/predict", {
+      const response = await fetch("https://apiptushki.ssrlab.by/predict", {
 	  method: "POST",
     headers: { 
       Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -34,7 +37,8 @@ const recognizeSlice = createSlice({
   initialState: {
     error: null,
     status: null,
-    birdName: null
+    birdName: null,
+    birdArray: null
 
   },
   reducers: {
@@ -50,7 +54,8 @@ const recognizeSlice = createSlice({
       })
       .addCase(fetchRecognize.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.birdName = action.payload[2].Birdname
+        state.birdArray = action.payload.predictions
+
       })
       .addCase(fetchRecognize.rejected, (state, action) => {
         state.status = 'failed';
