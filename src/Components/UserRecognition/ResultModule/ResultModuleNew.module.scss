@@ -26,22 +26,34 @@
     background: #1466FF;
     box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
     border-radius: 30px;
+
+    &:hover {
+        background: #185FE3;
+    }
+
+    &:active {
+        background: #0C52D5;
+        box-shadow: inset 2px 7px 10px rgba(0, 0, 0, 0.25);
+    }
+
     .btnBird {
         margin-left: 15px;
         width: 40px;
         height: 40px;
     }
 }
-
-.recognitionButton:hover {
-    background: #185FE3;
+.spectrogram {
+    margin-top: 20px;
+    overflow-x: auto;
+    text-align: center;
+    border-radius: 15px;
+    max-width: 100%;
+    img {
+        max-height: 500px;
+        border-radius: 15px;
+    }
+    
 }
-
-.recognitionButton:active {
-    background: #0C52D5;
-    box-shadow: inset 2px 7px 10px rgba(0, 0, 0, 0.25);
-}
-
 .resultContainer {
     padding: 15px 40px;
     background: rgba(64, 140, 255, 0.6);
@@ -57,14 +69,13 @@
 }
 
 .sectionTittle {
-    margin-left: -40px;
     padding: 5px 100px 5px 40px;
-    font-size: 34px;
+    font-size: 30px;
     line-height: 40px;
     text-transform: capitalize;
     color: #FFFFFF;
     background: #1466FF;
-    border-radius: 0px 30px 30px 0px;
+    border-radius: 30px;
 }
 
 @media (max-width: 768px) {

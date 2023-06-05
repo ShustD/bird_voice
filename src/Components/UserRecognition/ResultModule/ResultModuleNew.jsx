@@ -6,7 +6,7 @@ import { resetStatus } from "../../../store/recognizeSlice"
 
 export const ResultModuleNew = () => {
 
-  const { recognizedBirds } = useSelector(state => state.recognize)
+  const { recognizedBirds, spectrogram } = useSelector(state => state.recognize)
   const dispatch = useDispatch()
 
   const birdElements = Object.keys(recognizedBirds).map((birdName) => {
@@ -28,6 +28,9 @@ export const ResultModuleNew = () => {
     <div className={s.resultModule}>
       <div className={s.recognitionBox}>
         <button onClick={() => dispatch(resetStatus())} className={s.recognitionButton}>open recognition box <VectorBtn className={s.btnBird}/> </button>
+      </div>
+      <div className={s.spectrogram}>
+        <img src={`https://apiptushki.ssrlab.by${spectrogram}`} alt="hui" />
       </div>
       <div className={s.resultContainer}>
         {birdElements}

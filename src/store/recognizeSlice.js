@@ -38,8 +38,8 @@ const recognizeSlice = createSlice({
     error: null,
     status: null,
     birdName: null,
-    recognizedBirds: null
-
+    recognizedBirds: null,
+    spectrogram: null
   },
   reducers: {
     resetStatus: (state) => {
@@ -55,7 +55,7 @@ const recognizeSlice = createSlice({
       .addCase(fetchRecognize.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.recognizedBirds = action.payload.predictions
-
+        state.spectrogram = action.payload.spectogram_file
       })
       .addCase(fetchRecognize.rejected, (state, action) => {
         state.status = 'failed';
