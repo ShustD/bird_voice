@@ -166,7 +166,7 @@
         line-height: 20px;
         color: #1466FF;
         &:-webkit-autofill {
-            -webkit-text-fill-color: #1466FF !important;
+            -webkit-text-fill-color: #1466FF;
             transition: all 5000s ease-in-out;
         }
         &:focus-visible {
@@ -216,6 +216,12 @@
     font-size: 20px;    
     padding-bottom: 15px;
 }
-.inputError {
-    border-bottom: 4px solid #ED033B !important;
+
+.redLine {
+    position: relative;
+    top: -39px;
+    width: 100%;
+    height: 4px;
+    background-color: #ED033B;
+    z-index: 15;
 }

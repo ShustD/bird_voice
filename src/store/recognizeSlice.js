@@ -38,7 +38,7 @@ const recognizeSlice = createSlice({
     error: null,
     status: null,
     birdName: null,
-    birdArray: null
+    recognizedBirds: null
 
   },
   reducers: {
@@ -54,7 +54,7 @@ const recognizeSlice = createSlice({
       })
       .addCase(fetchRecognize.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.birdArray = action.payload.predictions
+        state.recognizedBirds = action.payload.predictions
 
       })
       .addCase(fetchRecognize.rejected, (state, action) => {

@@ -39,11 +39,11 @@ export const SignUp = () => {
         dispatch(resetAuthError())
     }, [dispatch])
 
-    useEffect(() => {        
+    useEffect(() => {
         if (isAuth) {
-           navigate('/userrecognition')
-       }   
-       }, [isAuth, navigate])
+            navigate('/userrecognition')
+        }
+    }, [isAuth, navigate])
     return (
         <div className={s.wrapper}>
             <div>
@@ -66,44 +66,64 @@ export const SignUp = () => {
                                             <label htmlFor="username">name</label>
                                             <div className={s.inputField}>
                                                 <Field name="username"
-                                                    className={errors.username ? s.inputError : null}
                                                     type="text" />
                                             </div>
-                                            {errors.username ? <div className={s.error}>{errors.username}</div> : null}
+                                            {errors.username && touched.username ?
+                                                <>
+                                                    <div className={s.redLine}></div>
+                                                    <div className={s.error}>{errors.username}</div>
+                                                </>
+                                                : null}
                                             <label htmlFor="email">email</label>
                                             <div className={s.inputField}>
                                                 <Field
-                                                    className={errors.email ? s.inputError : null}
                                                     id="email"
                                                     name="email"
                                                     type="text" />
                                             </div>
-                                            {errors.email ? <div className={s.error}>{errors.email}</div> : null}
+                                            {errors.email && touched.email ?
+                                                <>
+                                                    <div className={s.redLine}></div>
+                                                    <div className={s.error}>{errors.email}</div>
+                                                </>
+                                                : null}
                                             <label htmlFor="password">password</label>
                                             <div className={s.inputField}>
                                                 <Field
                                                     name="password"
-                                                    className={errors.password ? s.inputError : null}
                                                     type={passType}
                                                 /> <i onClick={() => setPassVis(!passVis)}>
                                                     <img className={s.vis} src={passIcon} alt="" /></i>
                                             </div>
-                                            {errors.password ? <div className={s.error}>{errors.password}</div> : null}
+                                            {errors.password && touched.password ?
+                                                <>
+                                                    <div className={s.redLine}></div>
+                                                    <div className={s.error}>{errors.password}</div>
+                                                </>
+                                                : null}
                                             <label htmlFor="first_name">First name</label>
                                             <div className={s.inputField}>
                                                 <Field name="first_name"
-                                                    className={errors.first_name ? s.inputError : null}
                                                     type="text" />
                                             </div>
-                                            {errors.first_name ? <div className={s.error}>{errors.first_name}</div> : null}
+                                            {errors.first_name && touched.first_name ?
+                                                <>
+                                                    <div className={s.redLine}></div>
+                                                    <div className={s.error}>{errors.first_name}</div>
+                                                </>
+                                                : null}
                                             <label htmlFor="last_name">Last name</label>
                                             <div className={s.inputField}>
                                                 <Field name="last_name"
-                                                    className={errors.last_name ? s.inputError : null}
                                                     type="text" />
                                             </div>
-                                            {errors.last_name ? <div className={s.error}>{errors.last_name}</div> : null}
-                                            {error ? <div style={{color: 'red'}}>{error}</div> : null}
+                                            {errors.last_name && touched.last_name ?
+                                                <>
+                                                    <div className={s.redLine}></div>
+                                                    <div className={s.error}>{errors.last_name}</div>
+                                                </>
+                                                : null}
+                                            {error ? <div style={{ color: 'red' }}>{error}</div> : null}
                                             <button disabled={statusCreate === 'loading' ? true : false} className={s.signBtn} type="submit">sign up</button>
                                         </Form>
                                     )}
