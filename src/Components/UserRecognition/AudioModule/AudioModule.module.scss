@@ -42,39 +42,13 @@
     text-transform: capitalize;
     color: #FFFFFF;
     background: #1466FF;
+    border-radius: 0 15px 15px 0;
 }
 
 @media (max-width: 768px) {
     .recognotion_tittle {
         padding: 10px 20px 10px 10px;
         font-size: 16px;
-    }
-}
-
-.test_model select {
-    margin-left: -15px;
-    padding: 10px 45px 10px 30px;
-    background-color: #B4D8FF;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 23px;
-    border: 0;
-    color: #1466FF;
-    border-radius: 50px;
-    appearance: none;
-    outline: none;
-    background-image: url('../../../assets/UserRecognition/arrow.png');
-    background-repeat: no-repeat;
-    background-position: 90% 50%;
-}
-
-@media (max-width: 768px) {
-    .test_model select {
-        margin-left: -15px;
-        padding: 10px 30px 10px 10px;
-        font-size: 16px;
-        background-position: 95% 50%;
-        background-size: 12%;
     }
 }
 

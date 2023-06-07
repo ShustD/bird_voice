@@ -28,11 +28,12 @@ export const fetchCollection = createAsyncThunk(
 )
 export const collectionUpdate = createAsyncThunk(
   'collection/update',
-  async (arg, { rejectWithValue, dispatch }) => {    
-    const { isCheck, key, deleted, validated } = arg
+  async ({ isCheck, key, deleted, validated}, { rejectWithValue, dispatch, getState }) => {    
+    const { currentPage } = getState().collection;
+
     try {
       const body = isCheck.map((id) => ({ id, [key]: deleted }))
-      const response = await fetch(`https://bird-sounds-database.ssrlab.by/api/audio_list_views/?deleted=${!deleted}&validated=${validated}`, {
+      const response = await fetch(`https://bird-sounds-database.ssrlab.by/api/audio_list_views/?deleted=${!deleted}&validated=${validated}&page=${currentPage}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

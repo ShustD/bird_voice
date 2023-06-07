@@ -13,33 +13,13 @@ import { fetchRecognize } from "../../../store/recognizeSlice"
 
 export const AudioModule = (props) => {
     const [animation, setAnimation] = useState(false)
-    const [error, setError] = useState(false)
     const [url, setUrl] = useState(null)
     const [drag, setDrag] = useState(false)
     const [voice, setVoice] = useState(null)
-    //const [model, setModel] = useState("dataset_xc_20220816-model_EffNetB3-species_14-date_20221006-epoch_98")
     const dispatch = useDispatch()
 
     const { status } = useSelector(state => state.recognize)
-
-
-    // const postCall2 = (sound, bool) => {
-    //     const data = new FormData()
-    //     data.set('audio', sound)
-    //     data.set('model', model)
-    //     data.set('lang', 'en')
-    //     fetch('https://corpus.by/BirdSoundsRecognizer/api', {
-    //         method: "POST",
-    //         body: data
-    //     }).then((res) => res.json().then(data => {
-    //         props.changeState(bool, data.bird_image, data.bird_name)
-    //         setAnimation(false)
-    //     })).catch((error) => {
-    //         setAnimation(false)
-    //         setError(true)
-    //     });
-    // }
-    const postCall = (sound, bool) => {
+    const postCall = (sound) => {
         dispatch(fetchRecognize(sound))
     }
 
@@ -66,22 +46,15 @@ export const AudioModule = (props) => {
         setUrl(url)
         setVoice(trim)
     }
-    const isVisibleAudioModule = (bool) => {
+    const isVisibleAudioModule = () => {
         setAnimation(!animation)
-        postCall(voice, bool)
+        postCall(voice)
     }
     return (
         <div className={s.recognition_container}>
             <div className={s.recognition_body}>
                 <div className={s.recognition_model}>
                     <div className={s.recognotion_tittle}>Recognition model</div>
-                    {/* <div className={s.test_model}>
-                        <select name="test_model" onChange={(e) => setModel(e.target.value)}>
-                            <option value="dataset_xc_20220816-model_EffNetB3-species_14-date_20221006-epoch_98">test_model 1</option>
-                            <option value="dataset_xc_20220113_model_EffNetB3_species_14_date_20220202_epoch_14">test_model 2</option>
-                            <option value="dataset_npc_20230307_model_EffNetB3_species_79_date_20230316_epoch_27">test_model 3</option>
-                        </select>
-                    </div> */}
                 </div>
                 <div className={s.dragDropAudio}>
                     {status === 'loading' ?
@@ -109,7 +82,7 @@ export const AudioModule = (props) => {
                     <input id="uploadFile" type="file" name="userfile[]" onChange={(e) => selectMusic(e)} />
 
                     <div className={s.post}>
-                        <button onClick={() => isVisibleAudioModule(false)}
+                        <button onClick={() => isVisibleAudioModule()}
                             disabled={voice && status !== 'loading' ? false : true}>Start of recognition</button>
                     </div>
                 </div>

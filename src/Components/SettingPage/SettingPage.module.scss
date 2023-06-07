@@ -200,3 +200,48 @@
     line-height: 23px;
     color: #0047CA;
 }
+
+.button__up {
+    cursor: pointer;
+    background-color: #1466FF;
+    color: #ACD2FE;
+    border: 1px solid rgba(0, 0, 0, 0);
+    padding: 5px 10px;
+    border-radius: 15px;
+    transition: .3s;
+    &:hover {
+        background: #185FE3;
+        box-shadow: 0px 3px 10px rgba(7, 62, 164, 0.53);
+    }
+    &:active {
+        background: #0C52D5;
+        box-shadow: inset 2px 7px 10px rgba(0, 0, 0, 0.25);
+    }
+    &:disabled {
+        background: #5C5C5C;
+        box-shadow: none;
+    }
+}
+
+.button__in {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: rgba(217, 230, 255, 0.45);
+    color: #1466FF;
+    border: 1px solid #1466FF;
+    transition: .3s;
+    &:hover {
+        background: #BCD8FC;
+        border: 1px solid #2F75F8;
+    }
+    &:active {
+        background: #67B0FC;
+        border: 1px solid #1466FF;
+    }
+    &:disabled {
+        background: #ECECEC;
+        border: 1px solid #25282B;
+        color: #25282B;
+    }
+}

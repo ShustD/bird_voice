@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import s from './SettingPage.module.scss'
 import { Formik, Field, Form } from 'formik';
 import invis from '../../assets/SignUp/invisible.png'
 import vis from '../../assets/SignUp/visible.png'
 import { useState } from 'react';
-import photo from '../../assets/settings/photo.png'
 import bird from '../../assets/settings/bird.png'
 import { useDispatch, useSelector } from "react-redux";
 import { addPhoto } from "../../store/authSlice";
+import noAvatar from './avatar.png'
 
 
 
@@ -21,7 +21,16 @@ export const SettingPage = () => {
     const [avatar, setAvatar] = useState(null)
     const dispatch = useDispatch()
     const { avatarUrl } = useSelector(state => state.auth)
-  
+
+    const deletePhoto = () => {
+        dispatch(addPhoto(''))
+        setAvatar(null)
+    }
+    useEffect(() => {
+        if(avatar) {
+            dispatch(addPhoto(avatar))
+        }
+    }, [avatar, dispatch])
 
     return (
         <div className={s.wrapper}>
@@ -95,27 +104,25 @@ export const SettingPage = () => {
 
                     <div className={s.profile_container}>
                         <div className={s.profile_content}>
-                            <img className={s.main_photo} 
-                            src={avatarUrl ? `https://bird-sounds-database.ssrlab.by${avatarUrl}` : photo } alt="" />
+                            <img className={s.main_photo}
+                                src={avatarUrl ? `https://bird-sounds-database.ssrlab.by${avatarUrl}` : noAvatar} alt="" />
                             <img className={s.upper_bird} src={bird} alt="" />
                             <div className={s.photo_set}>
                                 <div>
-                                    <img className={s.little_photo} 
-                                    src={avatarUrl ? `https://bird-sounds-database.ssrlab.by${avatarUrl}` : photo } alt="" />
+                                    <img className={s.little_photo}
+                                        src={avatarUrl ? `https://bird-sounds-database.ssrlab.by${avatarUrl}` : noAvatar} alt="" />
                                 </div>
                                 <div className={s.little_text}>
-                                    <div>edit avatar size</div>
-                                    <label className={s.upload_btn} htmlFor="audiorecord_local">select photo</label>
-                                            <input
-                                                id="audiorecord_local"
-                                                name="audiorecord_local"
-                                                type="file"
-                                                onChange={(e) => {
-                                                    setAvatar(e.target.files[0]);
-                                                }}
-                                            />
-                                    <div onClick={() => dispatch(addPhoto(avatar))}>upload a photo</div>
-                                    <div>delete a photo</div>
+                                    <label className={s.button__up} htmlFor="audiorecord_local">change photo</label>
+                                    <input
+                                        id="audiorecord_local"
+                                        name="audiorecord_local"
+                                        type="file"
+                                        onChange={(e) => {
+                                            setAvatar(e.target.files[0]);
+                                        }}
+                                    />
+                                    <div className={s.button__in} onClick={() => deletePhoto()}>delete a photo</div>
                                 </div>
                             </div>
                         </div>

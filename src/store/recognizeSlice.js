@@ -6,7 +6,7 @@ export const fetchRecognize = createAsyncThunk(
   async (sound, { rejectWithValue, dispatch }) => {
     const formData = new FormData()
     formData.append('audio_file', sound)
-    formData.append('language', 2)
+    formData.append('language', 1)
     try {
       const response = await fetch("https://apiptushki.ssrlab.by/predict", {
 	  method: "POST",
