@@ -187,6 +187,9 @@ tbody {
         margin: 0 5px;
         word-break: initial;
     }
+    .raw_id {
+        min-width: 50px;
+    }
 } 
 @media (max-width: 768px) {
     .table__header {

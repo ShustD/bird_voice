@@ -13,15 +13,27 @@ export const ResultModuleNew = () => {
     const value = recognizedBirds[birdName];
     const rangeElements = value.slice(1).map((arr, index) => {
       const [start, end] = arr;
-      const rangeText = `${start}s - ${end}s`;
-      return <div key={index}>{rangeText}</div>;
-    });  
-    const firstRange = value[0];  
+      const rangeText =`${start}s - ${end}s`;
+      return <div className={s.segment_time} key={index}>{rangeText}</div>;
+    });
+    const firstRange = value[0];
     return (
-      <div style={{ marginBottom: '15px' }} className={s.sectionTittle} key={birdName}>
-        <h3>{birdName}</h3>
-        <img style={{ maxWidth: '200px' }} src={firstRange} alt="" />
-        <div>{rangeElements}</div>
+      <div className={s.bird_card} key={birdName}>
+        <div>
+          <img src={firstRange} alt="" />
+        </div>
+        <div>
+          <div className={s.card_title}>{birdName}</div>
+          <div className={s.segment_title}>
+            Defined on the segment:
+          </div>
+          
+            <div className={s.segment}>{rangeElements}</div>
+          
+        </div>
+
+
+
       </div>
     );
   });
@@ -30,7 +42,7 @@ export const ResultModuleNew = () => {
   return (
     <div className={s.resultModule}>
       <div className={s.recognitionBox}>
-        <button onClick={() => dispatch(resetStatus())} className={s.recognitionButton}>open recognition box <VectorBtn className={s.btnBird}/> </button>
+        <button onClick={() => dispatch(resetStatus())} className={s.recognitionButton}>open recognition box <VectorBtn className={s.btnBird} /> </button>
       </div>
       <div className={s.spectrogram}>
         <img src={spectrogram} alt="" />

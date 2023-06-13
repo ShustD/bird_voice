@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import s from './HeaderDropDown.module.scss'
-import photo from '../../../assets/UserRecognition/userlogo.png'
+import photo from '../../../assets/settings/avatar.png'
 import { NavLink, useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Settings } from '@material-ui/icons'

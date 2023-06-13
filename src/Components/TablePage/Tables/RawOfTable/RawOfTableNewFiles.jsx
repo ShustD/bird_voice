@@ -8,7 +8,7 @@ export const RawOfTableNewFiles = (props) => {
     return (
         <tr className={s.raw_of_table}>
             <td><input id={props.id} type="checkbox" checked={props.check} onChange={(e) => props.handleClick(e, props.id)}/></td>
-            <td>{props.id}</td>
+            <td className={s.raw_id}>{props.id}</td>
             <td style={{ maxWidth: '100px' }}>{props.name}</td>
             <td>{props.validated ?
                 <Done className={s.icon_done} />  :

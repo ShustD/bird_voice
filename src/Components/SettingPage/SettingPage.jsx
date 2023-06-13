@@ -7,7 +7,7 @@ import { useState } from 'react';
 import bird from '../../assets/settings/bird.png'
 import { useDispatch, useSelector } from "react-redux";
 import { addPhoto } from "../../store/authSlice";
-import noAvatar from './avatar.png'
+import noAvatar from '../../assets/settings/avatar.png'
 
 
 

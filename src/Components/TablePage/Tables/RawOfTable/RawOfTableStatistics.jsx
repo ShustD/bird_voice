@@ -5,7 +5,8 @@ export const RawOfTableStatistics = (props) => {
 
     return (
         <tr className={s.raw_of_table}>
-                        <td><input  id={props.id} type="checkbox" checked={props.check} onChange={(e) => props.handleClick(e, props.id)}/></td>
+            <td></td>
+                        {/* <td><input  id={props.id} type="checkbox" checked={props.check} onChange={(e) => props.handleClick(e, props.id)}/></td> */}
                         <td>{props.description ? props.description : <i style={{ color: '#F13A3A' }} className="material-icons">close</i>}</td>
                         <td>{props.specie_key_name}</td>
                         <td>{props.specie_verbose_name}</td>

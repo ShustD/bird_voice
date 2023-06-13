@@ -42,23 +42,43 @@
         height: 40px;
     }
 }
+
 .spectrogram {
     margin-top: 20px;
     overflow-x: auto;
     text-align: center;
     border-radius: 15px;
     max-width: 100%;
+    &::-webkit-scrollbar {
+        height: 16px;               
+      }
+    &::-webkit-scrollbar-track {
+        border-radius: 20px;
+        background: #DAEDFF;;       
+      }
+    &::-webkit-scrollbar-thumb {
+        background-color: #1466FF;  
+        border-radius: 20px;      
+      }
     img {
         max-height: 500px;
         border-radius: 15px;
     }
-    
+     
+}
+@media screen and (min-width:320px) and (max-width:800px) {
+    .spectrogram::-webkit-scrollbar {
+        height: 25px;              
+      }
 }
 .resultContainer {
     padding: 15px 40px;
-    background: rgba(64, 140, 255, 0.6);
     border-radius: 20px;
     margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 @media (max-width: 768px) {
@@ -68,25 +88,56 @@
     }
 }
 
-.sectionTittle {
-    padding: 5px 100px 5px 40px;
+.bird_card {
+    box-sizing: border-box;
+    padding: 20px;
+    width: 400px;
+    margin-bottom: 15px;
     font-size: 30px;
     line-height: 40px;
     text-transform: capitalize;
     color: #FFFFFF;
     background: #1466FF;
     border-radius: 30px;
+    display: flex;
+    gap: 20px;
+
+    .card_title {
+        margin-top: 15px;
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 29px;
+    }
+
+    .segment_title {
+        margin-top: 10px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .segment {
+        margin-top: 5px;
+        display: flex;
+        flex-wrap: wrap;
+
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+
+        .segment_time {
+            margin: 5px 20px 0 0;
+        }
+    }
+
+    img {
+        max-width: 135px;
+        border-radius: 15px;
+    }
 }
 
 @media (max-width: 768px) {
-    .sectionTittle {
-        margin-left: -40px;
-        font-size: 25px;
-        margin: 0;
-        padding: 20px;
-
-        h3 {
-            margin: 0;
-        }
+    .bird_card {
+        width: 100%;
     }
 }
